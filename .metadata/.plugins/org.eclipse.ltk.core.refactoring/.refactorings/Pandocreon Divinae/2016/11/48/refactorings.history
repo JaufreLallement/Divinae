@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;origine.ListeOrigines&apos; to &apos;LibelleOrigine&apos;&#x0D;&#x0A;- Original project: &apos;Pandocreon Divinae&apos;&#x0D;&#x0A;- Original element: &apos;origine.ListeOrigines&apos;&#x0D;&#x0A;- Renamed element: &apos;origine.LibelleOrigine&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ListeOrigines&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;origine{ListeOrigines.java[ListeOrigines" matchStrategy="1" name="LibelleOrigine" qualified="false" references="true" similarDeclarations="false" stamp="1480424383304" textual="false" version="1.0"/>
+</session>

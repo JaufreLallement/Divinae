@@ -1,0 +1,114 @@
+/**
+ * 
+ */
+package de;
+
+import java.util.Random;
+
+import origine.LibelleOrigine;
+import origine.Origine;
+import joueur.Joueur;
+
+/**
+ * @author Lallement
+ * La classe De décrit les caractéristiques du dé utilisé lors du jeu Pandocreon Divinae
+ * La classe De est un singleton.
+ */
+public final class De {
+	/* ---------- Attributs ---------- */
+	/**
+	 * Instance du dé
+	 */
+	private static volatile De instance = null;
+	
+	/**
+	 * Faces du dé
+	 */
+	private Face faces[] = new Face[6];
+	
+	/**
+	 * Joueur lançant le dé.
+	 */
+	private Joueur lanceur = null;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur privé permettant de supprimer le constructeur publique par défaut
+	 */
+	private De() {
+		super();
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Méthode permettant de retourner une unique instance de la classe De
+	 * @return {De} instance : retourtne l'instance de la classer De
+	 */
+	public final static De getInstance() {
+		if (De.instance == null) {
+			synchronized (De.class) {
+				if (De.instance == null) {
+					De.instance = new De();
+					Origine jour = new Origine(LibelleOrigine.JOUR);
+					Origine nuit = new Origine(LibelleOrigine.NUIT);
+					Origine neant = new Origine(LibelleOrigine.NEANT);
+					for (int i = 0; i < De.getInstance().faces.length; i++) {
+						if (i == 0 || i == 2) {
+							De.getInstance().faces[i] = new Face(jour);
+						} else if (i == 1 || i == 3) {
+							De.getInstance().faces[i] = new Face(nuit);
+						} else {
+							De.getInstance().faces[i] = new Face(neant);
+						}
+					}
+				}
+			}
+		}
+		return De.instance;
+	}
+	
+	/** 
+	 * Accesseur permettant de retourner les faces du dé.
+	 * @return {Face[]} faces : retourne un tableau contenant les faces du dé.
+	 */
+	public Face[] getFaces() {
+		return this.faces;
+	}
+
+	/**
+	 * Accesseur permettant de retourner le dernier lanceur du dé
+	 * @return {Joueur} lanceur : retourne le dernier lanceur
+	 */
+	public Joueur getLanceur() {
+		return this.lanceur;
+	}
+	
+	/**
+	 * Modificateur permettant de mettre à jour le dernier lanceur
+	 * @param {Joueur} lanceur : lanceur mis à jour 
+	 */
+	public void setLanceur(Joueur lanceur) {
+		this.lanceur = lanceur;
+	}
+	
+	/* ---------- Méthodes ---------- */
+
+	/**
+	 * Méthode simulant un lancer de dé
+	 * @return {Face} face : retourne l'une des faces du dé de manière aléatoire
+	 */
+	public Face lancerDe() {
+		Random rand = new Random();
+		int numFace = rand.nextInt(6);
+		return this.faces[numFace]; 
+	}
+	
+	
+	/**
+	 * Méthode de tests
+	 * @param {String[]} args
+	 */
+	public static void main(String[] args) {
+		System.out.println(De.getInstance().lancerDe());
+	}
+}

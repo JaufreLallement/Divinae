@@ -1,0 +1,57 @@
+/**
+ * 
+ */
+package cartes;
+
+import dogme.Dogme;
+import effets.Capacite;
+import origine.Origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Divinite extends Carte {
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Nom de la divinité
+	 */
+	private String nomDivinite;
+	
+	/**
+	 * Tableau contenant les trois dogmes d'une divinité
+	 */
+	private Dogme[] dogmesDivinite = new Dogme[3];
+	
+	/**
+	 * Disponibilite de la capacite de la divinite
+	 */
+	private boolean capaciteDispo = true;
+	
+	private Capacite capaciteDivinite;
+	/* ---------- Constructeurs ---------- */
+	
+	/**
+	 * @param origine
+	 */
+	public Divinite(Origine origine) {
+		super(origine);
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	/* ---------- Getters & Setters ---------- */
+	
+	
+	/* ---------- Méthodes ---------- */
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

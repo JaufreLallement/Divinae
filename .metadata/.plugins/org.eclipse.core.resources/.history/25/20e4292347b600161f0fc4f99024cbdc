@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package de;
+
+/**
+ * @author Lallement
+ * La classe Face décrit les faces du dé utilisé lors du jeu Pandocreon Divinae
+ */
+public class Face {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

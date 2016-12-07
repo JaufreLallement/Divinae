@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package cartes;
+
+import dogme.Dogme;
+import origine.Origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Divinite extends Carte {
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Nom de la divinité
+	 */
+	private String nomDivinite;
+	
+	private Dogme dogmesDivinite[] = new Dogme[3];
+	/* ---------- Constructeurs ---------- */
+	
+	/**
+	 * @param origine
+	 */
+	public Divinite(Origine origine) {
+		super(origine);
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	/* ---------- Getters & Setters ---------- */
+	
+	
+	/* ---------- Méthodes ---------- */
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

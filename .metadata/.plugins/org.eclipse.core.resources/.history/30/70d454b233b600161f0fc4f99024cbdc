@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package origine;
+
+/**
+ * @author Lallement
+ * L'enumération ListeOrigines regroupe les origines que les cartes de Pandocréon Divinae utilisent.
+ * Certaines cartes seront d'origine Jour, d'autre d'origine Nuit, etc.
+ */
+public enum ListeOrigines {
+	JOUR,
+	NUIT,
+	NEANT,
+	AUBE,
+	CREPUSCULE
+}

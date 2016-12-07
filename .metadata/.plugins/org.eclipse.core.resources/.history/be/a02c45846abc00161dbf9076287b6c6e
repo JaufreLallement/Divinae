@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package cartes;
+
+import origine.Origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public abstract class Carte {
+	
+	private Origine origineCarte = null;
+
+	/**
+	 * 
+	 */
+	public Carte(Origine origine) {
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Origine {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+	}
+
+}

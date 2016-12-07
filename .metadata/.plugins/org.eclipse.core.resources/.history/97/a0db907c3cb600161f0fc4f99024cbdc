@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package dogme;
+
+/**
+ * @author Lallement
+ * La classe dogme décrit les dogmes adoptés par certaines cartes.
+ */
+public class Dogme {
+	/* ---------- Attributs ---------- */
+	/**
+	 * Libellé du dogme. Parmis les possibilités de l'énumération LibelleDogme
+	 */
+	private LibelleDogme libD;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur avec arguments
+	 * Tout Dogme nouvellement créé doit posséder un libellé
+	 * @param {LibelleDogme} libD : libellé à attribuer au dogme
+	 */
+	public Dogme(LibelleDogme libD) {
+		this.libD = libD;
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur permettant d'obtenir le libellé d'un dogme
+	 * @return
+	 */
+	public LibelleDogme getLibD() {
+		return libD;
+	}
+
+	public void setLibD(LibelleDogme libD) {
+		this.libD = libD;
+	}
+	
+	/* ---------- Méthodes ---------- */
+	/**
+	 * Méthode de tests
+	 * @param {String[]} args
+	 */
+	public static void main(String[] args) {
+
+	}
+}

@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Origine {
+	/* ---------- Attributs ---------- */
+	private LibelleOrigine origine;
+	
+	/* ---------- Constructeurs ---------- */
+	public Origine() {
+		this.origine = null;
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur permettant d'obtenir le libellé d'une origine
+	 * @return {LibelleOrigine} origine : retourne le libellé de l'origine 
+	 */
+	public LibelleOrigine getOrigine() {
+		return origine;
+	}
+	
+	/**
+	 * Modificateur permettant de changer le libellé d'une origine.
+	 * @param {LibelleOrigine} origine : nouveau libellé
+	 */
+	public void setOrigine(LibelleOrigine origine) {
+		this.origine = origine;
+	}
+	
+	/* ---------- Méthodes ---------- */
+	/**
+	 * Méthode de tests
+	 * @param {String[]} args
+	 */
+	public static void main(String[] args) {
+
+	}
+}

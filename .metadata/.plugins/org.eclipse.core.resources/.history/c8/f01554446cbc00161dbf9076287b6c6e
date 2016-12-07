@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+package cartes;
+
+/**
+ * @author Lallement
+ * 
+ */
+public interface Effet {
+}

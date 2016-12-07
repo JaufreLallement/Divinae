@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package effets;
+
+/**
+ * @author Lallement
+ *
+ */
+public class CapaciteMoine extends Capacite {
+
+	/**
+	 * @param libelle
+	 */
+	public CapaciteMoine(String libelle) {
+		super(libelle);
+		// TODO Auto-generated constructor stub
+	}
+	
+	/**
+	 * Surcharge de la méthode appliquerEffet pour la classe CapaciteMoine
+	 */
+	@Override
+	public void appliquerEffet() {
+		super();
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

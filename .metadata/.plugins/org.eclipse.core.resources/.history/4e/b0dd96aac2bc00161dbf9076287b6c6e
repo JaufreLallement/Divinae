@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+package cartes;
+
+import origine.Origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Divinite extends Carte {
+	
+	/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */
+	
+	/**
+	 * @param origine
+	 */
+	public Divinite(Origine origine) {
+		super(origine);
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	/* ---------- Getters & Setters ---------- */
+	
+	/* ---------- Méthodes ---------- */
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

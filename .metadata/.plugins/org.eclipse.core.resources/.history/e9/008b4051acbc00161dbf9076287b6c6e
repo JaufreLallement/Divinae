@@ -1,0 +1,41 @@
+/**
+ * 
+ */
+package effets;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Capacite implements Effet {
+	
+	private String libelleCap;
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {String} libelle : libelle de la capacité nouvellement créée
+	 */
+	public Capacite(String libelle) {
+		this.libelleCap = libelle;
+	}
+
+	/** 
+	 * Implémentation de la méthode appliquerEffet de l'interface Effet
+	 * @see effets.Effet#appliquerEffet()
+	 */
+	@Override
+	public void appliquerEffet() {
+		System.out.println(this.libelleCap);
+	}
+
+
+	/**
+	 * Méthode de tests
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

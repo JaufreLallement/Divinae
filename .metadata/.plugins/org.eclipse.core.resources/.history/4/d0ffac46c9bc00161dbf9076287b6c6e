@@ -1,0 +1,145 @@
+/**
+ * 
+ */
+package cartes;
+
+import dogme.Dogme;
+import effets.Capacite;
+import origine.Origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Divinite extends Carte {
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Nom de la divinité
+	 */
+	private String nomDivinite;
+	
+	/**
+	 * Tableau contenant les trois dogmes d'une divinité
+	 */
+	private Dogme[] dogmesDivinite;
+	
+	/**
+	 * Disponibilite de la capacite de la divinite
+	 */
+	private boolean capaciteDispo = true;
+	
+	/**
+	 * Capacite unique de la divinité
+	 */
+	private Capacite capaciteDivinite;
+	
+	/**
+	 * Nombre total de prieres rassemblées par la divinité.
+	 */
+	private int totalPrieres = 0;
+	
+	
+	/* ---------- Constructeurs ---------- */
+	
+	/**
+	 * Constructeur par défaut
+	 */
+	private Divinite() {
+		super();
+	}
+	
+	/**
+	 * Constructeur avec arguments
+	 * @param {String} nom : nom à attribuer à la divinite
+	 * @param {Origine} origine : Origine de la divinité nouvellement créée
+	 * @param {Capacite} capacite : Capacite unique à attribuer à la Divinite
+	 */
+	public Divinite(String nom, Origine origine, Capacite capacite) {
+		super(origine);
+		this.nomDivinite = nom;
+		this.capaciteDivinite = capacite;
+	}
+	
+
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * @return the nomDivinite
+	 */
+	public String getNomDivinite() {
+		return nomDivinite;
+	}
+
+	/**
+	 * @param nomDivinite the nomDivinite to set
+	 */
+	public void setNomDivinite(String nomDivinite) {
+		this.nomDivinite = nomDivinite;
+	}
+
+	/**
+	 * @return the dogmesDivinite
+	 */
+	public Dogme[] getDogmesDivinite() {
+		return dogmesDivinite;
+	}
+
+	/**
+	 * @param dogmesDivinite the dogmesDivinite to set
+	 */
+	public void setDogmesDivinite(Dogme[] dogmesDivinite) {
+		this.dogmesDivinite = dogmesDivinite;
+	}
+
+	/**
+	 * @return the capaciteDispo
+	 */
+	public boolean isCapaciteDispo() {
+		return capaciteDispo;
+	}
+
+	/**
+	 * @param capaciteDispo the capaciteDispo to set
+	 */
+	public void setCapaciteDispo(boolean capaciteDispo) {
+		this.capaciteDispo = capaciteDispo;
+	}
+
+	/**
+	 * @return the capaciteDivinite
+	 */
+	public Capacite getCapaciteDivinite() {
+		return capaciteDivinite;
+	}
+
+	/**
+	 * @param capaciteDivinite the capaciteDivinite to set
+	 */
+	public void setCapaciteDivinite(Capacite capaciteDivinite) {
+		this.capaciteDivinite = capaciteDivinite;
+	}
+
+	/**
+	 * @return the totalPrieres
+	 */
+	public int getTotalPrieres() {
+		return totalPrieres;
+	}
+
+	/**
+	 * @param totalPrieres the totalPrieres to set
+	 */
+	public void setTotalPrieres(int totalPrieres) {
+		this.totalPrieres = totalPrieres;
+	}
+	
+	/* ---------- Méthodes ---------- */
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

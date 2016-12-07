@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public enum ListeOrigines {
+
+}

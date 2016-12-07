@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package dogme;
+
+/**
+ * @author Lallement
+ * La classe dogme décrit les dogmes adoptés par certaines cartes.
+ */
+public class Dogme {
+	/* ---------- Attributs ---------- */
+	private LibelleDogme libD;
+	/* ---------- Constructeurs ---------- */
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- Méthodes ---------- */
+	/**
+	 * Méthode de tests
+	 * @param {String[]} args
+	 */
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Origine {
+	/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */
+	
+	/* ---------- Getters & Setters ---------- */
+	
+	/* ---------- Méthodes ---------- */
+	
+	
+	/**
+	 * Méthode de tests
+	 * @param {String[]} args
+	 */
+	public static void main(String[] args) {
+
+	}
+
+}
