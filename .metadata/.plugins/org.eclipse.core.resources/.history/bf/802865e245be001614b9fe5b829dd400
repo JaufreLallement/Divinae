@@ -1,0 +1,68 @@
+/**
+ * 
+ */
+package divinites;
+
+import de.De;
+import de.Face;
+import dogme.Dogme;
+import dogme.LibelleDogme;
+import origine.LibelleOrigine;
+import origine.Origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Brewalen extends Divinite{
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Instance du dé
+	 */
+	private static volatile De instance = null;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * On supprime le constructeur publique par défaut.
+	 */
+	private Brewalen() {
+		super();
+	}
+
+	/**
+	 * Constructeur privé avec arguments
+	 * La classe étant un singleton, on évite la création de plusieurs instances 
+	 */
+	private Brewalen(Dogme[] dogmes) {
+		super("Brewalen", new Origine(LibelleOrigine.JOUR), dogmes);
+	}
+	
+
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Méthode permettant de retourner une unique instance de la classe De
+	 * @return {De} instance : retourtne l'instance de la classer De
+	 */
+	public final static Brewalen getInstance() {
+		if (Brewalen.instance == null) {
+			synchronized (De.class) {
+				if (Brewalen.instance == null) {
+					
+				}
+			}
+		}
+		return Brewalen.instance;
+	}
+	
+	/* ---------- Méthodes ---------- */
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

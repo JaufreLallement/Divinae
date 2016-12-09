@@ -5,7 +5,6 @@ package de;
 
 import java.util.Random;
 
-import origine.LibelleOrigine;
 import origine.Origine;
 import joueur.Joueur;
 
@@ -48,16 +47,13 @@ public final class De {
 			synchronized (De.class) {
 				if (De.instance == null) {
 					De.instance = new De();
-					Origine jour = new Origine(LibelleOrigine.JOUR);
-					Origine nuit = new Origine(LibelleOrigine.NUIT);
-					Origine neant = new Origine(LibelleOrigine.NEANT);
 					for (int i = 0; i < De.getInstance().faces.length; i++) {
 						if (i == 0 || i == 2) {
-							De.instance.faces[i] = new Face(jour);
+							De.instance.faces[i] = new Face(Origine.JOUR);
 						} else if (i == 1 || i == 3) {
-							De.instance.faces[i] = new Face(nuit);
+							De.instance.faces[i] = new Face(Origine.NUIT);
 						} else {
-							De.instance.faces[i] = new Face(neant);
+							De.instance.faces[i] = new Face(Origine.NEANT);
 						}
 					}
 				}

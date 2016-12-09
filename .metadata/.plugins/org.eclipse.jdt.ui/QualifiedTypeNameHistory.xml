@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="origine.ListeOrigines"/>
-<fullyQualifiedTypeName name="dogme.LibelleDogme"/>
 <fullyQualifiedTypeName name="java.awt.image.SinglePixelPackedSampleModel"/>
 <fullyQualifiedTypeName name="javax.swing.SingleSelectionModel"/>
 <fullyQualifiedTypeName name="joueur.Joueur"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
-<fullyQualifiedTypeName name="origine.Origine"/>
-<fullyQualifiedTypeName name="origine.LibelleOrigine"/>
 <fullyQualifiedTypeName name="de.Face"/>
 <fullyQualifiedTypeName name="de.De"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.INTERNAL"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="effets.Capacite"/>
+<fullyQualifiedTypeName name="cartes.Divinite"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.LineNumberReader"/>
+<fullyQualifiedTypeName name="effets.Effet"/>
+<fullyQualifiedTypeName name="divinites.Divinite"/>
+<fullyQualifiedTypeName name="origine.LibelleOrigine"/>
+<fullyQualifiedTypeName name="dogme.LibelleDogme"/>
+<fullyQualifiedTypeName name="divinites.Brewalen"/>
+<fullyQualifiedTypeName name="dogme.Dogme"/>
+<fullyQualifiedTypeName name="origine.Origine"/>
 </qualifiedTypeNameHistroy>

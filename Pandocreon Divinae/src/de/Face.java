@@ -50,7 +50,7 @@ public class Face {
 	 */
 	@Override 
 	public String toString() {
-		return "Face obtenue: " + this.origineFace.getLibOrigine();
+		return "Face obtenue: " + this.origineFace.toString();
 	}
 	
 	/**

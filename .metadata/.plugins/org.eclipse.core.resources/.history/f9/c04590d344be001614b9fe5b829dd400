@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package divinites;
+
+import dogme.Dogme;
+import dogme.LibelleDogme;
+import origine.LibelleOrigine;
+import origine.Origine;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Brewalen extends Divinite{
+
+	/**
+	 * 
+	 */
+	private Brewalen() {
+	Dogme[] dogmes = new Dogme{new Dogme(LibelleDogme.NATURE), new Dogme(LibelleDogme.HUMAIN), new Dogme(LibelleDogme.MYSTIQUES)};
+		super("Brewalen", new Origine(LibelleOrigine.JOUR), dogmes);
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
