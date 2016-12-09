@@ -3,6 +3,8 @@
  */
 package cartes;
 
+import java.util.ArrayList;
+
 import dogme.Dogme;
 import origine.Origine;
 
@@ -56,6 +58,17 @@ public abstract class Carte {
 
 
 	/* ---------- Méthodes ---------- */
+	
+	/**
+	 * Méthode retournant toutes les cartes
+	 * @return {ArrayList<Carte>} cartes : retourne un ArrayList contenant toutes les cartes 
+	 */
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> cartes = new ArrayList<Carte>();
+		// TODO Utilisation d'un FileReader
+		return cartes;
+	}
+	
 	/**
 	 * @param args
 	 */

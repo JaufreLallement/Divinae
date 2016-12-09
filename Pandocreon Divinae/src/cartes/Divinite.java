@@ -3,8 +3,19 @@
  */
 package cartes;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.LineNumberReader;
+import java.util.ArrayList;
+
+import org.omg.CORBA.INTERNAL;
+
 import dogme.Dogme;
 import effets.Capacite;
+import origine.LibelleOrigine;
 import origine.Origine;
 
 /**
@@ -47,6 +58,16 @@ public class Divinite extends Carte {
 	 */
 	private Divinite() {
 		super();
+	}
+	
+	/**
+	 * Constructeur avec arguments
+	 * @param {String} nom : nom de la divinité nouvellement créée
+	 * @param {Origine} origine : origine de la divinité
+	 */
+	public Divinite(String nom, Origine origine) {
+		super(origine);
+		this.nomDivinite = nom;
 	}
 	
 	/**
@@ -146,13 +167,79 @@ public class Divinite extends Carte {
 		this.totalPrieres = nbPrieres;
 	}
 	
+	
 	/* ---------- Méthodes ---------- */
+	/**
+	 * Méthode retournant toutes les divinites
+	 * @return {ArrayList<Divinite>} divinites : retourne un ArrayList contenant toutes les divinites
+	 */
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> divinites = new ArrayList<Carte>();
+		// TODO Utilisation d'un FileReader
+		BufferedReader file;
+		try {
+			file = new BufferedReader(new FileReader("divinites.txt"));
+			
+			try {
+				String nom;
+				String libOrigine;
+				Origine origine;				
+				
+				while(file.ready()) {
+					
+					for (int i = 0; i < 1; i++) {
+						String ligne = file.readLine();
+						int separateur = ligne.indexOf(' ');
+						libOrigine = ligne.substring(separateur + 1 , ligne.lastIndexOf(' '));
+						System.out.println(libOrigine);
+						
+						nom = ligne.substring(0, separateur);
+						
+						
+						switch (libOrigine) {
+						case "JOUR":
+							origine = new Origine(LibelleOrigine.JOUR);
+							break;
+
+						case "NUIT":
+							origine = new Origine(LibelleOrigine.NUIT);
+							break;
+							
+						case "NEANT":
+							origine = new Origine(LibelleOrigine.NEANT);
+							break;
+						
+						case "AUBE":
+							origine = new Origine(LibelleOrigine.AUBE);
+							break;
+							
+						case "CREPUSCULE":
+							origine = new Origine(LibelleOrigine.CREPUSCULE);
+							break;
+						default :
+							origine = null;
+							break;
+						}
+						
+						Divinite d = new Divinite(nom, origine);
+						divinites.add(d);
+					}
+				}
+				file.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}		
+		return divinites;
+	}
+	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Divinite.getAll();
 	}
 
 }
