@@ -6,7 +6,6 @@ package divinites;
 
 import java.util.ArrayList;
 
-import joueur.Joueur;
 import cartes.Carte;
 import dogme.Dogme;
 import origine.Origine;
@@ -38,7 +37,7 @@ public class Divinite extends Carte {
 	 */
 	private int totalPrieres = 0;
 	
-
+	
 	/* ---------- Constructeurs ---------- */
 	/**
 	 * Constructeur par défaut   
@@ -151,7 +150,6 @@ public class Divinite extends Carte {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/* Tests de la méthode getAll() */
 		ArrayList<Divinite> testDivinites = Divinite.getAllDivinites();
 		System.out.println(testDivinites.size());
 		System.out.println(testDivinites.contains(Yartsur.getInstance()));

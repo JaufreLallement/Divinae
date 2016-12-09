@@ -18,15 +18,8 @@ import origine.Origine;
 public abstract class Carte {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Origine de la carte
-	 */
 	private Origine origineCarte;
 	
-	/**
-	 * Joueur possédant la carte divinité donnée
-	 */
-	private Joueur joueur = null;
 
 	/* ---------- Constructeurs ---------- */
 	

@@ -38,6 +38,11 @@ public class Divinite extends Carte {
 	 */
 	private int totalPrieres = 0;
 	
+	/**
+	 * Joueur possédant la carte divinité donnée
+	 */
+	private Joueur joueur = null;
+	
 
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -124,6 +129,22 @@ public class Divinite extends Carte {
 	 */
 	public void setTotalPrieres(int nbPrieres) {
 		this.totalPrieres = nbPrieres;
+	}
+	
+	/**
+	 * Accesseur pour l'attribut joueur
+	 * @return {Joueur} joueur : retourne le joueur possédant la divinité
+	 */
+	public Joueur getJoueur() {
+		return this.joueur;
+	}
+
+	/**
+	 * Modificateur pour l'attribut joueur
+	 * @param {Joueur} joueur : joueur nouveau joueur possédant la carte Divinité donnée.
+	 */
+	public void setJoueur(Joueur joueur) {
+		this.joueur = joueur;
 	}
 	
 	

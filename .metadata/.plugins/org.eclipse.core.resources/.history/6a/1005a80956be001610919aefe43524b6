@@ -38,6 +38,11 @@ public class Divinite extends Carte {
 	 */
 	private int totalPrieres = 0;
 	
+	/**
+	 * Joueur possédant la carte divinité donnée
+	 */
+	private Joueur joueur = null;
+	
 
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -151,7 +156,6 @@ public class Divinite extends Carte {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/* Tests de la méthode getAll() */
 		ArrayList<Divinite> testDivinites = Divinite.getAllDivinites();
 		System.out.println(testDivinites.size());
 		System.out.println(testDivinites.contains(Yartsur.getInstance()));
