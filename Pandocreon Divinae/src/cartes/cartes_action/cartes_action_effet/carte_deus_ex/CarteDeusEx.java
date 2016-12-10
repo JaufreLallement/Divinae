@@ -1,17 +1,26 @@
 package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
 
+import origine.Origine;
 import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
 
 /**
  * 
- * @author alexis
- * La classe CarteDeusEx décrit le comportement général des cartes Deus Ex
+ * @author alexis La classe CarteDeusEx dï¿½crit le comportement gï¿½nï¿½ral des
+ *         cartes Deus Ex
  */
-public class CarteDeusEx extends CartesActionEffet{
+public class CarteDeusEx extends CartesActionEffet {
 	/* ---------- Attributs ---------- */
 	/* ---------- Constructeurs ---------- */
+
+	public CarteDeusEx(Origine origine) {
+		super(origine);
+	}
+	public CarteDeusEx() {
+		super();
+	}
+
 	/* ---------- Getters & Setters ---------- */
-	/* ---------- Méthodes ---------- */
+	/* ---------- Mï¿½thodes ---------- */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
