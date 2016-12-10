@@ -41,4 +41,5 @@
 <fullyQualifiedTypeName name="origine.Origine"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="cartes.cartes_action.cartes_apocalypse.CarteApocalypse"/>
+<fullyQualifiedTypeName name="cartes.cartes_action.cartes_action_effet.CartesActionEffet"/>
 </qualifiedTypeNameHistroy>

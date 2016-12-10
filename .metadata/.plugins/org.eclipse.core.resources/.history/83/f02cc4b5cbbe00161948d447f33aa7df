@@ -1,0 +1,27 @@
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants;
+
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
+/**
+ * 
+ * @author alexis, Lallement
+ * La classe CarteCroyant décrit le comportement générale des cartes Croyants
+ */
+public class CarteCroyant extends CarteActionDogmatique {
+
+	/* ---------- Attributs ---------- */
+	/**
+	 * Points de prière de la carte croyant
+	 */
+	private int pointsPriere = 0;
+	
+	private int numTourCreation = 0;
+	/* ---------- Constructeurs ---------- */
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- MÃ©thodes ---------- */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

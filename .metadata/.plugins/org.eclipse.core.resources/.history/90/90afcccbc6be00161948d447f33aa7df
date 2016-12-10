@@ -1,0 +1,28 @@
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
+
+/**
+ * 
+ * @author alexis
+ * La classe CarteGuideSpirituel décrit le comportement général de la carte GuideSpirituel
+ */
+
+public class CarteGuideSpirituel extends CarteActionDogmatique {
+
+	/* ---------- Attributs ---------- */
+	/**
+	 * Nombre de croyant qu'un guide spirituel peut rassembler
+	 */
+	private int nbCroyantsTotal = 0;
+	/* ---------- Constructeurs ---------- */
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- M�thodes ---------- */
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,108 @@
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants;
+
+import origine.Origine;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
+import cartes.divinites.Divinite;
+/**
+ * 
+ * @author alexis
+ * @author Lallement
+ * La classe CarteCroyant décrit le comportement générale des cartes Croyants
+ */
+public class CarteCroyant extends CarteActionDogmatique {
+
+	/* ---------- Attributs ---------- */
+	/**
+	 * Points de prière de la carte croyant
+	 */
+	private int pointsPriere = 0;
+	
+	/**
+	 * Numéro du tour durant lequel la carte a été créée*
+	 * *posée sur la table
+	 */
+	private int numTourCreation = 0;
+	
+	/**
+	 * Possibilité de sacrifier la carte
+	 * True si on peut sacrifier la carte
+	 * False sinon, dans les cas où la carte vient d'être créée ou si elle est au centre de la table
+	 */
+	private boolean estSacrifiable = false;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par défaut
+	 */
+	public CarteCroyant() {
+		super();
+	}
+	
+	/**
+	 * Constructeur avec arguments
+	 * @param {Origine} origine : origine à attribuer à la carte 
+	 * @param {int} pointsPriere : points de prière que la carte doit posséder  
+	 */
+	public CarteCroyant(Origine origine, int pointsPriere) {
+		super(origine);
+		this.pointsPriere = pointsPriere;
+	}
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur pour l'attribut pointsPriere
+	 * @return {int} pointsPriere : retourne le nombre de points de priere dont dispose la carte
+	 */
+	public int getPointsPriere() {
+		return this.pointsPriere;
+	}
+
+	/**
+	 * Modificateur pour l'attribut pointsPriere
+	 * @param {int} pointsPriere : points de priere à attribuer à la carte 
+	 */
+	public void setPointsPriere(int pointsPriere) {
+		this.pointsPriere = pointsPriere;
+	}
+
+	/**
+	 * Accesseur pour l'attribut numTourCreation
+	 * @return {int} numTourCreation : retourne le numéro du tour durant lequel la carte a été créée
+	 */
+	public int getNumTourCreation() {
+		return this.numTourCreation;
+	}
+
+	/**
+	 * Modificateur pour l'attribut numTourCreation
+	 * @param {int} numTourCreation : numéro du tour de création à attribuer
+	 */
+	public void setNumTourCreation(int numTourCreation) {
+		this.numTourCreation = numTourCreation;
+	}
+
+	/**
+	 * Accesseur pour l'attribut estSacrifiable
+	 * @return {boolean} estSacrifiable : retourne true si la carte est sacrifiable, false sinon
+	 */
+	public boolean isEstSacrifiable() {
+		return this.estSacrifiable;
+	}
+
+	/**
+	 * Modificateur pour l'attribut estSacrifiable
+	 */
+	public void setEstSacrifiable() {
+		this.estSacrifiable = (this.estSacrifiable) ? false : true;
+	}
+	
+	/* ---------- Méthodes ---------- */
+	public void ajouterPrieres(Divinite d) {
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

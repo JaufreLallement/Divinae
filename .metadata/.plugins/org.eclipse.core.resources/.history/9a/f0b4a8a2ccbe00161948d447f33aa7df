@@ -1,0 +1,96 @@
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants;
+
+import origine.Origine;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
+/**
+ * 
+ * @author alexis, Lallement
+ * La classe CarteCroyant décrit le comportement générale des cartes Croyants
+ */
+public class CarteCroyant extends CarteActionDogmatique {
+
+	/* ---------- Attributs ---------- */
+	/**
+	 * Points de prière de la carte croyant
+	 */
+	private int pointsPriere = 0;
+	
+	/**
+	 * Numéro du tour durant lequel la carte a été créée
+	 */
+	private int numTourCreation = 0;
+	
+	/**
+	 * Possibilité de sacrifier la carte
+	 * True si on peut sacrifier la carte
+	 * False sinon, dans les cas où la carte vient d'être créée ou si elle est au centre de la table
+	 */
+	private boolean estSacrifiable = false;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par défaut
+	 */
+	public CarteCroyant() {
+		super();
+	}
+	
+	/**
+	 * Constructeur avec arguments
+	 * @param {Origine} origine : origine à attribuer à la carte 
+	 * @param {int} pointsPriere : points de prière que la carte doit posséder  
+	 */
+	public CarteCroyant(Origine origine, int pointsPriere) {
+		super(origine);
+		this.pointsPriere = pointsPriere;
+	}
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * @return the pointsPriere
+	 */
+	public int getPointsPriere() {
+		return pointsPriere;
+	}
+
+	/**
+	 * @param pointsPriere the pointsPriere to set
+	 */
+	public void setPointsPriere(int pointsPriere) {
+		this.pointsPriere = pointsPriere;
+	}
+
+	/**
+	 * @return the numTourCreation
+	 */
+	public int getNumTourCreation() {
+		return numTourCreation;
+	}
+
+	/**
+	 * @param numTourCreation the numTourCreation to set
+	 */
+	public void setNumTourCreation(int numTourCreation) {
+		this.numTourCreation = numTourCreation;
+	}
+
+	/**
+	 * @return the estSacrifiable
+	 */
+	public boolean isEstSacrifiable() {
+		return estSacrifiable;
+	}
+
+	/**
+	 * @param estSacrifiable the estSacrifiable to set
+	 */
+	public void setEstSacrifiable(boolean estSacrifiable) {
+		this.estSacrifiable = estSacrifiable;
+	}
+	
+	/* ---------- Méthodes ---------- */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

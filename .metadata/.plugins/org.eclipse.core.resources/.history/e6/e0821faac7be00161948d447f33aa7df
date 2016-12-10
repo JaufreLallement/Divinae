@@ -1,0 +1,53 @@
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels;
+import origine.Origine;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
+
+/**
+ * 
+ * @author alexis
+ * La classe CarteGuideSpirituel décrit le comportement des cartes Guides Spirituels
+ */
+
+public class CarteGuideSpirituel extends CarteActionDogmatique {
+
+	/* ---------- Attributs ---------- */
+	/**
+	 * Nombre de croyants qu'un guide spirituel peut rassembler
+	 */
+	private int nbCroyantsTotal = 0;
+	
+	/**
+	 * Tableau contenant les croyants rassemblés autour du guide
+	 */
+	private CarteCroyant[] croyants;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par défaut
+	 */
+	public CarteGuideSpirituel() {
+		super();
+		this.croyants = new CarteCroyant[this.nbCroyantsTotal];
+	}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine: origine à attribuer à la carte
+	 */
+	public CarteGuideSpirituel(Origine origine, int totalCroyants) {
+		super(origine);
+		this.croyants = new CarteCroyant[this.nbCroyantsTotal];
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- Méthodes ---------- */
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
