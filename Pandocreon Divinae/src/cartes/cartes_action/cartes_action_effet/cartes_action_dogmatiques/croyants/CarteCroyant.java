@@ -3,36 +3,37 @@ package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croya
 import origine.Origine;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
 import cartes.divinites.Divinite;
+import dogme.Dogme;
 /**
  * 
  * @author alexis
  * @author Lallement
- * La classe CarteCroyant décrit le comportement générale des cartes Croyants
+ * La classe CarteCroyant dï¿½crit le comportement gï¿½nï¿½rale des cartes Croyants
  */
 public class CarteCroyant extends CarteActionDogmatique {
 
 	/* ---------- Attributs ---------- */
 	/**
-	 * Points de prière de la carte croyant
+	 * Points de priï¿½re de la carte croyant
 	 */
 	private int pointsPriere = 0;
 	
 	/**
-	 * Numéro du tour durant lequel la carte a été créée*
-	 * *posée sur la table
+	 * Numï¿½ro du tour durant lequel la carte a ï¿½tï¿½ crï¿½ï¿½e*
+	 * *posï¿½e sur la table
 	 */
 	private int numTourCreation = 0;
 	
 	/**
-	 * Possibilité de sacrifier la carte
+	 * Possibilitï¿½ de sacrifier la carte
 	 * True si on peut sacrifier la carte
-	 * False sinon, dans les cas où la carte vient d'être créée ou si elle est au centre de la table
+	 * False sinon, dans les cas oï¿½ la carte vient d'ï¿½tre crï¿½ï¿½e ou si elle est au centre de la table
 	 */
 	private boolean estSacrifiable = false;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut
+	 * Constructeur par dï¿½faut
 	 */
 	public CarteCroyant() {
 		super();
@@ -40,11 +41,11 @@ public class CarteCroyant extends CarteActionDogmatique {
 	
 	/**
 	 * Constructeur avec arguments
-	 * @param {Origine} origine : origine à attribuer à la carte 
-	 * @param {int} pointsPriere : points de prière que la carte doit posséder  
+	 * @param {Origine} origine : origine ï¿½ attribuer ï¿½ la carte 
+	 * @param {int} pointsPriere : points de priï¿½re que la carte doit possï¿½der  
 	 */
-	public CarteCroyant(Origine origine, int pointsPriere) {
-		super(origine);
+	public CarteCroyant(Origine origine, Dogme[] dogmes, int pointsPriere) {
+		super(origine, dogmes);
 		this.pointsPriere = pointsPriere;
 	}
 	/* ---------- Getters & Setters ---------- */
@@ -58,7 +59,7 @@ public class CarteCroyant extends CarteActionDogmatique {
 
 	/**
 	 * Modificateur pour l'attribut pointsPriere
-	 * @param {int} pointsPriere : points de priere à attribuer à la carte 
+	 * @param {int} pointsPriere : points de priere ï¿½ attribuer ï¿½ la carte 
 	 */
 	public void setPointsPriere(int pointsPriere) {
 		this.pointsPriere = pointsPriere;
@@ -66,7 +67,7 @@ public class CarteCroyant extends CarteActionDogmatique {
 
 	/**
 	 * Accesseur pour l'attribut numTourCreation
-	 * @return {int} numTourCreation : retourne le numéro du tour durant lequel la carte a été créée
+	 * @return {int} numTourCreation : retourne le numï¿½ro du tour durant lequel la carte a ï¿½tï¿½ crï¿½ï¿½e
 	 */
 	public int getNumTourCreation() {
 		return this.numTourCreation;
@@ -74,7 +75,7 @@ public class CarteCroyant extends CarteActionDogmatique {
 
 	/**
 	 * Modificateur pour l'attribut numTourCreation
-	 * @param {int} numTourCreation : numéro du tour de création à attribuer
+	 * @param {int} numTourCreation : numï¿½ro du tour de crï¿½ation ï¿½ attribuer
 	 */
 	public void setNumTourCreation(int numTourCreation) {
 		this.numTourCreation = numTourCreation;
@@ -95,10 +96,10 @@ public class CarteCroyant extends CarteActionDogmatique {
 		this.estSacrifiable = (this.estSacrifiable) ? false : true;
 	}
 	
-	/* ---------- Méthodes ---------- */
+	/* ---------- Mï¿½thodes ---------- */
 	/**
-	 * Méthode permettant d'ajouter les points de prieres de la carte à une divinite donnée
-	 * @param {Divinite} d : divinite à laquelle on souhaite ajouter les points
+	 * Mï¿½thode permettant d'ajouter les points de prieres de la carte ï¿½ une divinite donnï¿½e
+	 * @param {Divinite} d : divinite ï¿½ laquelle on souhaite ajouter les points
 	 */
 	public void ajouterPrieres(Divinite d) {
 		d.setTotalPrieres(d.getTotalPrieres() + this.pointsPriere);

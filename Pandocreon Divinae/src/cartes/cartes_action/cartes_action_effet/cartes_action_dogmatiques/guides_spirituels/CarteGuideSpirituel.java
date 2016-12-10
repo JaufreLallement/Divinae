@@ -3,12 +3,13 @@ import origine.Origine;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
 import cartes.divinites.Divinite;
+import dogme.Dogme;
 
 /**
  * 
  * @author alexis
  * @author Lallement
- * La classe CarteGuideSpirituel décrit le comportement des cartes Guides Spirituels
+ * La classe CarteGuideSpirituel dï¿½crit le comportement des cartes Guides Spirituels
  */
 
 public class CarteGuideSpirituel extends CarteActionDogmatique {
@@ -20,13 +21,13 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	private int nbCroyantsTotal = 0;
 	
 	/**
-	 * Tableau contenant les croyants rassemblés autour du guide
+	 * Tableau contenant les croyants rassemblï¿½s autour du guide
 	 */
 	private CarteCroyant[] croyants;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut
+	 * Constructeur par dï¿½faut
 	 */
 	public CarteGuideSpirituel() {
 		super();
@@ -35,11 +36,11 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	
 	/**
 	 * Constructeur avec argument
-	 * @param {Origine} origine: origine à attribuer à la carte
+	 * @param {Origine} origine: origine ï¿½ attribuer ï¿½ la carte
 	 * @param {int} totalCroyants : nombre de croyants total que le Guide peut rassembler
 	 */
-	public CarteGuideSpirituel(Origine origine, int totalCroyants) {
-		super(origine);
+	public CarteGuideSpirituel(Origine origine, Dogme[] dogmes, int totalCroyants) {
+		super(origine, dogmes);
 		this.nbCroyantsTotal = totalCroyants;
 		this.croyants = new CarteCroyant[this.nbCroyantsTotal];
 	}
@@ -55,7 +56,7 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 
 	/**
 	 * Modificateur pour l'attribut nbCroyantsTotal
-	 * @param {int} nbCroyantsTotal : nombre total de croyants à attribuer à la carte croyant
+	 * @param {int} nbCroyantsTotal : nombre total de croyants ï¿½ attribuer ï¿½ la carte croyant
 	 */
 	public void setNbCroyantsTotal(int nbCroyantsTotal) {
 		this.nbCroyantsTotal = nbCroyantsTotal;
@@ -71,16 +72,16 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 
 	/**
 	 * Modificateur pour l'attribut nbCroyantsTotal
-	 * @param {CarteCroyant[}} croyants : tableau de croyants à attribuer au Guide
+	 * @param {CarteCroyant[}} croyants : tableau de croyants ï¿½ attribuer au Guide
 	 */
 	public void setCroyants(CarteCroyant[] croyants) {
 		this.croyants = croyants;
 	}
 	
-	/* ---------- Méthodes ---------- */
+	/* ---------- Mï¿½thodes ---------- */
 	/**
-	 * Méthode permettant de lier un croyant à un guide spirituel
-	 * @param {CarteCroyant} croyant : croyant à lier au guide
+	 * Mï¿½thode permettant de lier un croyant ï¿½ un guide spirituel
+	 * @param {CarteCroyant} croyant : croyant ï¿½ lier au guide
 	 */
 	public void addCroyant(CarteCroyant croyant) {
 		boolean arrayEmpty = false;
@@ -90,9 +91,9 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	}
 	
 	/**
-	 * Méthode permettant d'ajouter les points de prieres de tous les croyants rassemblés autour d'un guide
-	 * à une divinite donnée
-	 * @param {Divinite} d : divinite à laquelle on souhaite ajouter les points 
+	 * Mï¿½thode permettant d'ajouter les points de prieres de tous les croyants rassemblï¿½s autour d'un guide
+	 * ï¿½ une divinite donnï¿½e
+	 * @param {Divinite} d : divinite ï¿½ laquelle on souhaite ajouter les points 
 	 */
 	public void guiderVersDivinite(Divinite d) {
 		for (CarteCroyant carteCroyant : croyants) {
@@ -101,13 +102,13 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	}
 	
 	/**
-	 * Méthode de tests
+	 * Mï¿½thode de tests
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		CarteGuideSpirituel bouddha = new CarteGuideSpirituel(Origine.JOUR, 3);
+		/*CarteGuideSpirituel bouddha = new CarteGuideSpirituel(Origine.JOUR, 3);
 		CarteCroyant croyant = new CarteCroyant();
-		bouddha.addCroyant(croyant);
+		bouddha.addCroyant(croyant);*/
 	}
 
 }
