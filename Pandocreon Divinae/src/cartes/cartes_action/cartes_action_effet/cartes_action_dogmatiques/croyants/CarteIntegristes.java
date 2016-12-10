@@ -20,8 +20,13 @@ public final class CarteIntegristes extends CarteCroyant implements Effet {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
+<<<<<<< HEAD
 	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
 	 * Permet egalement d'eviter que d'autre classes aient acces au coinstructeur
+=======
+	 * Constructeur par défaut, private afin de supprimer le constructeur par défaut publique
+	 * Permet également d'éviter que d'autre classes aient accès au constructeur
+>>>>>>> 8be086e82920343e617b52144aa6859e8ac0cc9e
 	 */
 	private CarteIntegristes() {}
 	
