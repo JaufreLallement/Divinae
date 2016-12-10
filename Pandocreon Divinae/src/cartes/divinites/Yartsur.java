@@ -12,13 +12,9 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Yartsur.
  * Cette classe est un singleton
  */
-public final class Yartsur extends Divinite implements Effet {
+public class Yartsur extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Instance de Yartsur
-	 */
-	private static volatile Yartsur instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -34,6 +30,26 @@ public final class Yartsur extends Divinite implements Effet {
 		super("Yartsur", Origine.JOUR, dogmes);
 	}
 	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class YartsurHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static Yartsur instance = new Yartsur(YartsurHolder.getDogmes());
+		
+		/**
+		 * Methode permettant d'obtenir les dogmes de la divinite
+		 * @return {Dogme[]} : tableau de dogmes
+		 */
+		private static Dogme[] getDogmes() {
+			return new Dogme[]{Dogme.CHAOS, Dogme.SYMBOLES, Dogme.MYSTIQUES};
+		}
+	}
+	
 
 	/* ---------- Getters & Setters ---------- */
 	/**
@@ -41,15 +57,7 @@ public final class Yartsur extends Divinite implements Effet {
 	 * @return {Yartsur} instance : retourtne l'instance de la classer Yartsur
 	 */
 	public final static Yartsur getInstance() {
-		if (Yartsur.instance == null) {
-			synchronized (Yartsur.class) {
-				if (Yartsur.instance == null) {
-					Dogme[] dogmes = {Dogme.CHAOS, Dogme.SYMBOLES, Dogme.MYSTIQUES};
-					Yartsur.instance = new Yartsur(dogmes);
-				}
-			}
-		}
-		return Yartsur.instance;
+		return YartsurHolder.instance;
 	}
 	
 	/* ---------- Méthodes ---------- */

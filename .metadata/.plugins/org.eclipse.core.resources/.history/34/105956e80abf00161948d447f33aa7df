@@ -1,0 +1,57 @@
+package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
+
+import java.util.ArrayList;
+
+import origine.Origine;
+import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
+
+/**
+ * @author alexis
+ * @author Lallement
+ * La classe CarteDeusEx decrit le comportement general des cartes Deus Ex
+ */
+public class CarteDeusEx extends CartesActionEffet {
+	
+	/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par défaut
+	 */
+	public CarteDeusEx() {
+		super();
+	}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
+	 */
+	public CarteDeusEx(Origine origine) {
+		super(origine);
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	
+	/* ---------- Methodes ---------- */
+	/**
+	 * Méthode permettatn de récupérer toutes les cartes Deus Ex
+	 * @return {ArrayList<CarteDeusEx>} deusEx : retourne un ArrayList contenant toutes les cartes DeusEx
+	 */
+	public static ArrayList<CarteDeusEx> getAllDeusEx() {
+		ArrayList<CarteDeusEx> deusEx = new ArrayList<CarteDeusEx>();
+		deusEx.add(CarteBouleversement.getInstance());
+		deusEx.add(CarteColereDivine.getAllColeresDivines()());
+		deusEx.add(CarteBouleversement.getInstance());
+		return deusEx;
+	}
+	
+	/**
+	 * Méthode de tests
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

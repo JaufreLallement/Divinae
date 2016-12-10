@@ -12,13 +12,9 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Killinstred.
  * Cette classe est un singleton
  */
-public final class Killinstred extends Divinite implements Effet {
+public class Killinstred extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Instance de Killinstred
-	 */
-	private static volatile Killinstred instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -34,6 +30,26 @@ public final class Killinstred extends Divinite implements Effet {
 		super("Killinstred", Origine.NUIT, dogmes);
 	}
 	
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class KillinstredHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static Killinstred instance = new Killinstred(KillinstredHolder.getDogmes());
+		
+		/**
+		 * Methode permettant d'obtenir les dogmes de la divinite
+		 * @return {Dogme[]} : tableau de dogmes
+		 */
+		private static Dogme[] getDogmes() {
+			return new Dogme[]{Dogme.NATURE, Dogme.MYSTIQUES, Dogme.CHAOS};
+		}
+	}
 
 	/* ---------- Getters & Setters ---------- */
 	/**
@@ -41,15 +57,7 @@ public final class Killinstred extends Divinite implements Effet {
 	 * @return {Killinstred} instance : retourtne l'instance de la classer Killinstred
 	 */
 	public final static Killinstred getInstance() {
-		if (Killinstred.instance == null) {
-			synchronized (Drinded.class) {
-				if (Killinstred.instance == null) {
-					Dogme[] dogmes = {Dogme.NATURE, Dogme.MYSTIQUES, Dogme.CHAOS};
-					Killinstred.instance = new Killinstred(dogmes);
-				}
-			}
-		}
-		return Killinstred.instance;
+		return KillinstredHolder.instance;
 	}
 	
 	/* ---------- Méthodes ---------- */

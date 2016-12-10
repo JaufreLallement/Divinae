@@ -12,13 +12,9 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Gwenghelen.
  * Cette classe est un singleton
  */
-public final class Gwenghelen extends Divinite implements Effet {
+public class Gwenghelen extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Instance de Gwenghelen
-	 */
-	private static volatile Gwenghelen instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -34,6 +30,26 @@ public final class Gwenghelen extends Divinite implements Effet {
 		super("Gwenghelen", Origine.AUBE, dogmes);
 	}
 	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class GwenghelenHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static Gwenghelen instance = new Gwenghelen(GwenghelenHolder.getDogmes());
+		
+		/**
+		 * Methode permettant d'obtenir les dogmes de la divinite
+		 * @return {Dogme[]} : tableau de dogmes
+		 */
+		private static Dogme[] getDogmes() {
+			return new Dogme[]{Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.SYMBOLES};
+		}
+	}
+	
 
 	/* ---------- Getters & Setters ---------- */
 	/**
@@ -41,15 +57,7 @@ public final class Gwenghelen extends Divinite implements Effet {
 	 * @return {Gwenghelen} instance : retourtne l'instance de la classer Gwenghelen
 	 */
 	public final static Gwenghelen getInstance() {
-		if (Gwenghelen.instance == null) {
-			synchronized (Gwenghelen.class) {
-				if (Gwenghelen.instance == null) {
-					Dogme[] dogmes = {Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.SYMBOLES};
-					Gwenghelen.instance = new Gwenghelen(dogmes);
-				}
-			}
-		}
-		return Gwenghelen.instance;
+		return GwenghelenHolder.instance;
 	}
 	
 	/* ---------- Méthodes ---------- */

@@ -1,0 +1,108 @@
+/**
+ * 
+ */
+package cartes;
+
+import java.util.ArrayList;
+
+import cartes.divinites.Divinite;
+import joueur.Joueur;
+import dogme.Dogme;
+import origine.Origine;
+
+/**
+ * @author Lallement
+ * La classe De est la classe regroupant tous les types de cartes.
+ * Cette classe est abstraite.
+ */
+public abstract class Carte {
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Origine de la carte
+	 */
+	private Origine origineCarte;
+	
+	/**
+	 * Joueur possédant la carte divinité donnée
+	 */
+	private Joueur joueur = null;
+
+	/* ---------- Constructeurs ---------- */
+	
+	/**
+	 * Constructeur par défaut
+	 */
+	public Carte() {
+		this.origineCarte = null;
+	}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine de la carte nouvellement créée
+	 */
+	public Carte(Origine origine) {
+		this.origineCarte = origine;
+	}
+
+
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur pour l'attribut origineCarte
+	 * @return {Origine} origineCarte : retourne l'origine de la carte
+	 */
+	public Origine getOrigineCarte() {
+		return this.origineCarte;
+	}
+
+
+
+	/**
+	 * Modificateur pour l'attribut origineCarte
+	 * @param {Origine} origine : origine à attribuer à la carte
+	 */
+	public void setOrigineCarte(Origine origine) {
+		this.origineCarte = origine;
+	}
+	
+	/**
+	 * Accesseur pour l'attribut joueur
+	 * @return {Joueur} joueur : retourne le joueur possédant la divinité
+	 */
+	public Joueur getJoueur() {
+		return this.joueur;
+	}
+
+	/**
+	 * Modificateur pour l'attribut joueur
+	 * @param {Joueur} joueur : joueur nouveau joueur possédant la carte Divinité donnée.
+	 */
+	public void setJoueur(Joueur joueur) {
+		this.joueur = joueur;
+	}
+
+
+	/* ---------- Méthodes ---------- */
+	
+	/**
+	 * Méthode retournant toutes les cartes
+	 * @return {ArrayList<Carte>} cartes : retourne un ArrayList contenant toutes les cartes 
+	 */
+	public static ArrayList<Carte> getAllCartes() {
+		ArrayList<Carte> cartes = new ArrayList<Carte>();
+		cartes.addAll(Divinite.getAllDivinites());
+		return cartes;
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		/* Tests de la méthode getAllCartes */
+		ArrayList<Carte> testCartes = Carte.getAllCartes();
+		System.out.println(testCartes.get(5).getOrigineCarte());
+		Divinite d = (Divinite)testCartes.get(7);
+		System.out.println(d.getNomDivinite());
+	}
+
+}

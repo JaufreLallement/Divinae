@@ -12,13 +12,9 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Brewalen.
  * Cette classe est un singleton
  */
-public final class Brewalen extends Divinite implements Effet {
+public class Brewalen extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Instance de Brewalen
-	 */
-	private static volatile Brewalen instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -32,6 +28,27 @@ public final class Brewalen extends Divinite implements Effet {
 	 */
 	private Brewalen(Dogme[] dogmes) {
 		super("Brewalen", Origine.JOUR, dogmes);
+		
+	}
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class BrewalenHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static Brewalen instance = new Brewalen(BrewalenHolder.getDogmes());
+		
+		/**
+		 * Methode permettant d'obtenir les dogmes de la divinite
+		 * @return {Dogme[]} : tableau de dogmes
+		 */
+		private static Dogme[] getDogmes() {
+			return new Dogme[]{Dogme.NATURE, Dogme.HUMAIN, Dogme.MYSTIQUES};
+		}
 	}
 	
 
@@ -41,15 +58,7 @@ public final class Brewalen extends Divinite implements Effet {
 	 * @return {Brewalen} instance : retourtne l'instance de la classer Brewalen
 	 */
 	public final static Brewalen getInstance() {
-		if (Brewalen.instance == null) {
-			synchronized (Brewalen.class) {
-				if (Brewalen.instance == null) {
-					Dogme[] dogmes = {Dogme.NATURE, Dogme.HUMAIN, Dogme.MYSTIQUES};
-					Brewalen.instance = new Brewalen(dogmes);
-				}
-			}
-		}
-		return Brewalen.instance;
+		return BrewalenHolder.instance;
 	}
 	
 	/* ---------- Méthodes ---------- */
@@ -63,11 +72,15 @@ public final class Brewalen extends Divinite implements Effet {
 	}
 	
 	/**
+	 * Methode de tests
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Brewalen b = Brewalen.getInstance();
+		Dogme[] d = b.getDogmesDivinite();
+		for (int i = 0; i < d.length; i++) {
+			System.out.println(d[i]);
+		}
 	}
 
 }

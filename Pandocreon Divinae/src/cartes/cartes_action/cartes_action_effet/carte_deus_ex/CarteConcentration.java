@@ -1,49 +1,70 @@
 package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
+
+import effets.Effet;
+import origine.Origine;
+
 /**
- * 
  * @author alexis
- * La classe CarteConcentration décrit le comportement général de la carte Concentration
+ * @author Lallement
+ * La classe Concentration decrit le comportement de la carte Concentration
 */
 
-public final class CarteConcentration extends CarteDeusEx {
+public class CarteConcentration extends CarteDeusEx implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Unique instance de la classe CarteConcentration
-	 */
-	private static volatile CarteConcentration instance = null;
 	
 	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
+	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
+	 */
+	private CarteConcentration() {}
 	
 	/**
-	 * Constructeur par défaut, private afin de supprimer le constructeur par défaut publique
-	 * Permet également d'éviter que d'autre classes aient accès au constructeur
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine � attribuer � la carte nouvellement creee
 	 */
-	private CarteConcentration() {
-		super();
+	private CarteConcentration(Origine origine) {
+		super(origine);
+	}
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne priv�e, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class CarteConcentrationHolder {		
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static CarteConcentration instance = new CarteConcentration(Origine.NEANT);
 	}
 	
 	/* ---------- Getters & Setters ---------- */
-	/* ---------- Méthodes ---------- */
 	/**
-	 * Méthode permettant d'obtenir l'unique instance de la classe CarteConcentration
-	 * @return the instance
+	 * Accesseur permettant d'obtenir l'unique instance de la classe CarteConcentration
+	 * @return {CarteConcentration} instance : instance unique de la classe
 	 */
 	public final static CarteConcentration getInstance() {
-		if (CarteConcentration.instance == null) {
-			synchronized (CarteConcentration.instance) {
-				if (CarteConcentration.instance == null) {
-					
-					CarteConcentration concentration = new CarteConcentration();
-				}
-			}
-		}
-		return instance;
+		return CarteConcentrationHolder.instance;
 	}
 	
+	/* ---------- Methodes ---------- */
+	/**
+	 * Impl�mentation de la methode appliquerEffet 
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO appliquer l'effet correspondant � la carte
+	}
+	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		CarteConcentration conc = CarteConcentration.getInstance();
+		System.out.println(conc.getOrigineCarte());
 	}
 
 }

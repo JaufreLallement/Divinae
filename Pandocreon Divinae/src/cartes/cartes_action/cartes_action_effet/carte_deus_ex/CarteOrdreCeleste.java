@@ -1,51 +1,67 @@
 package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
 
+import effets.Effet;
 import origine.Origine;
 
 /**
- * 
  * @author alexis
- *La classe CarteOrdreCeleste d√©crit le comportement g√©n√©ral de la carte Ordre Celeste
+ * @author Lallement
+ * La classe CarteOrdreCeleste decrit le comportement de la carte Ordre Celeste
  */
-
-
-	public final class CarteOrdreCeleste extends CarteDeusEx {
+public class CarteOrdreCeleste extends CarteDeusEx implements Effet {
 		
-		/* ---------- Attributs ---------- */
-		/**
-		 * Unique instance de la classe CarteOrdreCeleste
-		 */
-		private static volatile CarteOrdreCeleste instance = null;
-		
-		/* ---------- Constructeurs ---------- */
-		
-		/**
-		 * Constructeur par d√©faut, private afin de supprimer le constructeur par d√©faut publique
-		 * Permet √©galement d'√©viter que d'autre classes aient acc√®s au constructeur
-		 */
-		private CarteOrdreCeleste() {}
-		private CarteOrdreCeleste(Origine origine) {
+	/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */		
+	/**
+	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
+	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
+	 */
+	private CarteOrdreCeleste() {}
+	
+	/**
+	 * Constructeur avec arguments
+	 * @param {Origine} origine : origine ‡ attribuer ‡ la carte nouvellement creee
+	 */
+	private CarteOrdreCeleste(Origine origine) {
 		super (origine);
-		}
-		/* ---------- Getters & Setters ---------- */
-		/* ---------- M√©thodes ---------- */
+	}
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privÈe, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class CarteOrdreCelesteHolder {		
 		/**
-		 * M√©thode permettant d'obtenir l'unique instance de la classe CarteOrdreCeleste
-		 * @return the instance
+		 * Unique instance de la classe non preinitialisee
 		 */
-		public final static CarteOrdreCeleste getInstance() {
-			if (CarteOrdreCeleste.instance == null) {
-				synchronized (CarteOrdreCeleste.instance) {
-					if (CarteOrdreCeleste.instance == null) {
-						
-						CarteOrdreCeleste ordreCeleste = new CarteOrdreCeleste(Origine.JOUR);
-					}
-				}
-			}
-			return instance;
-		}
-		
-			public static void main(String[] args) {
+		private final static CarteOrdreCeleste instance = new CarteOrdreCeleste(Origine.JOUR);
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur permettant d'obtenir l'unique instance de la classe CarteOrdreCeleste
+	 * @return {CarteOrdreCeleste} instance : instance unique de la classe
+	 */
+	public final static CarteOrdreCeleste getInstance() {
+		return CarteOrdreCelesteHolder.instance;
+	}
+	
+	/* ---------- Methodes ---------- */
+	/**
+	 * ImplÈmentation de la methode appliquerEffet 
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO appliquer l'effet correspondant ‡ la carte
+	}
+	
+	/**
+	 * MÈthode de tests
+	 * @param args
+	 */
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}

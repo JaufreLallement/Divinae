@@ -12,13 +12,9 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Llewella.
  * Cette classe est un singleton
  */
-public final class Llewella extends Divinite implements Effet {
+public class Llewella extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Instance de Llewella
-	 */
-	private static volatile Llewella instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -34,6 +30,26 @@ public final class Llewella extends Divinite implements Effet {
 		super("Llewella", Origine.NUIT, dogmes);
 	}
 	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class LlewellaHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static Llewella instance = new Llewella(LlewellaHolder.getDogmes());
+		
+		/**
+		 * Methode permettant d'obtenir les dogmes de la divinite
+		 * @return {Dogme[]} : tableau de dogmes
+		 */
+		private static Dogme[] getDogmes() {
+			return new Dogme[]{Dogme.NATURE, Dogme.MYSTIQUES, Dogme.CHAOS};
+		}
+	}
+	
 
 	/* ---------- Getters & Setters ---------- */
 	/**
@@ -41,15 +57,7 @@ public final class Llewella extends Divinite implements Effet {
 	 * @return {Llewella} instance : retourtne l'instance de la classer Llewella
 	 */
 	public final static Llewella getInstance() {
-		if (Llewella.instance == null) {
-			synchronized (Drinded.class) {
-				if (Llewella.instance == null) {
-					Dogme[] dogmes = {Dogme.NATURE, Dogme.MYSTIQUES, Dogme.CHAOS};
-					Llewella.instance = new Llewella(dogmes);
-				}
-			}
-		}
-		return Llewella.instance;
+		return LlewellaHolder.instance;
 	}
 	
 	/* ---------- Méthodes ---------- */

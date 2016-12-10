@@ -12,13 +12,9 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Drinded.
  * Cette classe est un singleton
  */
-public final class Drinded extends Divinite implements Effet {
+public class Drinded extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Instance de Drinded
-	 */
-	private static volatile Drinded instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -34,6 +30,26 @@ public final class Drinded extends Divinite implements Effet {
 		super("Drinded", Origine.JOUR, dogmes);
 	}
 	
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class DrindedHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static Drinded instance = new Drinded(DrindedHolder.getDogmes());
+		
+		/**
+		 * Methode permettant d'obtenir les dogmes de la divinite
+		 * @return {Dogme[]} : tableau de dogmes
+		 */
+		private static Dogme[] getDogmes() {
+			return new Dogme[]{Dogme.NATURE, Dogme.HUMAIN, Dogme.SYMBOLES};
+		}
+	}
 
 	/* ---------- Getters & Setters ---------- */
 	/**
@@ -41,15 +57,7 @@ public final class Drinded extends Divinite implements Effet {
 	 * @return {Drinded} instance : retourtne l'instance de la classe Drinded
 	 */
 	public final static Drinded getInstance() {
-		if (Drinded.instance == null) {
-			synchronized (Drinded.class) {
-				if (Drinded.instance == null) {
-					Dogme[] dogmes = {Dogme.NATURE, Dogme.HUMAIN, Dogme.SYMBOLES};
-					Drinded.instance = new Drinded(dogmes);
-				}
-			}
-		}
-		return Drinded.instance;
+		return DrindedHolder.instance;
 	}
 	
 	/* ---------- Méthodes ---------- */

@@ -1,52 +1,71 @@
 package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
 
+import effets.Effet;
 import origine.Origine;
 
-/**
- * 
+/** 
  * @author alexis
- * La classe CarteDiversion d√©crit le comportement g√©n√©ral de la carte Diversion
+ * @author Lallement
+ * La classe CarteDiversion decrit le comportement de la carte Diversion
  */
-public final class CarteDiversion extends CarteDeusEx {
+public class CarteDiversion extends CarteDeusEx implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Unique instance de la classe CarteDiversion
-	 */
-	private static volatile CarteDiversion instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	
 	/**
-	 * Constructeur par d√©faut, private afin de supprimer le constructeur par d√©faut publique
-	 * Permet √©galement d'√©viter que d'autre classes aient acc√®s au constructeur
+	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
+	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
 	private CarteDiversion(){}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine ‡ attribuer ‡ la carte nouvellement creee
+	 */
 	private CarteDiversion(Origine origine) {
-	super (origine);
+		super (origine);
+	}
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privÈe, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class CarteDiversionHolder {		
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static CarteDiversion instance = new CarteDiversion(Origine.NUIT);
 	}
 	
 	/* ---------- Getters & Setters ---------- */
-	/* ---------- M√©thodes ---------- */
 	/**
-	 * M√©thode permettant d'obtenir l'unique instance de la classe CarteDiversion
-	 * @return the instance
+	 * Accesseur permettant d'obtenir l'unique instance de la classe CarteDiversion
+	 * @return {CarteDiversion} instance : instance unique de la classe
 	 */
 	public final static CarteDiversion getInstance() {
-		if (CarteDiversion.instance == null) {
-			synchronized (CarteDiversion.instance) {
-				if (CarteDiversion.instance == null) {
-					
-					CarteDiversion diversion = new CarteDiversion(Origine.NUIT);
-				}
-			}
-		}
-		return instance;
-	}	
+		return CarteDiversionHolder.instance;
+	}
 	
+	/* ---------- Methodes ---------- */
+	/**
+	 * ImplÈmentation de la methode appliquerEffet 
+	 */
+	
+	@Override
+	public void appliquerEffet() {
+		// TODO appliquer l'effet correspondant ‡ la carte
+	}
+	
+	/**
+	 * MÈthode de tests
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		CarteDiversion div = CarteDiversion.getInstance();
+		System.out.println(div.getOrigineCarte());
 	}
 
 }

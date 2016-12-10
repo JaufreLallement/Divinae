@@ -1,51 +1,69 @@
 package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
 
+import effets.Effet;
 import origine.Origine;
 
-/**
- * 
+/** 
  * @author alexis
- *La classe CarteStase décrit le comportement général de la carte Stase
+ * @author Lallement
+ * La classe CarteStase decrit le comportement de la carte Stase
  */
-public final class CarteStase extends CarteDeusEx {
+public class CarteStase extends CarteDeusEx implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Unique instance de la classe CarteStase
-	 */
-	private static volatile CarteStase instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	
 	/**
-	 * Constructeur par défaut, private afin de supprimer le constructeur par défaut publique
-	 * Permet également d'éviter que d'autre classes aient accès au constructeur
+	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
+	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
 	private CarteStase(){}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine de la carte nouvellement cr��e
+	 */
 	private CarteStase(Origine origine) {
-	super (origine);
+		super (origine);
+	}
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne priv�e, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class CarteStaseHolder {		
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static CarteStase instance = new CarteStase(Origine.JOUR);
 	}
 	
 	/* ---------- Getters & Setters ---------- */
-	/* ---------- Méthodes ---------- */
 	/**
-	 * Méthode permettant d'obtenir l'unique instance de la classe CarteStase
-	 * @return the instance
+	 * Accesseur permettant d'obtenir l'unique instance de la classe CarteStase
+	 * @return {CarteStase} instance : instance unique de la classe
 	 */
 	public final static CarteStase getInstance() {
-		if (CarteStase.instance == null) {
-			synchronized (CarteStase.instance) {
-				if (CarteStase.instance == null) {
-					
-					CarteStase stase = new CarteStase(Origine.JOUR);
-				}
-			}
-		}
-		return instance;
-	}	
+		return CarteStaseHolder.instance;
+	}
+	
+	/* ---------- Methodes ---------- */
+	/**
+	 * Impl�mentation de la methode appliquerEffet 
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO appliquer l'effet correspondant � la carte
+	}
+	
+	/**
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
-
 }

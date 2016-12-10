@@ -12,13 +12,9 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Romtec.
  * Cette classe est un singleton
  */
-public final class Romtec extends Divinite implements Effet {
+public class Romtec extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Instance de Romtec
-	 */
-	private static volatile Romtec instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -34,6 +30,26 @@ public final class Romtec extends Divinite implements Effet {
 		super("Romtec", Origine.CREPUSCULE, dogmes);
 	}
 	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class RomtecHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static Romtec instance = new Romtec(RomtecHolder.getDogmes());
+		
+		/**
+		 * Methode permettant d'obtenir les dogmes de la divinite
+		 * @return {Dogme[]} : tableau de dogmes
+		 */
+		private static Dogme[] getDogmes() {
+			return new Dogme[]{Dogme.NATURE, Dogme.HUMAIN, Dogme.CHAOS};
+		}
+	}
+	
 
 	/* ---------- Getters & Setters ---------- */
 	/**
@@ -41,15 +57,8 @@ public final class Romtec extends Divinite implements Effet {
 	 * @return {Romtec} instance : retourtne l'instance de la classer Romtec
 	 */
 	public final static Romtec getInstance() {
-		if (Romtec.instance == null) {
-			synchronized (Romtec.class) {
-				if (Romtec.instance == null) {
-					Dogme[] dogmes = {Dogme.NATURE, Dogme.HUMAIN, Dogme.CHAOS};
-					Romtec.instance = new Romtec(dogmes);
-				}
-			}
-		}
-		return Romtec.instance;
+
+		return RomtecHolder.instance;
 	}
 	
 	/* ---------- Méthodes ---------- */

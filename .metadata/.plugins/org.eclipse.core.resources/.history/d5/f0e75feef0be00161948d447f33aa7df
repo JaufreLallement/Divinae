@@ -1,0 +1,51 @@
+package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
+/**
+ * @author alexis
+ * @author Lallement
+ * La classe Concentration decrit le comportement general de la carte Concentration
+*/
+
+public final class CarteConcentration extends CarteDeusEx {
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Unique instance de la classe CarteConcentration
+	 */
+	private static volatile CarteConcentration instance = null;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
+	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
+	 */
+	private CarteConcentration() {
+		super();
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Methode permettant d'obtenir l'unique instance de la classe CarteConcentration
+	 * @return the instance
+	 */
+	public final static CarteConcentration getInstance() {
+		if (CarteConcentration.instance == null) {
+			synchronized (CarteConcentration.instance) {
+				if (CarteConcentration.instance == null) {
+					
+					CarteConcentration concentration = new CarteConcentration();
+				}
+			}
+		}
+		return CarteConcentration.instance;
+	}
+	/* ---------- Methodes ---------- */	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

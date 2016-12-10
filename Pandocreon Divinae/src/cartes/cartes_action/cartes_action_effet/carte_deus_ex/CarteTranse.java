@@ -1,42 +1,57 @@
 package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
+
+import effets.Effet;
+
 /**
- * 
  * @author alexis
- *La classe CarteTranse décrit le comportement général de la carte Transe
+ * @author Lallement
+ * La classe CarteTranse decrit le comportement de la carte Transe
  */
-public final class CarteTranse extends CarteDeusEx {
+public class CarteTranse extends CarteDeusEx implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Unique instance de la classe CarteTranse
-	 */
-	private static volatile CarteTranse instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut, private afin de supprimer le constructeur par défaut publique
-	 * Permet également d'éviter que d'autre classes aient accès au constructeur
+	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
+	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
-	private CarteTranse(){
-		super();
-	}	
-	/* ---------- Getters & Setters ---------- */
-	/* ---------- Méthodes ---------- */
+	private CarteTranse(){}	
+	
+	/* ---------- Holder ---------- */
 	/**
-	 * Méthode permettant d'obtenir l'unique instance de la classe CarteTranse
-	 * @return the instance
+	 * @author Lallement
+	 * Classe interne priv�e, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class CarteTranseHolder {		
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static CarteTranse instance = new CarteTranse();
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur permettant d'obtenir l'unique instance de la classe CarteTranse
+	 * @return {CarteTranse} instance : instance unique de la classe
 	 */
 	public final static CarteTranse getInstance() {
-		if (CarteTranse.instance == null) {
-			synchronized (CarteTranse.instance) {
-				if (CarteTranse.instance == null) {
-					
-					CarteTranse Transe = new CarteTranse();
-				}
-			}
-		}
-		return instance;
+		return CarteTranseHolder.instance;
 	}
+	
+	/* ---------- Methodes ---------- */
+	/**
+	 * Impl�mentation de la methode appliquerEffet 
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO appliquer l'effet correspondant � la carte
+	}
+	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

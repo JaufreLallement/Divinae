@@ -12,13 +12,9 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Gorna.
  * Cette classe est un singleton
  */
-public final class Gorna extends Divinite implements Effet {
+public class Gorna extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Instance de Gorna
-	 */
-	private static volatile Gorna instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -34,6 +30,26 @@ public final class Gorna extends Divinite implements Effet {
 		super("Gorna", Origine.CREPUSCULE, dogmes);
 	}
 	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class GornaHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static Gorna instance = new Gorna(GornaHolder.getDogmes());
+		
+		/**
+		 * Methode permettant d'obtenir les dogmes de la divinite
+		 * @return {Dogme[]} : tableau de dogmes
+		 */
+		private static Dogme[] getDogmes() {
+			return new Dogme[]{Dogme.HUMAIN, Dogme.SYMBOLES, Dogme.CHAOS};
+		}
+	}
+	
 
 	/* ---------- Getters & Setters ---------- */
 	/**
@@ -41,15 +57,7 @@ public final class Gorna extends Divinite implements Effet {
 	 * @return {Gorna} instance : retourtne l'instance de la classe Gorna
 	 */
 	public final static Gorna getInstance() {
-		if (Gorna.instance == null) {
-			synchronized (Gorna.class) {
-				if (Gorna.instance == null) {
-					Dogme[] dogmes = {Dogme.HUMAIN, Dogme.SYMBOLES, Dogme.CHAOS};
-					Gorna.instance = new Gorna(dogmes);
-				}
-			}
-		}
-		return Gorna.instance;
+		return GornaHolder.instance;
 	}
 	
 	/* ---------- Méthodes ---------- */

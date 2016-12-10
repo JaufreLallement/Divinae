@@ -1,46 +1,68 @@
 package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
+
+import effets.Effet;
+import origine.Origine;
+
 /**
  * 
  * @author alexis
- *La classe CarteTrouNoir décrit le comportement général de la carte Trou Noir
+ * @author Lallement
+ * La classe CarteTrouNoir decrit le comportement de la carte Trou Noir
  */
 
-public final class CarteTrouNoir extends CarteDeusEx {
+public class CarteTrouNoir extends CarteDeusEx implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Unique instance de la classe CarteTrouNoir
-	 */
-	private static volatile CarteTrouNoir instance = null;
 	
 	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
+	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
+	 */
+	private CarteTrouNoir() {}
 	
 	/**
-	 * Constructeur par défaut, private afin de supprimer le constructeur par défaut publique
-	 * Permet également d'éviter que d'autre classes aient accès au constructeur
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine � attribuer � la carte nouvellement creee
 	 */
-	private CarteTrouNoir() {
-		super();
+	private CarteTrouNoir(Origine origine) {
+		super(origine);
+	}
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne priv�e, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class CarteTrouNoirHolder {		
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static CarteTrouNoir instance = new CarteTrouNoir();
 	}
 	
 	/* ---------- Getters & Setters ---------- */
-	/* ---------- Méthodes ---------- */
 	/**
-	 * Méthode permettant d'obtenir l'unique instance de la classe CarteTrouNoir
-	 * @return the instance
+	 * Accesseur permettant d'obtenir l'unique instance de la classe CarteTrouNoir
+	 * @return {CarteTrouNoir} instance : instance unique de la classe
 	 */
 	public final static CarteTrouNoir getInstance() {
-		if (CarteTrouNoir.instance == null) {
-			synchronized (CarteTrouNoir.instance) {
-				if (CarteTrouNoir.instance == null) {
-					
-					CarteTrouNoir trouNoir = new CarteTrouNoir();
-				}
-			}
-		}
-		return instance;
+		return CarteTrouNoirHolder.instance;
 	}
 	
+	/* ---------- Methodes ---------- */
+	/**
+	 * Impl�mentation de la methode appliquerEffet 
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO appliquer l'effet correspondant � la carte
+	}
+	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

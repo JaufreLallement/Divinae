@@ -12,13 +12,9 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Shingva.
  * Cette classe est un singleton
  */
-public final class Shingva extends Divinite implements Effet {
+public class Shingva extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Instance de Shingva
-	 */
-	private static volatile Shingva instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -34,6 +30,26 @@ public final class Shingva extends Divinite implements Effet {
 		super("Shingva", Origine.AUBE, dogmes);
 	}
 	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class ShingvaHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static Shingva instance = new Shingva(ShingvaHolder.getDogmes());
+		
+		/**
+		 * Methode permettant d'obtenir les dogmes de la divinite
+		 * @return {Dogme[]} : tableau de dogmes
+		 */
+		private static Dogme[] getDogmes() {
+			return new Dogme[]{Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.CHAOS};
+		}
+	}
+	
 
 	/* ---------- Getters & Setters ---------- */
 	/**
@@ -41,15 +57,7 @@ public final class Shingva extends Divinite implements Effet {
 	 * @return {Shingva} instance : retourtne l'instance de la classer Shingva
 	 */
 	public final static Shingva getInstance() {
-		if (Shingva.instance == null) {
-			synchronized (Shingva.class) {
-				if (Shingva.instance == null) {
-					Dogme[] dogmes = {Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.CHAOS};
-					Shingva.instance = new Shingva(dogmes);
-				}
-			}
-		}
-		return Shingva.instance;
+		return ShingvaHolder.instance;
 	}
 	
 	/* ---------- Méthodes ---------- */

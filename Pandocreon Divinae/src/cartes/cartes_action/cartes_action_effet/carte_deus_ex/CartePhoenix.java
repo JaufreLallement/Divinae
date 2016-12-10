@@ -1,48 +1,70 @@
 package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
+
+import effets.Effet;
+import origine.Origine;
+
 /**
  * 
  * @author alexis
- *La classe CartePhoenix décrit le comportement général de la carte Phoenix
+ * @author Lallement
+ * La classe CartePhoenix decrit le comportement de la carte Phoenix
  */
-public final class CartePhoenix extends CarteDeusEx {
+public class CartePhoenix extends CarteDeusEx implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Unique instance de la classe CartePhoenix
-	 */
-	private static volatile CartePhoenix instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	
 	/**
-	 * Constructeur par défaut, private afin de supprimer le constructeur par défaut publique
-	 * Permet également d'éviter que d'autre classes aient accès au constructeur
+	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
+	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
-	private CartePhoenix() {
-		super();
+	private CartePhoenix() {}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine � attribuer � la carte nouvellement creee
+	 */
+	private CartePhoenix(Origine origine) {
+		super(origine);
+	}
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne priv�e, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class CartePhoenixHolder {		
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static CartePhoenix instance = new CartePhoenix(Origine.NEANT);
 	}
 	
 	/* ---------- Getters & Setters ---------- */
-	/* ---------- Méthodes ---------- */
 	/**
-	 * Méthode permettant d'obtenir l'unique instance de la classe CartePhoenix
-	 * @return the instance
+	 * Acceusseur permettant d'obtenir l'unique instance de la classe CartePhoenix
+	 * @return {CartePhoenix} instance : instance unique de la classe
 	 */
 	public final static CartePhoenix getInstance() {
-		if (CartePhoenix.instance == null) {
-			synchronized (CartePhoenix.instance) {
-				if (CartePhoenix.instance == null) {
-					
-					CartePhoenix phoenix = new CartePhoenix();
-				}
-			}
-		}
-		return instance;
+		return CartePhoenixHolder.instance;
 	}
 	
+	/* ---------- Methodes ---------- */
+	/**
+	 * Impl�mentation de la methode appliquerEffet 
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO appliquer l'effet correspondant � la carte
+	}
+	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 	}
 
 }

@@ -4,7 +4,6 @@
 package de;
 
 import java.util.Random;
-
 import origine.Origine;
 import joueur.Joueur;
 
@@ -13,12 +12,8 @@ import joueur.Joueur;
  * La classe De décrit les caractéristiques du dé utilisé lors du jeu Pandocreon Divinae
  * La classe De est un singleton.
  */
-public final class De {
+public class De {
 	/* ---------- Attributs ---------- */
-	/**
-	 * Instance du dé
-	 */
-	private static volatile De instance = null;
 	
 	/**
 	 * Faces du dé
@@ -35,7 +30,29 @@ public final class De {
 	/**
 	 * Constructeur privé permettant de supprimer le constructeur publique par défaut
 	 */
-	private De() {}
+	private De() {
+		for (int i = 0; i < this.faces.length; i++) {
+			if (i == 0 || i == 2) {
+				this.faces[i] = new Face(Origine.JOUR);
+			} else if (i == 1 || i == 3) {
+				this.faces[i] = new Face(Origine.NUIT);
+			} else {
+				this.faces[i] = new Face(Origine.NEANT);
+			}
+		}
+	}
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class DeHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static De instance = new De();
+	}
 	
 	/* ---------- Getters & Setters ---------- */
 	/**
@@ -43,23 +60,7 @@ public final class De {
 	 * @return {De} instance : retourtne l'instance de la classer De
 	 */
 	public final static De getInstance() {
-		if (De.instance == null) {
-			synchronized (De.class) {
-				if (De.instance == null) {
-					De.instance = new De();
-					for (int i = 0; i < De.getInstance().faces.length; i++) {
-						if (i == 0 || i == 2) {
-							De.instance.faces[i] = new Face(Origine.JOUR);
-						} else if (i == 1 || i == 3) {
-							De.instance.faces[i] = new Face(Origine.NUIT);
-						} else {
-							De.instance.faces[i] = new Face(Origine.NEANT);
-						}
-					}
-				}
-			}
-		}
-		return De.instance;
+		return DeHolder.instance;
 	}
 	
 	/** 
@@ -105,5 +106,8 @@ public final class De {
 	 */
 	public static void main(String[] args) {
 		System.out.println(De.getInstance().lancerDe().toString());
+		for (Face f : De.getInstance().faces) {
+			System.out.println(f.getOrigineFace());
+		}
 	}
 }

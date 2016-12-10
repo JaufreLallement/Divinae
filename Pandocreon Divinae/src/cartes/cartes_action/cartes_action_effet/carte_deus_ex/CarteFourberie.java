@@ -1,51 +1,63 @@
 package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
 
+import effets.Effet;
 import origine.Origine;
 
 /**
- * 
  * @author alexis
- * La classe CarteFourberie décrit le comportement général de la carte Fourberie
+ * @author Lallement
+ * La classe CarteFourberie decrit le comportement de la carte Fourberie
  */
-public final class CarteFourberie extends CarteDeusEx {
+public class CarteFourberie extends CarteDeusEx implements Effet {
 	
 	/* ---------- Attributs ---------- */
-	/**
-	 * Unique instance de la classe CarteFourberie
-	 */
-	private static volatile CarteFourberie instance = null;
 	
-	/* ---------- Constructeurs ---------- */
-	
+	/* ---------- Constructeurs ---------- */	
 	/**
-	 * Constructeur par défaut, private afin de supprimer le constructeur par défaut publique
-	 * Permet également d'éviter que d'autre classes aient accès au constructeur
+	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
+	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
 	private CarteFourberie(){}
 	
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine � attribuer � la carte nouvellement creee
+	 */
 	private CarteFourberie(Origine origine) {
-	super (origine);
+		super (origine);
+	}
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne priv�e, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class CarteFourberieHolder {		
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static CarteFourberie instance = new CarteFourberie(Origine.NUIT);
 	}
 	
 	/* ---------- Getters & Setters ---------- */
-	/* ---------- Méthodes ---------- */
 	/**
-	 * Méthode permettant d'obtenir l'unique instance de la classe CarteFourberie
-	 * @return the instance
+	 * Accesseur permettant d'obtenir l'unique instance de la classe CarteFourberie
+	 * @return {CarteFourberie} instance : instance unique de la classe
 	 */
 	public final static CarteFourberie getInstance() {
-		if (CarteFourberie.instance == null) {
-			synchronized (CarteFourberie.instance) {
-				if (CarteFourberie.instance == null) {
-					
-					CarteFourberie fourberie = new CarteFourberie(Origine.NUIT);
-				}
-			}
-		}
-		return instance;
+		return CarteFourberieHolder.instance;
 	}	
+	
+	/* ---------- Methodes ---------- */
+	/**
+	 * Impl�mentation de la methode appliquerEffet 
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO appliquer l'effet correspondant � la carte
+	}
 		
-		public static void main(String[] args) {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
