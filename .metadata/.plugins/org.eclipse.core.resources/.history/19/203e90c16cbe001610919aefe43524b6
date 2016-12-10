@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques;
+
+import origine.Origine;
+import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
+
+/**
+ * @author Lallement
+ *
+ */
+public abstract class CarteActionDogmatique extends CartesActionEffet {
+	
+	/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */	
+	/**
+	 * Constructeur par défaut
+	 */
+	public CarteActionDogmatique() {
+		super();
+	}
+
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine à attribuer à la carte nouvellement créée
+	 */
+	public CarteActionDogmatique(Origine origine) {
+		super(origine);
+	}
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

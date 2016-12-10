@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package cartes.cartes_action.cartes_action_effet;
+
+import origine.Origine;
+import cartes.cartes_action.CarteAction;
+
+/**
+ * @author Lallement
+ *
+ */
+public class CartesActionEffet extends CarteAction {
+	
+	/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par défaut
+	 */
+	public CartesActionEffet() {
+		super();
+	}
+
+	/**
+	 * Constructeur avec arguments
+	 * @param {Origine} origine : origine à attribuer à la carte nouvellement créée
+	 */
+	public CartesActionEffet(Origine origine) {
+		super(origine);
+	}
+	
+
+	/* ---------- Getters & Setters ---------- */
+	
+	/* ---------- Méthodes ---------- */
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

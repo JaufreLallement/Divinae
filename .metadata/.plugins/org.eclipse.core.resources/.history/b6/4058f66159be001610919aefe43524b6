@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package joueur;
+
+/**
+ * @author Lallement
+ *
+ */
+public interface Strategy {
+	public jouer();
+}

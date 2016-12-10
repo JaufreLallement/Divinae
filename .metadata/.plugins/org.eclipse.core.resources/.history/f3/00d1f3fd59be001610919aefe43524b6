@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package joueur;
+
+import strategie.Strategy;
+
+/**
+ * @author Lallement
+ *
+ */
+public class JoueurVirtuel implements Strategy {
+	/* ---------- Attributs ---------- */
+	/**
+	 * Strategie employée par le joueur virtuel
+	 */
+	private Strategy strategie;
+
+	/* ---------- Constructeurs ---------- */
+	public JoueurVirtuel() {
+		
+	}
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- Méthodes ---------- */
+	/**
+	 * 
+	 */
+	public JoueurVirtuel() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public void jouer() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+}

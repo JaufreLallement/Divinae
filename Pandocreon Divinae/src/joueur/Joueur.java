@@ -3,12 +3,23 @@
  */
 package joueur;
 
+import java.util.ArrayList;
+
 /**
  * @author Lallement
  *
  */
 public class Joueur {
-
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Nom du joueur
+	 */
+	private String nom;
+	/* ---------- Constructeurs ---------- */
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- Méthodes ---------- */
+	
 	/**
 	 * @param args
 	 */

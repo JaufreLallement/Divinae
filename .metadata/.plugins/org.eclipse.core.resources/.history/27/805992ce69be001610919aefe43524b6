@@ -1,0 +1,70 @@
+/**
+ * 
+ */
+package cartes.cartes_action;
+
+import java.util.ArrayList;
+
+import origine.Origine;
+import cartes.Carte;
+
+/**
+ * @author Lallement
+ *
+ */
+public class CarteAction extends Carte {
+	
+	/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par défaut
+	 */
+	public CarteAction() {
+		super(null);
+	}
+
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine à attribuer à la carte action si elle en possède une
+	 */
+	public CarteAction(Origine origine) {
+		super(origine);
+	}
+	
+
+	/* ---------- Getters & Setters ---------- */
+	
+	/* ---------- Méthodes ---------- */	
+	/**
+	 * Méthode permettant de jouer une carte action
+	 */
+	public void jouerCarte() {
+		// TODO décrire le comportement par défaut d'une carte action lorsqu'elle est jouée
+	}
+	
+	/**
+	 * Méthode permettant de défausser une carte
+	 */
+	public void defausser() {
+		// TODO décrire le comportement d'une carte action lorsqu'elle est défaussée
+	}
+	
+	/**
+	 * Méthode permettant d'obtenir toutes les cartes action
+	 * @return {ArrayList<CarteAction>} cartesAction : retourne un ArrayList contenant toutes les cartes actions 
+	 */
+	public static ArrayList<CarteAction> getAllCartesAction() {
+		ArrayList<CarteAction> cartesAction = new ArrayList<CarteAction>();
+		return cartesAction;
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

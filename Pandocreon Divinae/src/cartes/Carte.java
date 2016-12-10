@@ -5,8 +5,8 @@ package cartes;
 
 import java.util.ArrayList;
 
+import cartes.divinites.Divinite;
 import joueur.Joueur;
-import divinites.Divinite;
 import dogme.Dogme;
 import origine.Origine;
 
