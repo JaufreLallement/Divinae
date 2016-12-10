@@ -12,7 +12,7 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Shingva.
  * Cette classe est un singleton
  */
-public final class Shingva extends Divinite implements Effet {
+public class Shingva extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**

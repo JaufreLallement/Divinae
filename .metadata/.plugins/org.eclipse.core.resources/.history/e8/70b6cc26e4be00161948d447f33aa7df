@@ -48,7 +48,7 @@ public final class CarteIntegristes extends CarteCroyant implements Effet {
 	
 	/* ---------- Methodes ---------- */
 	/**
-	 * Implementation de la methode appliquerEffet
+	 * Implémentation de la méthode appliquerEffet
 	 * @see effet.Effet#appliquerEffet()
 	 */
 	@Override

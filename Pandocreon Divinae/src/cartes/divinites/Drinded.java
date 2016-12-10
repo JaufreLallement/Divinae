@@ -12,7 +12,7 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Drinded.
  * Cette classe est un singleton
  */
-public class Drinded extends Divinite implements Effet {
+public final class Drinded extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**

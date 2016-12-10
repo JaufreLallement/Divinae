@@ -12,7 +12,7 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Gwenghelen.
  * Cette classe est un singleton
  */
-public class Gwenghelen extends Divinite implements Effet {
+public final class Gwenghelen extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**

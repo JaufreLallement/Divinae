@@ -12,7 +12,7 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité PuiTara.
  * Cette classe est un singleton
  */
-public class PuiTara extends Divinite implements Effet {
+public final class PuiTara extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**

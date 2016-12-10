@@ -9,47 +9,47 @@ import origine.Origine;
 
 /**
  * @author Lallement
- * Classe décrivant le comportement de la divinité Shingva.
+ * Classe décrivant le comportement de la divinité Yartsur.
  * Cette classe est un singleton
  */
-public final class Shingva extends Divinite implements Effet {
+public finalclass Yartsur extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**
-	 * Instance de Shingva
+	 * Instance de Yartsur
 	 */
-	private static volatile Shingva instance = null;
+	private static volatile Yartsur instance = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
 	 * On supprime le constructeur publique par défaut.
 	 */
-	private Shingva() {}
+	private Yartsur() {}
 
 	/**
 	 * Constructeur privé avec arguments
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
-	private Shingva(Dogme[] dogmes) {
-		super("Shingva", Origine.AUBE, dogmes);
+	private Yartsur(Dogme[] dogmes) {
+		super("Yartsur", Origine.JOUR, dogmes);
 	}
 	
 
 	/* ---------- Getters & Setters ---------- */
 	/**
-	 * Méthode permettant de retourner une unique instance de la classe Shingva
-	 * @return {Shingva} instance : retourtne l'instance de la classer Shingva
+	 * Méthode permettant de retourner une unique instance de la classe Yartsur
+	 * @return {Yartsur} instance : retourtne l'instance de la classer Yartsur
 	 */
-	public final static Shingva getInstance() {
-		if (Shingva.instance == null) {
-			synchronized (Shingva.class) {
-				if (Shingva.instance == null) {
-					Dogme[] dogmes = {Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.CHAOS};
-					Shingva.instance = new Shingva(dogmes);
+	public final static Yartsur getInstance() {
+		if (Yartsur.instance == null) {
+			synchronized (Yartsur.class) {
+				if (Yartsur.instance == null) {
+					Dogme[] dogmes = {Dogme.CHAOS, Dogme.SYMBOLES, Dogme.MYSTIQUES};
+					Yartsur.instance = new Yartsur(dogmes);
 				}
 			}
 		}
-		return Shingva.instance;
+		return Yartsur.instance;
 	}
 	
 	/* ---------- Méthodes ---------- */

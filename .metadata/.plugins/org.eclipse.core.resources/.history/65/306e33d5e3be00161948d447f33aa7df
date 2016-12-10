@@ -7,7 +7,7 @@ import origine.Origine;
 /**
  * 
  * @author alexis
- * La classe CarteIntegristes decrit le comportement general de la carte Integristes
+ * La classe CarteIntegristes décrit le comportement general de la carte Integristes
  * Cettye classe est un singleton
  */
 public final class CarteIntegristes extends CarteCroyant implements Effet {
@@ -48,7 +48,7 @@ public final class CarteIntegristes extends CarteCroyant implements Effet {
 	
 	/* ---------- Methodes ---------- */
 	/**
-	 * Implementation de la methode appliquerEffet
+	 * Implémentation de la méthode appliquerEffet
 	 * @see effet.Effet#appliquerEffet()
 	 */
 	@Override

@@ -12,7 +12,7 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Yartsur.
  * Cette classe est un singleton
  */
-public class Yartsur extends Divinite implements Effet {
+public final class Yartsur extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**

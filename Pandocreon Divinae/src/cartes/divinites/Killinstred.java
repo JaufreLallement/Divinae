@@ -12,7 +12,7 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Killinstred.
  * Cette classe est un singleton
  */
-public class Killinstred extends Divinite implements Effet {
+public final class Killinstred extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**

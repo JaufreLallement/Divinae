@@ -27,7 +27,7 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par defaut
+	 * Constructeur par d�faut
 	 */
 	public CarteGuideSpirituel() {
 		super();

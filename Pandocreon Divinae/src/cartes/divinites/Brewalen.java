@@ -12,7 +12,7 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Brewalen.
  * Cette classe est un singleton
  */
-public class Brewalen extends Divinite implements Effet {
+public final class Brewalen extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**

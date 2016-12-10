@@ -12,7 +12,7 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Llewella.
  * Cette classe est un singleton
  */
-public class Llewella extends Divinite implements Effet {
+public final class Llewella extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**

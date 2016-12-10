@@ -12,7 +12,7 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Gorna.
  * Cette classe est un singleton
  */
-public class Gorna extends Divinite implements Effet {
+public final class Gorna extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**

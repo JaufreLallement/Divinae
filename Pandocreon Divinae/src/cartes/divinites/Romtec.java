@@ -12,7 +12,7 @@ import origine.Origine;
  * Classe décrivant le comportement de la divinité Romtec.
  * Cette classe est un singleton
  */
-public class Romtec extends Divinite implements Effet {
+public final class Romtec extends Divinite implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**
