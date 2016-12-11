@@ -39,15 +39,7 @@ public class Gorna extends Divinite implements Effet {
 		/**
 		 * Unique instance de la classe non preinitialisee
 		 */
-		private final static Gorna instance = new Gorna(GornaHolder.getDogmes());
-		
-		/**
-		 * Methode permettant d'obtenir les dogmes de la divinite
-		 * @return {Dogme[]} : tableau de dogmes
-		 */
-		private static Dogme[] getDogmes() {
-			return new Dogme[]{Dogme.HUMAIN, Dogme.SYMBOLES, Dogme.CHAOS};
-		}
+		private final static Gorna instance = new Gorna(new Dogme[]{Dogme.HUMAIN, Dogme.SYMBOLES, Dogme.CHAOS});
 	}
 	
 

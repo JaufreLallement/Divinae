@@ -43,7 +43,8 @@ public class CarteMiroir extends CarteDeusEx implements Effet {
 	
 	/* ---------- Methodes ---------- */
 	/**
-	 * Implémentation de la methode appliquerEffet 
+	 * Implémentation de la methode appliquerEffet
+	 * @see effet.Effet#appliquerEffet() 
 	 */
 	@Override
 	public void appliquerEffet() {

@@ -39,15 +39,7 @@ public class Yartsur extends Divinite implements Effet {
 		/**
 		 * Unique instance de la classe non preinitialisee
 		 */
-		private final static Yartsur instance = new Yartsur(YartsurHolder.getDogmes());
-		
-		/**
-		 * Methode permettant d'obtenir les dogmes de la divinite
-		 * @return {Dogme[]} : tableau de dogmes
-		 */
-		private static Dogme[] getDogmes() {
-			return new Dogme[]{Dogme.CHAOS, Dogme.SYMBOLES, Dogme.MYSTIQUES};
-		}
+		private final static Yartsur instance = new Yartsur(new Dogme[]{Dogme.CHAOS, Dogme.SYMBOLES, Dogme.MYSTIQUES});
 	}
 	
 

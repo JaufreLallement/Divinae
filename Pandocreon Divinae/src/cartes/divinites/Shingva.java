@@ -39,15 +39,7 @@ public class Shingva extends Divinite implements Effet {
 		/**
 		 * Unique instance de la classe non preinitialisee
 		 */
-		private final static Shingva instance = new Shingva(ShingvaHolder.getDogmes());
-		
-		/**
-		 * Methode permettant d'obtenir les dogmes de la divinite
-		 * @return {Dogme[]} : tableau de dogmes
-		 */
-		private static Dogme[] getDogmes() {
-			return new Dogme[]{Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.CHAOS};
-		}
+		private final static Shingva instance = new Shingva(new Dogme[]{Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.CHAOS});
 	}
 	
 

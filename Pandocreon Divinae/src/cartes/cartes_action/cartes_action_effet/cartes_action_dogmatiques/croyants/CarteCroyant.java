@@ -1,39 +1,40 @@
 package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants;
 
+import java.util.ArrayList;
+
 import origine.Origine;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
 import cartes.divinites.Divinite;
 import dogme.Dogme;
 /**
  * 
- * @author alexis
  * @author Lallement
- * La classe CarteCroyant d�crit le comportement g�n�rale des cartes Croyants
+ * La classe CarteCroyant decrit le comportement generale des cartes Croyants
  */
 public class CarteCroyant extends CarteActionDogmatique {
 
 	/* ---------- Attributs ---------- */
 	/**
-	 * Points de pri�re de la carte croyant
+	 * Points de priere de la carte croyant
 	 */
 	private int pointsPriere = 0;
 	
 	/**
-	 * Num�ro du tour durant lequel la carte a �t� cr��e*
-	 * *pos�e sur la table
+	 * Numero du tour durant lequel la carte a ete creee
+	 * *posee sur la table
 	 */
 	private int numTourCreation = 0;
 	
 	/**
-	 * Possibilit� de sacrifier la carte
+	 * Possibilite de sacrifier la carte
 	 * True si on peut sacrifier la carte
-	 * False sinon, dans les cas o� la carte vient d'�tre cr��e ou si elle est au centre de la table
+	 * False sinon, dans les cas ou la carte vient d'etre creee ou si elle est au centre de la table
 	 */
 	private boolean estSacrifiable = false;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par d�faut
+	 * Constructeur par defaut
 	 */
 	public CarteCroyant() {
 		super();
@@ -41,8 +42,9 @@ public class CarteCroyant extends CarteActionDogmatique {
 	
 	/**
 	 * Constructeur avec arguments
-	 * @param {Origine} origine : origine � attribuer � la carte 
-	 * @param {int} pointsPriere : points de pri�re que la carte doit poss�der  
+	 * @param {Origine} origine : origine a attribuer a la carte 
+	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
+	 * @param {int} pointsPriere : points de priere que la carte doit posseder  
 	 */
 	public CarteCroyant(Origine origine, Dogme[] dogmes, int pointsPriere) {
 		super(origine, dogmes);
@@ -96,18 +98,43 @@ public class CarteCroyant extends CarteActionDogmatique {
 		this.estSacrifiable = (this.estSacrifiable) ? false : true;
 	}
 	
-	/* ---------- M�thodes ---------- */
+	/* ---------- Methodes ---------- */
 	/**
-	 * M�thode permettant d'ajouter les points de prieres de la carte � une divinite donn�e
-	 * @param {Divinite} d : divinite � laquelle on souhaite ajouter les points
+	 * Methode permettant d'ajouter les points de prieres de la carte � une divinite donn�e
+	 * @param {Divinite} d : divinite a laquelle on souhaite ajouter les points
 	 */
 	public void ajouterPrieres(Divinite d) {
 		d.setTotalPrieres(d.getTotalPrieres() + this.pointsPriere);
 	}
 	
+	/**
+	 * Methode retournant toutes les cartes croyant
+	 * @return {ArrayList<CarteCroyant>} divinites : retourne un ArrayList contenant toutes les divinites
+	 */
+	public static ArrayList<CarteCroyant> getAllCroyants() {
+		ArrayList<CarteCroyant> croyants = new ArrayList<CarteCroyant>();
+		croyants.addAll(CarteAlchimiste.getAllAlchimistes());
+		croyants.addAll(CarteAliene.getAllAlienes());
+		croyants.addAll(CarteDemon.getAllDemons());
+		croyants.add(CarteDiplomate.getInstance());
+		croyants.addAll(CarteErmite.getAllErmites());
+		croyants.addAll(CarteEsprit.getAllEsprits());
+		croyants.add(CarteGuerrierSaint.getInstance());
+		croyants.add(CarteIllusionniste.getInstance());
+		croyants.add(CarteIntegriste.getInstance());
+		croyants.add(CarteLycanthrope.getInstance());
+		croyants.addAll(CarteMoine.getAllMoines());
+		croyants.add(CarteNihilliste.getInstance());
+		croyants.add(CartePillard.getInstance());
+		croyants.add(CarteRevenant.getInstance());
+		croyants.add(CarteRevolutionnaire.getInstance());
+		croyants.addAll(CarteTravailleur.getAllTravailleurs());
+		croyants.addAll(CarteVampire.getAllVampires());
+		return croyants;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 	}
 
 }

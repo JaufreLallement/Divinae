@@ -39,15 +39,7 @@ public class PuiTara extends Divinite implements Effet {
 		/**
 		 * Unique instance de la classe non preinitialisee
 		 */
-		private final static PuiTara instance = new PuiTara(PuiTaraHolder.getDogmes());
-		
-		/**
-		 * Methode permettant d'obtenir les dogmes de la divinite
-		 * @return {Dogme[]} : tableau de dogmes
-		 */
-		private static Dogme[] getDogmes() {
-			return new Dogme[]{Dogme.NATURE, Dogme.MYSTIQUES, Dogme.SYMBOLES};
-		}
+		private final static PuiTara instance = new PuiTara(new Dogme[]{Dogme.NATURE, Dogme.MYSTIQUES, Dogme.SYMBOLES});
 	}
 
 	/* ---------- Getters & Setters ---------- */

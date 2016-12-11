@@ -40,15 +40,7 @@ public class Brewalen extends Divinite implements Effet {
 		/**
 		 * Unique instance de la classe non preinitialisee
 		 */
-		private final static Brewalen instance = new Brewalen(BrewalenHolder.getDogmes());
-		
-		/**
-		 * Methode permettant d'obtenir les dogmes de la divinite
-		 * @return {Dogme[]} : tableau de dogmes
-		 */
-		private static Dogme[] getDogmes() {
-			return new Dogme[]{Dogme.NATURE, Dogme.HUMAIN, Dogme.MYSTIQUES};
-		}
+		private final static Brewalen instance = new Brewalen(new Dogme[]{Dogme.NATURE, Dogme.HUMAIN, Dogme.MYSTIQUES});
 	}
 	
 

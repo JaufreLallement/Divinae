@@ -1,0 +1,68 @@
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants;
+
+import origine.Origine;
+import dogme.Dogme;
+import effets.Effet;
+
+/**
+ * 
+ * @author Lallement
+ * La classe CarteGuerriersSaints dÃ©crit le comportement gÃ©nÃ©ral de la carte GuerriersSaints
+ */
+public class CarteGuerriersSaints extends CarteCroyant implements Effet {
+
+/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * On supprime le constructeur publique par défaut.
+	 */
+	private CarteGuerriersSaints() {}
+
+	/**
+	 * Constructeur privé avec arguments
+	 * La classe étant un singleton, on évite la création de plusieurs instances 
+	 */
+	private CarteGuerriersSaints(Dogme[] dogmes) {
+		super(Origine.JOUR, dogmes, 4);
+		
+	}
+	
+	/* ---------- Holder ---------- */
+	/**
+	 * @author Lallement
+	 * Classe interne privée, responsable de l'instanciation de l'instance unique du Singleton.
+	 */
+	private static class CarteGuerriersSaintsHolder {
+		/**
+		 * Unique instance de la classe non preinitialisee
+		 */
+		private final static CarteGuerriersSaints instance = new CarteGuerriersSaints(new Dogme[]{Dogme.MYSTIQUES, Dogme.NATURE, Dogme.SYMBOLES});
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Méthode permettant de retourner une unique instance de la classe Brewalen
+	 * @return {CarteGuerriersSaints} instance : retourtne l'instance de la classe CarteGuerriersSaints
+	 */
+	public final static CarteGuerriersSaints getInstance() {
+		return CarteGuerriersSaintsHolder.instance;
+	}
+	
+	/* ---------- Méthodes ---------- */	
+	/**
+	 * Implémentation de la méthode appliquerEffet
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO application de l'effet correspondant à la classe.
+	}
+	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+}

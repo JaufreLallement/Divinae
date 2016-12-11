@@ -39,15 +39,7 @@ public class Gwenghelen extends Divinite implements Effet {
 		/**
 		 * Unique instance de la classe non preinitialisee
 		 */
-		private final static Gwenghelen instance = new Gwenghelen(GwenghelenHolder.getDogmes());
-		
-		/**
-		 * Methode permettant d'obtenir les dogmes de la divinite
-		 * @return {Dogme[]} : tableau de dogmes
-		 */
-		private static Dogme[] getDogmes() {
-			return new Dogme[]{Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.SYMBOLES};
-		}
+		private final static Gwenghelen instance = new Gwenghelen(new Dogme[]{Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.SYMBOLES});
 	}
 	
 

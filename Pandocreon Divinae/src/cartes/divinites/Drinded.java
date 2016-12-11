@@ -40,15 +40,7 @@ public class Drinded extends Divinite implements Effet {
 		/**
 		 * Unique instance de la classe non preinitialisee
 		 */
-		private final static Drinded instance = new Drinded(DrindedHolder.getDogmes());
-		
-		/**
-		 * Methode permettant d'obtenir les dogmes de la divinite
-		 * @return {Dogme[]} : tableau de dogmes
-		 */
-		private static Dogme[] getDogmes() {
-			return new Dogme[]{Dogme.NATURE, Dogme.HUMAIN, Dogme.SYMBOLES};
-		}
+		private final static Drinded instance = new Drinded(new Dogme[]{Dogme.NATURE, Dogme.HUMAIN, Dogme.SYMBOLES});
 	}
 
 	/* ---------- Getters & Setters ---------- */

@@ -53,6 +53,7 @@ public class CartePhoenix extends CarteDeusEx implements Effet {
 	/* ---------- Methodes ---------- */
 	/**
 	 * Implémentation de la methode appliquerEffet 
+	 * @see effet.Effet#appliquerEffet()
 	 */
 	@Override
 	public void appliquerEffet() {

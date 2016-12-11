@@ -3,8 +3,11 @@
  */
 package cartes.cartes_action.cartes_action_effet;
 
+import java.util.ArrayList;
+
 import origine.Origine;
 import cartes.cartes_action.CarteAction;
+import cartes.cartes_action.cartes_apocalypse.CarteApocalypse;
 
 /**
  * @author Lallement
@@ -54,6 +57,14 @@ public class CartesActionEffet extends CarteAction {
 	}
 	
 	/* ---------- Méthodes ---------- */
+	/**
+	 * Méthode permettant d'obtenir toutes les cartes action
+	 * @return {ArrayList<CartesActionEffet>} cartesActionEffet : retourne un ArrayList contenant toutes les cartes actions 
+	 */
+	public static ArrayList<CartesActionEffet> getAllCartesEffet() {
+		ArrayList<CartesActionEffet> cartesActionEffet = new ArrayList<CartesActionEffet>();
+		return cartesActionEffet;
+	}
 	
 	/**
 	 * @param args

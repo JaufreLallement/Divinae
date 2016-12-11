@@ -39,15 +39,7 @@ public class Romtec extends Divinite implements Effet {
 		/**
 		 * Unique instance de la classe non preinitialisee
 		 */
-		private final static Romtec instance = new Romtec(RomtecHolder.getDogmes());
-		
-		/**
-		 * Methode permettant d'obtenir les dogmes de la divinite
-		 * @return {Dogme[]} : tableau de dogmes
-		 */
-		private static Dogme[] getDogmes() {
-			return new Dogme[]{Dogme.NATURE, Dogme.HUMAIN, Dogme.CHAOS};
-		}
+		private final static Romtec instance = new Romtec(new Dogme[]{Dogme.NATURE, Dogme.HUMAIN, Dogme.CHAOS});
 	}
 	
 

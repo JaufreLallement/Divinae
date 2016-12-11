@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import origine.Origine;
 import cartes.Carte;
+import cartes.cartes_action.cartes_apocalypse.CarteApocalypse;
 
 /**
  * @author Lallement
@@ -56,6 +57,7 @@ public class CarteAction extends Carte {
 	 */
 	public static ArrayList<CarteAction> getAllCartesAction() {
 		ArrayList<CarteAction> cartesAction = new ArrayList<CarteAction>();
+		cartesAction.addAll(CarteApocalypse.getAllApocalypse());
 		return cartesAction;
 	}
 

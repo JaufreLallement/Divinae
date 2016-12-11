@@ -1,4 +1,5 @@
 package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels;
+
 import origine.Origine;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
@@ -6,10 +7,9 @@ import cartes.divinites.Divinite;
 import dogme.Dogme;
 
 /**
- * 
  * @author alexis
  * @author Lallement
- * La classe CarteGuideSpirituel d�crit le comportement des cartes Guides Spirituels
+ * La classe CarteGuideSpirituel decrit le comportement des cartes Guides Spirituels
  */
 
 public class CarteGuideSpirituel extends CarteActionDogmatique {
@@ -78,22 +78,21 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 		this.croyants = croyants;
 	}
 	
-	/* ---------- M�thodes ---------- */
+	/* ---------- Methodes ---------- */
 	/**
 	 * M�thode permettant de lier un croyant � un guide spirituel
 	 * @param {CarteCroyant} croyant : croyant � lier au guide
 	 */
 	public void addCroyant(CarteCroyant croyant) {
-		boolean arrayEmpty = false;
 		for (int i = 0; i < this.nbCroyantsTotal; i++) {
 			if (this.croyants[i] == null) this.croyants[i] = croyant;
 		}
 	}
 	
 	/**
-	 * M�thode permettant d'ajouter les points de prieres de tous les croyants rassembl�s autour d'un guide
-	 * � une divinite donn�e
-	 * @param {Divinite} d : divinite � laquelle on souhaite ajouter les points 
+	 * Methode permettant d'ajouter les points de prieres de tous les croyants rassembles autour d'un guide
+	 * a une divinite donnee
+	 * @param {Divinite} d : divinite a laquelle on souhaite ajouter les points 
 	 */
 	public void guiderVersDivinite(Divinite d) {
 		for (CarteCroyant carteCroyant : croyants) {
@@ -102,7 +101,7 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	}
 	
 	/**
-	 * M�thode de tests
+	 * Methode de tests
 	 * @param args
 	 */
 	public static void main(String[] args) {

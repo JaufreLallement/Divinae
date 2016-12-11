@@ -1,0 +1,23 @@
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants;
+
+
+/**
+ * 
+ * @author Lallement
+ * La classe CarteEsprits décrit le comportement général de la carte Esprits
+ */
+public class CarteEsprit extends CarteCroyant {
+
+	/* ---------- Attributs ---------- */
+	/* ---------- Constructeurs ---------- */
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- Methodes ---------- */
+	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+}

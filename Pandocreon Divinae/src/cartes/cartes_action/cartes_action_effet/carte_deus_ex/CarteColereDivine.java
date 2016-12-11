@@ -7,7 +7,7 @@ import origine.Origine;
 
 /**
  * 
- * @author alexis
+ * @author Lallement
  * La classe CarteColere Divine decrit le comportement general des cartes Colere Divine
  */
 public class CarteColereDivine extends CarteDeusEx implements Effet {
@@ -44,7 +44,8 @@ public class CarteColereDivine extends CarteDeusEx implements Effet {
 	}
 	
 	/**
-	 * Implémentation de la methode appliquerEffet 
+	 * Implémentation de la methode appliquerEffet
+	 * @see effet.Effet#appliquerEffet() 
 	 */
 	@Override
 	public void appliquerEffet() {
