@@ -1,0 +1,49 @@
+/**
+ * 
+ */
+package partie;
+
+import java.util.ArrayList;
+
+import cartes.cartes_action.CarteAction;
+import cartes.divinites.Divinite;
+import joueur.Joueur;
+
+/**
+ * @author Lallement
+ * La classe Partie décrit le comportement d'une partie. Il s'agit de la classe principale du programme
+ * La classe sera chargée de lancer un nouvelle partie sur demande.
+ */
+public class Partie {
+	/* ---------- Attributs ---------- */
+	/**
+	 * Joueurs participant à la partie
+	 */
+	private ArrayList<Joueur> participants;
+	
+	/**
+	 * Pioche de la partie.
+	 */
+	private ArrayList<CarteAction> pioche = CarteAction.getAllCartesAction();
+	
+	/**
+	 * Cimetiere de la partie
+	 */
+	private ArrayList<CarteAction> cimetiere = null;
+	
+	/**
+	 * Divinites que les joueurs peuvent incarner
+	 */
+	private ArrayList<Divinite> piocheDivinites = Divinite.getAllDivinites();
+	/* ---------- Constructeurs ---------- */
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- Méthodes ---------- */
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+}

@@ -22,14 +22,14 @@ public class JoueurVirtuel extends Joueur {
 	/**
 	 * Tableau de differents noms possibles pour les joueurs virtuels
 	 */
-	private String[] noms = {"Galadriel", "Caranthir", "Manwë", "Varda", "Ulmo", "Aulë", "Yavanna", "Geralt", "Thingol", };
+	private static String[] noms = {"Galadriel", "Caranthir", "Manwë", "Varda", "Ulmo", "Aulë", "Yavanna", "Geralt", "Thingol"};
 
 	/* ---------- Constructeurs ---------- */
 	/**
 	 * Constructeur publique par défaut supprimé pour éviter la création de joueurs virtuels 
 	 * sans informations permettant l'identification.
 	 */
-	private JoueurVirtuel(String nom) {
+	public JoueurVirtuel(String nom) {
 		super(nom);
 	}
 	
@@ -57,6 +57,15 @@ public class JoueurVirtuel extends Joueur {
 	 */
 	public void setStrategie(Strategy strategie) {
 		this.strategie = strategie;
+	}
+	
+	/**
+	 * Accesseur permettant d'obtenir un nom au hasard parmis les noms disponibles
+	 * @return {String} randomNom : retourne un nom au hasard parmis this.noms
+	 */
+	public static String getRandomNom() {
+		Random numRand = new Random();
+		return JoueurVirtuel.noms[numRand.nextInt(JoueurVirtuel.noms.length)];
 	}
 	
 	/* ---------- Méthodes ---------- */

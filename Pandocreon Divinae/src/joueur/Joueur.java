@@ -4,6 +4,7 @@
 package joueur;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import partie.Partie;
 import cartes.cartes_action.CarteAction;
@@ -24,7 +25,7 @@ public class Joueur {
 	/**
 	 * Jeu du joueur : ArrayList de Carte Action
 	 */
-	private ArrayList<CarteAction> jeu;
+	private ArrayList<CarteAction> jeu = new ArrayList<CarteAction>();
 	
 	/**
 	 * Divinite incranee par le joueur 
@@ -206,6 +207,51 @@ public class Joueur {
 	}
 	
 	/* ---------- Méthodes ---------- */
+	/**
+	 * Methode permettant d'initialiser les nouveaux joueurs
+	 * @return {ArrayList<Joueur>} participants : retourne un ArrayList contenant entre six et deux joueurs
+	 */
+	public static ArrayList<Joueur> getSixParticipants(int nbParticipant, Partie p) {
+		ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+		JoueurPhysique jp = JoueurPhysique.getInstance();
+		jp.setPartie(p);
+		joueurs.add(jp);
+		for (int i = 0; i < nbParticipant - 1; i++) {
+			JoueurVirtuel jv = new JoueurVirtuel(JoueurVirtuel.getRandomNom());
+			jv.setPartie(p);
+			joueurs.add(jv);
+		}
+		return joueurs;
+	}
+	
+	/**
+	 * Methode permettant de distribuer les cartes a un joueur
+	 */
+	public void distribuerJeu() {
+		Random randDiv = new Random();
+		this.diviniteIncarnee = this.partie.getPiocheDivinites().get(randDiv.nextInt(this.partie.getPiocheDivinites().size()));
+		this.partie.getPiocheDivinites().remove(this.diviniteIncarnee);
+		
+		for (int i = 0; i < 7; i++) {
+			this.jeu.add(this.partie.getPioche().get(randDiv.nextInt(this.partie.getPioche().size())));
+			this.partie.getPioche().remove(this.jeu.get(i));
+			System.out.println(this.jeu.get(i));
+		}
+	}
+	
+	/**
+	 * Methode permettant de donner les détails d'un joueur
+	 * @return {String} : retourne un chaîne de caractère décrivant le joueur
+	 */
+	@Override
+	public String toString() {
+		return "Joueur: " + this.nomJoueur +
+				" ,, Divinite: " + this.diviniteIncarnee.getNomDivinite() + 
+				" ,, Points Jour: " + this.pointsActionJour + 
+				" ,, Points Nuit: " + this.pointsActionNuit + 
+				" ,, Points Neant: " + this.pointsActionNeant;
+	}
+	
 	/**
 	 * @param args
 	 */
