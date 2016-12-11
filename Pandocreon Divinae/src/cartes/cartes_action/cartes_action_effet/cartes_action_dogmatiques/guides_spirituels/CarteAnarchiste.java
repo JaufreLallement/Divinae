@@ -1,24 +1,25 @@
 package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels;
 
+import java.util.ArrayList;
+
+import origine.Origine;
+import dogme.Dogme;
+import effets.Effet;
+
 /**
- * 
  * @author alexis
- * La classe CarteAnarchiste décrit le comportement général de la carte Anarchiste
+ * La classe CarteAnarchiste decrit le comportement general de la carte Anarchiste
  */
 
 public class CarteAnarchiste extends CarteGuideSpirituel {
 
-	/* ---------- Attributs ---------- */
-	/* ---------- Constructeurs ---------- */
-	/* ---------- Getters & Setters ---------- */
-	/* ---------- Méthodes ---------- */
-	
-	
-	
-	
+
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 	}
 
 }

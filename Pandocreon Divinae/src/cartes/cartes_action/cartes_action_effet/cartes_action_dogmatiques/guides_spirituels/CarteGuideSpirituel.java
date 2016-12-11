@@ -36,7 +36,8 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	
 	/**
 	 * Constructeur avec argument
-	 * @param {Origine} origine: origine � attribuer � la carte
+	 * @param {Origine} origine : origine a attribuer a la carte
+	 * @param {Dogme[]} dogmes : dogmes a attribuer  
 	 * @param {int} totalCroyants : nombre de croyants total que le Guide peut rassembler
 	 */
 	public CarteGuideSpirituel(Origine origine, Dogme[] dogmes, int totalCroyants) {
