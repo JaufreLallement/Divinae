@@ -13,19 +13,13 @@ public class CarteConcentration extends CarteDeusEx implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	
-	/* ---------- Constructeurs ---------- */
-	/**
-	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
-	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
-	 */
-	private CarteConcentration() {}
-	
+	/* ---------- Constructeurs ---------- */	
 	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
 	 */
 	private CarteConcentration(Origine origine) {
-		super(origine);
+		super(origine, "Concentration");
 	}
 	
 	/* ---------- Holder ---------- */

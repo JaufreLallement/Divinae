@@ -17,18 +17,11 @@ public class CarteErmite extends CarteCroyant implements Effet {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut
-	 */
-	public CarteErmite() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
 	 * Constructeur avec arguments
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
 	 */
 	public CarteErmite(Dogme[] dogmes) {
-		super(Origine.JOUR, dogmes, 1);
+		super(Origine.JOUR, dogmes, 1, "Ermite");
 	}
 	
 

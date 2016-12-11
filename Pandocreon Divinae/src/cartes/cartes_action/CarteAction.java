@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import origine.Origine;
 import cartes.Carte;
+import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
 import cartes.cartes_action.cartes_apocalypse.CarteApocalypse;
 
 /**
@@ -58,6 +59,7 @@ public class CarteAction extends Carte {
 	public static ArrayList<CarteAction> getAllCartesAction() {
 		ArrayList<CarteAction> cartesAction = new ArrayList<CarteAction>();
 		cartesAction.addAll(CarteApocalypse.getAllApocalypse());
+		cartesAction.addAll(CartesActionEffet.getAllCartesEffet());
 		return cartesAction;
 	}
 
@@ -65,8 +67,8 @@ public class CarteAction extends Carte {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		ArrayList<CarteAction> cartesAction = CarteAction.getAllCartesAction();
+		System.out.println(cartesAction.size());
 	}
 
 }

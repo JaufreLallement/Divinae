@@ -20,10 +20,12 @@ public class CarteIntegriste extends CarteCroyant implements Effet {
 	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
 	 * Permet egalement d'eviter que d'autre classes aient acces au coinstructeur
 	 */
-	private CarteIntegriste() {}
+	private CarteIntegriste() {
+		super("Integriste");
+	}
 	
 	private CarteIntegriste(Origine origine, Dogme[] dogmes, int pointsPriere) {
-		super(origine, dogmes, pointsPriere);
+		super(origine, dogmes, pointsPriere, "Integriste");
 	}
 	
 	/* ---------- Holder ---------- */

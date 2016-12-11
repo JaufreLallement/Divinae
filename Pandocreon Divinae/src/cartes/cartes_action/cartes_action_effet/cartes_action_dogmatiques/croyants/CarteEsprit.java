@@ -18,18 +18,11 @@ public class CarteEsprit extends CarteCroyant implements Effet {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut
-	 */
-	public CarteEsprit() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
 	 * Constructeur avec arguments
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
 	 */
 	public CarteEsprit(Dogme[] dogmes) {
-		super(Origine.NEANT, dogmes, 2);
+		super(Origine.NEANT, dogmes, 2, "Esprits");
 	}
 	
 

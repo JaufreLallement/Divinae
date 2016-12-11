@@ -34,10 +34,11 @@ public class CarteCroyant extends CarteActionDogmatique {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par defaut
+	 * Constructeur avec argument
+	 * @param {String} intitule : intitule de la carte
 	 */
-	public CarteCroyant() {
-		super();
+	public CarteCroyant(String intitule) {
+		super(intitule);
 	}
 	
 	/**
@@ -46,8 +47,8 @@ public class CarteCroyant extends CarteActionDogmatique {
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
 	 * @param {int} pointsPriere : points de priere que la carte doit posseder  
 	 */
-	public CarteCroyant(Origine origine, Dogme[] dogmes, int pointsPriere) {
-		super(origine, dogmes);
+	public CarteCroyant(Origine origine, Dogme[] dogmes, int pointsPriere, String intitule) {
+		super(origine, dogmes, intitule);
 		this.pointsPriere = pointsPriere;
 	}
 	/* ---------- Getters & Setters ---------- */
@@ -133,8 +134,28 @@ public class CarteCroyant extends CarteActionDogmatique {
 		return croyants;
 	}
 	
+	/**
+	 * Methode permettant de donner les détails d'un croyant
+	 * @return {String} : retourne un chaîne de caractère décrivant le croyant
+	 */
+	@Override
+	public String toString() {
+		return "Croyant: " + this.getIntituleCarte() + 
+				" ,, Origine: " + this.getOrigineCarte() + 
+				" ,, Points de priere: " + this.getPointsPriere() + 
+				" ,, Dogmes: " + this.getDogmes()[0] + ", " + this.getDogmes()[1] + ", " + this.getDogmes()[2];
+	}
+	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ArrayList<CarteCroyant> testCroyants = CarteCroyant.getAllCroyants();
+		System.out.println(testCroyants.size());
+		for (CarteCroyant croyant : testCroyants) {
+			System.out.println(croyant.toString());
+		}
 	}
 
 }

@@ -3,6 +3,8 @@
  */
 package joueur;
 
+import java.util.Random;
+
 import strategie.StrategiePassive;
 import strategie.Strategy;
 
@@ -10,27 +12,33 @@ import strategie.Strategy;
  * @author Lallement
  *
  */
-public class JoueurVirtuel {
+public class JoueurVirtuel extends Joueur {
 	/* ---------- Attributs ---------- */
 	/**
 	 * Strategie employée par le joueur virtuel
 	 */
 	private Strategy strategie = new StrategiePassive();
+	
+	/**
+	 * Tableau de differents noms possibles pour les joueurs virtuels
+	 */
+	private String[] noms = {"Galadriel", "Caranthir", "Manwë", "Varda", "Ulmo", "Aulë", "Yavanna", "Geralt", "Thingol", };
 
 	/* ---------- Constructeurs ---------- */
 	/**
 	 * Constructeur publique par défaut supprimé pour éviter la création de joueurs virtuels 
 	 * sans informations permettant l'identification.
 	 */
-	private JoueurVirtuel() {
-		super();
+	private JoueurVirtuel(String nom) {
+		super(nom);
 	}
 	
 	/**
 	 * Constructeur avec arguments
 	 * @param {Strategy} strategie : strategie que le joueur virtuel créé devra employer.
 	 */
-	public JoueurVirtuel(Strategy strategie) {
+	public JoueurVirtuel(Strategy strategie, String nom) {
+		super(nom);
 		this.strategie = strategie;
 	}
 	
@@ -61,7 +69,6 @@ public class JoueurVirtuel {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		JoueurVirtuel bot = new JoueurVirtuel();
-		bot.employerStrategie();
+		
 	}
 }

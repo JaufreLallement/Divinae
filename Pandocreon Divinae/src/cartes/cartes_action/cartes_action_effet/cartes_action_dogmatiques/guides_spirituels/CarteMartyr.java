@@ -16,19 +16,12 @@ public class CarteMartyr extends CarteGuideSpirituel implements Effet {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut
-	 */
-	public CarteMartyr() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
 	 * Constructeur avec arguments
 	 * @param {Origine} origine : origine a attribuer à la carte
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
 	 */
 	public CarteMartyr(Origine origine, Dogme[] dogmes) {
-		super(origine, dogmes, 2);
+		super(origine, dogmes, 2, "Martyr");
 	}
 	
 

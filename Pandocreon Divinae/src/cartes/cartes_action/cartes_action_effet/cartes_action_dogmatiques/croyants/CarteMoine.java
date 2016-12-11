@@ -19,18 +19,11 @@ public class CarteMoine extends CarteCroyant implements Effet {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut
-	 */
-	public CarteMoine() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
 	 * Constructeur avec arguments
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
 	 */
 	public CarteMoine(Dogme[] dogmes) {
-		super(Origine.JOUR, dogmes, 2);
+		super(Origine.JOUR, dogmes, 2, "Moine");
 	}
 	
 

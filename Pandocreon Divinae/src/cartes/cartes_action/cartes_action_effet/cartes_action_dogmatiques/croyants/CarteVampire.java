@@ -17,18 +17,11 @@ public class CarteVampire extends CarteCroyant implements Effet {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut
-	 */
-	public CarteVampire() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
 	 * Constructeur avec arguments
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
 	 */
 	public CarteVampire(Dogme[] dogmes) {
-		super(Origine.NUIT, dogmes, 1);
+		super(Origine.NUIT, dogmes, 1, "Vampires");
 	}
 	
 

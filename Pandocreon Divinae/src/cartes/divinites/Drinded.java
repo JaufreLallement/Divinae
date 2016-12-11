@@ -45,7 +45,7 @@ public class Drinded extends Divinite implements Effet {
 
 	/* ---------- Getters & Setters ---------- */
 	/**
-	 * Méthode permettant de retourner une unique instance de la classe Drinded
+	 * Accesseur permettant de retourner une unique instance de la classe Drinded
 	 * @return {Drinded} instance : retourtne l'instance de la classe Drinded
 	 */
 	public final static Drinded getInstance() {

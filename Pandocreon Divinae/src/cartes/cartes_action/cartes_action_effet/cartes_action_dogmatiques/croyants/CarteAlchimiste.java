@@ -15,19 +15,13 @@ public class CarteAlchimiste extends CarteCroyant implements Effet {
 	/* ---------- Attributs ---------- */
 	
 	/* ---------- Constructeurs ---------- */
-	/**
-	 * Constructeur par défaut
-	 */
-	public CarteAlchimiste() {
-		// TODO Auto-generated constructor stub
-	}
 
 	/**
 	 * Constructeur avec arguments
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
 	 */
 	public CarteAlchimiste(Dogme[] dogmes) {
-		super(Origine.NUIT, dogmes, 2);
+		super(Origine.NUIT, dogmes, 2, "Alchimistes");
 	}
 	
 

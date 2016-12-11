@@ -1,7 +1,6 @@
 package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
 
 import effets.Effet;
-import origine.Origine;
 
 /**
  * @author alexis
@@ -18,14 +17,8 @@ public class CarteBouleversement extends CarteDeusEx implements Effet {
 	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
 	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
-	private CarteBouleversement() {}
-	
-	/**
-	 * Constructeur avec argument
-	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
-	 */
-	private CarteBouleversement(Origine origine) {
-		super(origine);
+	private CarteBouleversement() {
+		super("Bouleversement");
 	}
 	
 	/* ---------- Holder ---------- */

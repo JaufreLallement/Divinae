@@ -15,19 +15,13 @@ public class CarteAliene extends CarteCroyant implements Effet {
 	/* ---------- Attributs ---------- */
 	
 	/* ---------- Constructeurs ---------- */
-	/**
-	 * Constructeur par défaut
-	 */
-	public CarteAliene() {
-		// TODO Auto-generated constructor stub
-	}
 
 	/**
 	 * Constructeur avec arguments
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
 	 */
 	public CarteAliene(Dogme[] dogmes) {
-		super(Origine.NEANT, dogmes, 2);
+		super(Origine.NEANT, dogmes, 2, "Alienes");
 	}
 	
 

@@ -17,14 +17,16 @@ public class CarteNihilliste extends CarteCroyant implements Effet {
 	/**
 	 * On supprime le constructeur publique par défaut.
 	 */
-	private CarteNihilliste() {}
+	private CarteNihilliste() {
+		super("Nihiliste");
+	}
 
 	/**
 	 * Constructeur privé avec arguments
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private CarteNihilliste(Dogme[] dogmes) {
-		super(Origine.NEANT, dogmes, 4);	
+		super(Origine.NEANT, dogmes, 4, "Nihiliste");	
 	}
 	
 	/* ---------- Holder ---------- */

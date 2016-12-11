@@ -9,7 +9,7 @@ import origine.Origine;
 
 /**
  * @author Lallement
- * Classe décrivant le comportement de la divinité Brewalen.
+ * Classe décrivant le comportement de la divinite Brewalen.
  * Cette classe est un singleton
  */
 public class Brewalen extends Divinite implements Effet {
@@ -53,7 +53,7 @@ public class Brewalen extends Divinite implements Effet {
 		return BrewalenHolder.instance;
 	}
 	
-	/* ---------- Méthodes ---------- */
+	/* ---------- Methodes ---------- */
 	
 	/**
 	 * Implémentation de la méthode appliquerEffet

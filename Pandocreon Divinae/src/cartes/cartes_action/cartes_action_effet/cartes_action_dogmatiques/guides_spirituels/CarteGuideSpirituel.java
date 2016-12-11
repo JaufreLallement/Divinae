@@ -1,5 +1,7 @@
 package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels;
 
+import java.util.ArrayList;
+
 import origine.Origine;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
@@ -7,7 +9,6 @@ import cartes.divinites.Divinite;
 import dogme.Dogme;
 
 /**
- * @author alexis
  * @author Lallement
  * La classe CarteGuideSpirituel decrit le comportement des cartes Guides Spirituels
  */
@@ -21,16 +22,17 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	private int nbCroyantsTotal = 0;
 	
 	/**
-	 * Tableau contenant les croyants rassemblï¿½s autour du guide
+	 * Tableau contenant les croyants rassembles autour du guide
 	 */
 	private CarteCroyant[] croyants;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par defaut
+	 * Constructeur avec argument
+	 * @param {String} intitule : intitule de la carte
 	 */
-	public CarteGuideSpirituel() {
-		super();
+	public CarteGuideSpirituel(String intitule) {
+		super(intitule);
 		this.croyants = new CarteCroyant[this.nbCroyantsTotal];
 	}
 	
@@ -40,8 +42,8 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	 * @param {Dogme[]} dogmes : dogmes a attribuer  
 	 * @param {int} totalCroyants : nombre de croyants total que le Guide peut rassembler
 	 */
-	public CarteGuideSpirituel(Origine origine, Dogme[] dogmes, int totalCroyants) {
-		super(origine, dogmes);
+	public CarteGuideSpirituel(Origine origine, Dogme[] dogmes, int totalCroyants, String intitule) {
+		super(origine, dogmes, intitule);
 		this.nbCroyantsTotal = totalCroyants;
 		this.croyants = new CarteCroyant[this.nbCroyantsTotal];
 	}
@@ -57,7 +59,7 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 
 	/**
 	 * Modificateur pour l'attribut nbCroyantsTotal
-	 * @param {int} nbCroyantsTotal : nombre total de croyants ï¿½ attribuer ï¿½ la carte croyant
+	 * @param {int} nbCroyantsTotal : nombre total de croyants a attribuer a la carte croyant
 	 */
 	public void setNbCroyantsTotal(int nbCroyantsTotal) {
 		this.nbCroyantsTotal = nbCroyantsTotal;
@@ -73,7 +75,7 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 
 	/**
 	 * Modificateur pour l'attribut nbCroyantsTotal
-	 * @param {CarteCroyant[}} croyants : tableau de croyants ï¿½ attribuer au Guide
+	 * @param {CarteCroyant[}} croyants : tableau de croyants a attribuer au Guide
 	 */
 	public void setCroyants(CarteCroyant[] croyants) {
 		this.croyants = croyants;
@@ -81,8 +83,8 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	
 	/* ---------- Methodes ---------- */
 	/**
-	 * Mï¿½thode permettant de lier un croyant ï¿½ un guide spirituel
-	 * @param {CarteCroyant} croyant : croyant ï¿½ lier au guide
+	 * Methode permettant de lier un croyant a un guide spirituel
+	 * @param {CarteCroyant} croyant : croyant a lier au guide
 	 */
 	public void addCroyant(CarteCroyant croyant) {
 		for (int i = 0; i < this.nbCroyantsTotal; i++) {
@@ -102,13 +104,47 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	}
 	
 	/**
+	 * Méthode retournant tous les guides spirituels
+	 * @return {ArrayList<CarteGuideSpirituel>} divinites : retourne un ArrayList contenant tous les guides spirituels
+	 */
+	public static ArrayList<CarteGuideSpirituel> getAllGuides() {
+		ArrayList<CarteGuideSpirituel> guides = new ArrayList<CarteGuideSpirituel>();
+		guides.add(CarteAnarchiste.getInstance());
+		guides.add(CarteAscete.getInstance());
+		guides.addAll(CarteClerc.getAllClercs());
+		guides.add(CarteDevin.getInstance());
+		guides.add(CarteExorciste.getInstance());
+		guides.addAll(CarteMartyr.getAllMartyrs());
+		guides.add(CarteMessie.getInstance());
+		guides.add(CartePaladin.getInstance());
+		guides.add(CarteShaman.getInstance());
+		guides.add(CarteSorcier.getInstance());
+		guides.add(CarteTyran.getInstance());
+		return guides;
+	}
+	
+	/**
+	 * Methode permettant de donner les détails d'un guide
+	 * @return {String} : retourne un chaîne de caractère décrivant le guide
+	 */
+	@Override
+	public String toString() {
+		return "Guide Spirituel: " + this.getIntituleCarte() + 
+				" ,, Origine: " + this.getOrigineCarte() + 
+				" ,, Nombre de croyants: " + this.getNbCroyantsTotal() + 
+				" ,, Dogmes: " + this.getDogmes()[0] + ", " + this.getDogmes()[1];
+	}
+	
+	/**
 	 * Methode de tests
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/*CarteGuideSpirituel bouddha = new CarteGuideSpirituel(Origine.JOUR, 3);
-		CarteCroyant croyant = new CarteCroyant();
-		bouddha.addCroyant(croyant);*/
+		ArrayList<CarteGuideSpirituel> testGuides = CarteGuideSpirituel.getAllGuides();
+		System.out.println(testGuides.size());
+		for (CarteGuideSpirituel guide : testGuides) {
+			System.out.println(guide.toString());
+		}
 	}
 
 }

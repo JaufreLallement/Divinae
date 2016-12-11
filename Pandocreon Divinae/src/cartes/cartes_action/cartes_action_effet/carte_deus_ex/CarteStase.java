@@ -18,14 +18,16 @@ public class CarteStase extends CarteDeusEx implements Effet {
 	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
 	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
-	private CarteStase(){}
+	private CarteStase(){
+		super("Stase");
+	}
 	
 	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine de la carte nouvellement créée
 	 */
 	private CarteStase(Origine origine) {
-		super (origine);
+		super (origine, "Stase");
 	}
 	
 	/* ---------- Holder ---------- */

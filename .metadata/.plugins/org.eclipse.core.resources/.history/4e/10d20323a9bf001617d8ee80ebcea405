@@ -1,0 +1,80 @@
+/**
+ * 
+ */
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques;
+
+import java.util.ArrayList;
+
+import origine.Origine;
+import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels.CarteGuideSpirituel;
+import cartes.divinites.Brewalen;
+import cartes.divinites.Divinite;
+import cartes.divinites.Drinded;
+import cartes.divinites.Gorna;
+import cartes.divinites.Gwenghelen;
+import cartes.divinites.Killinstred;
+import cartes.divinites.Llewella;
+import cartes.divinites.PuiTara;
+import cartes.divinites.Romtec;
+import cartes.divinites.Shingva;
+import cartes.divinites.Yartsur;
+import dogme.Dogme;
+
+/**
+ * @author Lallement
+ *
+ */
+public abstract class CarteActionDogmatique extends CartesActionEffet {
+	
+	/* ---------- Attributs ---------- */
+	private Dogme[] dogmes;
+	
+	/* ---------- Constructeurs ---------- */	
+	/**
+	 * Constructeur par défaut
+	 */
+	public CarteActionDogmatique(String intitule) {
+		super(intitule);
+	}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine à attribuer à la carte nouvellement créée
+	 */
+	public CarteActionDogmatique(Origine origine, String intitule) {
+		super(origine, intitule);
+	}
+
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine à attribuer à la carte nouvellement créée
+	 * @param {Dogme[]} dogmes : tableau de dogmes à attribuer à la carte
+	 */
+	public CarteActionDogmatique(Origine origine, Dogme[] dogmes, String intitule) {
+		super(origine, intitule);
+		this.dogmes = dogmes;
+	}
+	
+	/* ---------- Méthodes ---------- */
+	/**
+	 * Méthode retournant toutes les cartes dogmatiques
+	 * @return {ArrayList<CarteActionDogmatique>} divinites : retourne un ArrayList contenant toutes les cartes dogmatiques
+	 */
+	public static ArrayList<CarteActionDogmatique> getAllCartesDogmatiques() {
+		ArrayList<CarteActionDogmatique> dogmatiques = new ArrayList<CarteActionDogmatique>();
+		dogmatiques.addAll(CarteCroyant.getAllCroyants());
+		dogmatiques.addAll(CarteGuideSpirituel.getAllGuides());
+		return dogmatiques;
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

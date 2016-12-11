@@ -17,14 +17,16 @@ public class CartePillard extends CarteCroyant implements Effet {
 	/**
 	 * On supprime le constructeur publique par défaut.
 	 */
-	private CartePillard() {}
+	private CartePillard() {
+		super("Pillard");
+	}
 
 	/**
 	 * Constructeur privé avec arguments
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private CartePillard(Dogme[] dogmes) {
-		super(Origine.NUIT, dogmes, 4);
+		super(Origine.NUIT, dogmes, 4, "Pillard");
 		
 	}
 	

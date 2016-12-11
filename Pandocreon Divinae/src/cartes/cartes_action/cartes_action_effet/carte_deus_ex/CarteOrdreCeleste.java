@@ -17,14 +17,16 @@ public class CarteOrdreCeleste extends CarteDeusEx implements Effet {
 	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
 	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
-	private CarteOrdreCeleste() {}
+	private CarteOrdreCeleste() {
+		super("Ordre celeste");
+	}
 	
 	/**
 	 * Constructeur avec arguments
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
 	 */
 	private CarteOrdreCeleste(Origine origine) {
-		super (origine);
+		super (origine, "Ordre celeste");
 	}
 	
 	/* ---------- Holder ---------- */

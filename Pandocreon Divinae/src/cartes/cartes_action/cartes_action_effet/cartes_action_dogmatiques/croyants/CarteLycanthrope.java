@@ -17,14 +17,16 @@ public class CarteLycanthrope extends CarteCroyant implements Effet {
 	/**
 	 * On supprime le constructeur publique par défaut.
 	 */
-	private CarteLycanthrope() {}
+	private CarteLycanthrope() {
+		super("Lycanthrope");
+	}
 
 	/**
 	 * Constructeur privé avec arguments
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private CarteLycanthrope(Dogme[] dogmes) {
-		super(Origine.NUIT, dogmes, 4);
+		super(Origine.NUIT, dogmes, 4, "Lycanthrope");
 		
 	}
 	

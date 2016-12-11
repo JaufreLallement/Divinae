@@ -18,7 +18,9 @@ public class CarteMiroir extends CarteDeusEx implements Effet {
 	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
 	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
-	private CarteMiroir() {}
+	private CarteMiroir() {
+		super("Miroir");
+	}
 	
 	/* ---------- Holder ---------- */
 	/**

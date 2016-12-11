@@ -14,17 +14,11 @@ public class CarteFourberie extends CarteDeusEx implements Effet {
 	
 	/* ---------- Constructeurs ---------- */	
 	/**
-	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
-	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
-	 */
-	private CarteFourberie(){}
-	
-	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
 	 */
 	private CarteFourberie(Origine origine) {
-		super (origine);
+		super (origine, "Fourberie");
 	}
 	
 	/* ---------- Holder ---------- */

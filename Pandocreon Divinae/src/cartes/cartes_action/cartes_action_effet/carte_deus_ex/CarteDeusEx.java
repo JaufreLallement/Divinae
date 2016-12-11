@@ -18,16 +18,16 @@ public class CarteDeusEx extends CartesActionEffet {
 	/**
 	 * Constructeur par défaut
 	 */
-	public CarteDeusEx() {
-		super();
+	public CarteDeusEx(String intitule) {
+		super(intitule);
 	}
 	
 	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
 	 */
-	public CarteDeusEx(Origine origine) {
-		super(origine);
+	public CarteDeusEx(Origine origine, String intitule) {
+		super(origine, intitule);
 	}
 	
 	/* ---------- Getters & Setters ---------- */
@@ -56,12 +56,26 @@ public class CarteDeusEx extends CartesActionEffet {
 	}
 	
 	/**
+	 * Methode permettant de donner les détails d'un deus ex
+	 * @return {String} : retourne un chaîne de caractère décrivant le deus ex
+	 */
+	@Override
+	public String toString() {
+		return "Deus Ex: " + this.getIntituleCarte() + 
+				" ,, Origine: " + this.getOrigineCarte();
+	}
+	
+	/**
 	 * Méthode de tests
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		ArrayList<CarteDeusEx> testDeusEx = CarteDeusEx.getAllDeusEx();
+		System.out.println(testDeusEx.size());
+		
+		for (CarteDeusEx deusEx : testDeusEx) {
+			System.out.println(deusEx.toString());
+		}
 	}
 
 }

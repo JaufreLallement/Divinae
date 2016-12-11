@@ -1,0 +1,50 @@
+/**
+ * 
+ */
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels;
+
+import origine.Origine;
+import dogme.Dogme;
+import effets.Effet;
+
+/**
+ * @author Lallement
+ *
+ */
+public class CarteSorcier extends CarteGuideSpirituel implements Effet {
+
+	/**
+	 * 
+	 */
+	public CarteSorcier() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param origine
+	 * @param dogmes
+	 * @param totalCroyants
+	 */
+	public CarteSorcier(Dogme[] dogmes) {
+		super(Origine.NUIT, dogmes, 3);
+		// TODO Auto-generated constructor stub
+	}
+
+	/* (non-Javadoc)
+	 * @see effets.Effet#appliquerEffet()
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO Auto-generated method stub
+
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

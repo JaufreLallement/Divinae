@@ -5,9 +5,9 @@ package cartes;
 
 import java.util.ArrayList;
 
+import cartes.cartes_action.CarteAction;
 import cartes.divinites.Divinite;
 import joueur.Joueur;
-import dogme.Dogme;
 import origine.Origine;
 
 /**
@@ -21,7 +21,7 @@ public abstract class Carte {
 	/**
 	 * Origine de la carte
 	 */
-	private Origine origineCarte;
+	private Origine origineCarte = null;
 	
 	/**
 	 * Joueur possédant la carte divinité donnée
@@ -33,9 +33,7 @@ public abstract class Carte {
 	/**
 	 * Constructeur par défaut
 	 */
-	public Carte() {
-		this.origineCarte = null;
-	}
+	public Carte() {}
 	
 	/**
 	 * Constructeur avec argument
@@ -91,6 +89,7 @@ public abstract class Carte {
 	public static ArrayList<Carte> getAllCartes() {
 		ArrayList<Carte> cartes = new ArrayList<Carte>();
 		cartes.addAll(Divinite.getAllDivinites());
+		cartes.addAll(CarteAction.getAllCartesAction());
 		return cartes;
 	}
 	
@@ -100,9 +99,7 @@ public abstract class Carte {
 	public static void main(String[] args) {
 		/* Tests de la méthode getAllCartes */
 		ArrayList<Carte> testCartes = Carte.getAllCartes();
-		System.out.println(testCartes.get(5).getOrigineCarte());
-		Divinite d = (Divinite)testCartes.get(7);
-		System.out.println(d.getNomDivinite());
+		System.out.println(testCartes.size());
 	}
 
 }

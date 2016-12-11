@@ -19,14 +19,16 @@ public class CartePhoenix extends CarteDeusEx implements Effet {
 	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
 	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
-	private CartePhoenix() {}
+	private CartePhoenix() {
+		super("Phoenix");
+	}
 	
 	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
 	 */
 	private CartePhoenix(Origine origine) {
-		super(origine);
+		super(origine, "Phoenix");
 	}
 	
 	/* ---------- Holder ---------- */

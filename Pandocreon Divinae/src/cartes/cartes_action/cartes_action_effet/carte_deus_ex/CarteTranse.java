@@ -16,7 +16,9 @@ public class CarteTranse extends CarteDeusEx implements Effet {
 	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
 	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
 	 */
-	private CarteTranse(){}	
+	private CarteTranse(){
+		super("Transe");
+	}	
 	
 	/* ---------- Holder ---------- */
 	/**

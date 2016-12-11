@@ -7,7 +7,8 @@ import java.util.ArrayList;
 
 import origine.Origine;
 import cartes.cartes_action.CarteAction;
-import cartes.cartes_action.cartes_apocalypse.CarteApocalypse;
+import cartes.cartes_action.cartes_action_effet.carte_deus_ex.CarteDeusEx;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
 
 /**
  * @author Lallement
@@ -20,23 +21,30 @@ public class CartesActionEffet extends CarteAction {
 	 * Intitulé de la carte
 	 */
 	private String intituleCarte;
-	
-	
+
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut
+	 * Constructeur privé par défaut
 	 */
-	public CartesActionEffet() {
+	public CartesActionEffet() {}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {String} intitule : intitule de la carte
+	 */
+	public CartesActionEffet(String intitule) {
 		super();
+		this.intituleCarte = intitule;
 	}
 
 	/**
 	 * Constructeur avec arguments
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
 	 */
-	public CartesActionEffet(Origine origine) {
+	public CartesActionEffet(Origine origine, String intitule) {
 		super(origine);
+		this.intituleCarte = intitule;
 	}
 	
 	/* ---------- Getters & Setters ---------- */
@@ -63,6 +71,8 @@ public class CartesActionEffet extends CarteAction {
 	 */
 	public static ArrayList<CartesActionEffet> getAllCartesEffet() {
 		ArrayList<CartesActionEffet> cartesActionEffet = new ArrayList<CartesActionEffet>();
+		cartesActionEffet.addAll(CarteActionDogmatique.getAllCartesDogmatiques());
+		cartesActionEffet.addAll(CarteDeusEx.getAllDeusEx());
 		return cartesActionEffet;
 	}
 	

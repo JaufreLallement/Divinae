@@ -16,18 +16,11 @@ public class CarteDemon extends CarteCroyant implements Effet {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut
-	 */
-	public CarteDemon() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
 	 * Constructeur avec arguments
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
 	 */
 	public CarteDemon(Dogme[] dogmes) {
-		super(Origine.NUIT, dogmes, 2);
+		super(Origine.NUIT, dogmes, 2, "Demons");
 	}
 	
 

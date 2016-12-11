@@ -144,16 +144,31 @@ public class Divinite extends Carte {
 		divinites.add(Shingva.getInstance());
 		divinites.add(Yartsur.getInstance());
 		return divinites;
-	}	
+	}
 	
 	/**
+	 * Methode permettant de donner les détails d'unn divinite
+	 * @return {String} : retourne un chaîne de caractère décrivant la divbinite
+	 */
+	@Override
+	public String toString() {
+		return "Divinite: " + this.getNomDivinite() + 
+				" ,, Origine: " + this.getOrigineCarte() + 
+				" ,, Points de priere: " + this.getTotalPrieres() + 
+				" ,, Dogmes: " + this.getDogmesDivinite()[0] + ", " + this.getDogmesDivinite()[1] + ", " + this.getDogmesDivinite()[2];
+	}
+	
+	/**
+	 * Methode de tests
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		/* Tests de la méthode getAll() */
 		ArrayList<Divinite> testDivinites = Divinite.getAllDivinites();
 		System.out.println(testDivinites.size());
-		System.out.println(testDivinites.contains(Yartsur.getInstance()));
-		System.out.println(testDivinites.toString());
+
+		for (Divinite divinite : testDivinites) {
+			System.out.println(divinite.toString());
+		}
 	}
 }

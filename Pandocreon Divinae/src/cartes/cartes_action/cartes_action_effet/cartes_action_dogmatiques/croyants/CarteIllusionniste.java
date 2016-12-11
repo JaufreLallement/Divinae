@@ -17,15 +17,16 @@ public class CarteIllusionniste extends CarteCroyant implements Effet {
 	/**
 	 * On supprime le constructeur publique par défaut.
 	 */
-	private CarteIllusionniste() {}
+	private CarteIllusionniste() {
+		super("Illusioniste");
+	}
 
 	/**
 	 * Constructeur privé avec arguments
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private CarteIllusionniste(Dogme[] dogmes) {
-		super(Origine.NUIT, dogmes, 4);
-		
+		super(Origine.NUIT, dogmes, 4, "Illusioniste");	
 	}
 	
 	/* ---------- Holder ---------- */

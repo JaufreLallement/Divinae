@@ -17,14 +17,16 @@ public class CarteGuerrierSaint extends CarteCroyant implements Effet {
 	/**
 	 * On supprime le constructeur publique par défaut.
 	 */
-	private CarteGuerrierSaint() {}
+	private CarteGuerrierSaint() {
+		super("Guerrier saint");
+	}
 
 	/**
 	 * Constructeur privé avec arguments
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private CarteGuerrierSaint(Dogme[] dogmes) {
-		super(Origine.JOUR, dogmes, 4);
+		super(Origine.JOUR, dogmes, 4, "Guerrier saint");
 		
 	}
 	

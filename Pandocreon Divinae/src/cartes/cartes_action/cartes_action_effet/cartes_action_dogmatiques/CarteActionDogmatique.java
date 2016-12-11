@@ -8,17 +8,7 @@ import java.util.ArrayList;
 import origine.Origine;
 import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
-import cartes.divinites.Brewalen;
-import cartes.divinites.Divinite;
-import cartes.divinites.Drinded;
-import cartes.divinites.Gorna;
-import cartes.divinites.Gwenghelen;
-import cartes.divinites.Killinstred;
-import cartes.divinites.Llewella;
-import cartes.divinites.PuiTara;
-import cartes.divinites.Romtec;
-import cartes.divinites.Shingva;
-import cartes.divinites.Yartsur;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels.CarteGuideSpirituel;
 import dogme.Dogme;
 
 /**
@@ -32,18 +22,19 @@ public abstract class CarteActionDogmatique extends CartesActionEffet {
 	
 	/* ---------- Constructeurs ---------- */	
 	/**
-	 * Constructeur par défaut
+	 * Constructeur avec argument
+	 * @param {String} intitule : intitule de la carte
 	 */
-	public CarteActionDogmatique() {
-		super();
+	public CarteActionDogmatique(String intitule) {
+		super(intitule);
 	}
 	
 	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement créée
 	 */
-	public CarteActionDogmatique(Origine origine) {
-		super(origine);
+	public CarteActionDogmatique(Origine origine, String intitule) {
+		super(origine, intitule);
 	}
 
 	/**
@@ -51,9 +42,18 @@ public abstract class CarteActionDogmatique extends CartesActionEffet {
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement créée
 	 * @param {Dogme[]} dogmes : tableau de dogmes à attribuer à la carte
 	 */
-	public CarteActionDogmatique(Origine origine, Dogme[] dogmes) {
-		super(origine);
+	public CarteActionDogmatique(Origine origine, Dogme[] dogmes, String intitule) {
+		super(origine, intitule);
 		this.dogmes = dogmes;
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur permettant d'obtenir les dogmes d'une carte
+	 * @return {Dogme[]} dogmes : retourne un tableau contenant les dogmes de la carte
+	 */
+	public Dogme[] getDogmes() {
+		return this.dogmes;
 	}
 	
 	/* ---------- Méthodes ---------- */
@@ -64,6 +64,7 @@ public abstract class CarteActionDogmatique extends CartesActionEffet {
 	public static ArrayList<CarteActionDogmatique> getAllCartesDogmatiques() {
 		ArrayList<CarteActionDogmatique> dogmatiques = new ArrayList<CarteActionDogmatique>();
 		dogmatiques.addAll(CarteCroyant.getAllCroyants());
+		dogmatiques.addAll(CarteGuideSpirituel.getAllGuides());
 		return dogmatiques;
 	}
 	
@@ -71,8 +72,10 @@ public abstract class CarteActionDogmatique extends CartesActionEffet {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Dogme[] dogmes = new Dogme[3];
+		dogmes[0] = Dogme.CHAOS;
+		dogmes[1] = Dogme.HUMAIN;
+		System.out.println(dogmes[2]);
 	}
 
 }

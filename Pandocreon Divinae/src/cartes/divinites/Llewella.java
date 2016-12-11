@@ -56,6 +56,7 @@ public class Llewella extends Divinite implements Effet {
 	
 	/**
 	 * Implémentation de la méthode appliquerEffet
+	 * @see effet.Effet#appliquerEffet()
 	 */
 	@Override
 	public void appliquerEffet() {

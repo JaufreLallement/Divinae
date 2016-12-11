@@ -14,18 +14,13 @@ public class CarteColereDivine extends CarteDeusEx implements Effet {
 	/* ---------- Attributs ---------- */
 	
 	/* ---------- Constructeurs ---------- */
-	/**
-	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
-	 * Permet de s'assurer que les informations permettant l'identification d'une carte soient fournies
-	 */
-	private CarteColereDivine() {}
 	
 	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
 	 */
 	public CarteColereDivine(Origine origine) {
-		super(origine);
+		super(origine, "Colere divine");
 	}
 	
 	/* ---------- Getters & Setters ---------- */

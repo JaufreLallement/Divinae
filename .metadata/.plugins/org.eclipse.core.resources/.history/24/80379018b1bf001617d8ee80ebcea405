@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package joueur;
+
+import java.util.ArrayList;
+
+import cartes.cartes_action.CarteAction;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Joueur {
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Nom du joueur
+	 */
+	private String nom;
+	
+	/**
+	 * Jeu du joueur : ArrayList de Carte Action
+	 */
+	private ArrayList<CarteAction> jeu; 
+	/* ---------- Constructeurs ---------- */
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- Méthodes ---------- */
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

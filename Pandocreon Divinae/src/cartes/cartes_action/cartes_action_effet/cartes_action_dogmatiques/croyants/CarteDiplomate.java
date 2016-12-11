@@ -17,14 +17,16 @@ public class CarteDiplomate extends CarteCroyant implements Effet {
 	/**
 	 * On supprime le constructeur publique par défaut.
 	 */
-	private CarteDiplomate() {}
+	private CarteDiplomate() {
+		super("Diplomate");
+	}
 
 	/**
 	 * Constructeur privé avec arguments
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private CarteDiplomate(Dogme[] dogmes) {
-		super(Origine.JOUR, dogmes, 4);
+		super(Origine.JOUR, dogmes, 4, "Diplomate");
 		
 	}
 	
@@ -52,6 +54,7 @@ public class CarteDiplomate extends CarteCroyant implements Effet {
 	/* ---------- Méthodes ---------- */ 	
 	/**
 	 * Implémentation de la méthode appliquerEffet
+	 * @see effet.Effet#appliquerEffet()
 	 */
 	@Override
 	public void appliquerEffet() {

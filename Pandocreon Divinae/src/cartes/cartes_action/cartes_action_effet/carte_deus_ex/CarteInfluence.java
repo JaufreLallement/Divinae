@@ -15,14 +15,16 @@ public class CarteInfluence extends CarteDeusEx implements Effet {
 	/**
 	 * Unique instance de la classe CarteInfluenceJour
 	 */
-	private String typeInfluence = "Nulle";
+	private String typeInfluence;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
 	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
 	 * Permet de s'assurer que les informations permettant l'identification d'une carte soient fournies
 	 */
-	private CarteInfluence() {}
+	private CarteInfluence(String type) {
+		super("Influence " + type);
+	}
 	
 	/**
 	 * Constructeur avec argument
@@ -30,7 +32,7 @@ public class CarteInfluence extends CarteDeusEx implements Effet {
 	 * @param {String} type : chaîne de caractère permettant d'identifier la carte influence
 	 */
 	public CarteInfluence(Origine origine, String type) {
-		super(origine);
+		super(origine, "Influence" + type);
 		this.typeInfluence = type;
 	}
 	
@@ -80,11 +82,11 @@ public class CarteInfluence extends CarteDeusEx implements Effet {
 	 */
 	public static ArrayList<CarteInfluence> getAllInfluence() {
 		ArrayList<CarteInfluence> influences = new ArrayList<CarteInfluence>();
-		influences.add(new CarteInfluence(null, "Jour"));
-		influences.add(new CarteInfluence(null, "Nuit"));
-		influences.add(new CarteInfluence(null, "Neant"));
-		influences.add(new CarteInfluence());
-		influences.add(new CarteInfluence());
+		influences.add(new CarteInfluence("Jour"));
+		influences.add(new CarteInfluence("Nuit"));
+		influences.add(new CarteInfluence("Neant"));
+		influences.add(new CarteInfluence("Nulle"));
+		influences.add(new CarteInfluence("Nulle"));
 		return influences;
 	}
 	

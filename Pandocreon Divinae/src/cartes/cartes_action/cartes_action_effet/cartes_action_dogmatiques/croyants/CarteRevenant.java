@@ -16,14 +16,16 @@ public class CarteRevenant extends CarteCroyant implements Effet {
 	/**
 	 * On supprime le constructeur publique par défaut.
 	 */
-	private CarteRevenant() {}
+	private CarteRevenant() {
+		super("Revenant");
+	}
 
 	/**
 	 * Constructeur privé avec arguments
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private CarteRevenant(Dogme[] dogmes) {
-		super(Origine.NEANT, dogmes, 1);
+		super(Origine.NEANT, dogmes, 1, "Revenant");
 		
 	}
 	

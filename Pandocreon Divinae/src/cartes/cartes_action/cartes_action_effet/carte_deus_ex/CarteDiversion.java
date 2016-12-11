@@ -12,20 +12,13 @@ public class CarteDiversion extends CarteDeusEx implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	
-	/* ---------- Constructeurs ---------- */
-	
-	/**
-	 * Constructeur par defaut, private afin de supprimer le constructeur par defaut publique
-	 * Permet egalement d'eviter que d'autre classes aient acces au constructeur
-	 */
-	private CarteDiversion(){}
-	
+	/* ---------- Constructeurs ---------- */	
 	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
 	 */
 	private CarteDiversion(Origine origine) {
-		super (origine);
+		super (origine, "Diversion");
 	}
 	
 	/* ---------- Holder ---------- */

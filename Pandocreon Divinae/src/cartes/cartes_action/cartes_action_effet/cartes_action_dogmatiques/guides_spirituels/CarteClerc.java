@@ -15,21 +15,13 @@ public class CarteClerc extends CarteGuideSpirituel implements Effet {
 
 	/* ---------- Attributs ---------- */
 	
-	/* ---------- Constructeurs ---------- */
-	/**
-	 * Constructeur par défaut
-	 */
-	public CarteClerc() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
+	/* ---------- Constructeurs ---------- */	/**
 	 * Constructeur avec arguments
 	 * @param {Origine} origine : origine a attribuer à la carte
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
 	 */
 	public CarteClerc(Origine origine, Dogme[] dogmes) {
-		super(origine, dogmes, 2);
+		super(origine, dogmes, 2, "Clerc");
 	}
 	
 
