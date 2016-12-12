@@ -33,7 +33,7 @@ public class CarteDemon extends CarteCroyant implements Effet {
 	 */
 	@Override
 	public void appliquerEffet() {
-		// TODO Appliquer l'effet correspondant à la carte
+		this.getJoueur().setPointsActionNuit(this.getJoueur().getPointsActionNuit() + 1);
 	}
 	
 	/**

@@ -71,6 +71,21 @@ public class CartesActionEffet extends CarteAction implements Effet {
 		this.intituleCarte = intituleCarte;
 	}
 	
+	/**
+	 * Accesseur pour l'attribut isSacrifiable 
+	 * @return {boolean} isSacrifiable : true si la carte est sacrifiable, false sinon
+	 */
+	public boolean isSacrifiable() {
+		return this.isSacrifiable;
+	}
+
+	/**
+	 * Modificateur pour l'attribut isSacrifiable
+	 */
+	public void setSacrifiable() {
+		this.isSacrifiable = (this.isSacrifiable) ? false : true;
+	}
+
 	/* ---------- Méthodes ---------- */
 	/**
 	 * Méthode permettant d'obtenir toutes les cartes action

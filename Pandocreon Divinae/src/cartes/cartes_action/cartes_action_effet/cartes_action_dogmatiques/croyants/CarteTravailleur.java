@@ -1,10 +1,10 @@
 package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants;
 
 import java.util.ArrayList;
-
 import origine.Origine;
 import dogme.Dogme;
 import effets.Effet;
+import exceptions.InvalidDiviniteException;
 
 /**
  * 
@@ -30,11 +30,19 @@ public class CarteTravailleur extends CarteCroyant implements Effet {
 	/* ---------- Méthodes ---------- */
 	/**
 	 * Implémentation de la méthode appliquerEffet
+	 * @throws InvalidDiviniteException 
 	 * @see effet.Effet#appliquerEffet()
 	 */
 	@Override
 	public void appliquerEffet() {
-		// TODO Appliquer l'effet correspondant à la carte
+		// TODO appliquer l'effet correspondant
+	}
+	
+	/**
+	 * Methode permettant de dissiper l'effet de la carte
+	 */
+	public void dissiperEffet() {
+		// TODO dissper
 	}
 	
 	/**

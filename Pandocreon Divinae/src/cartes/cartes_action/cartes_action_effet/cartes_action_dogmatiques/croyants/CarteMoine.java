@@ -7,12 +7,13 @@ import java.util.ArrayList;
 
 import origine.Origine;
 import dogme.Dogme;
+import effets.Effet;
 
 /**
  * @author Lallement
  * La classe CarteMoine décrit le comportement général des cartes Moine
  */
-public class CarteMoine extends CarteCroyant {
+public class CarteMoine extends CarteCroyant implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	

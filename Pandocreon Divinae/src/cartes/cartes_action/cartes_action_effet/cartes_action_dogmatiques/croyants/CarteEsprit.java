@@ -35,7 +35,7 @@ public class CarteEsprit extends CarteCroyant implements Effet {
 	 */
 	@Override
 	public void appliquerEffet() {
-		// TODO Appliquer l'effet correspondant à la carte
+		this.getJoueur().setPointsActionNeant(this.getJoueur().getPointsActionNeant() + 1);
 	}
 	
 	/**
