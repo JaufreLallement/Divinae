@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package partie;
+
+/**
+ * @author Lallement
+ * La classe Tour decrit le comportement de l'ensemble des tours au sein d'une partie
+ */
+public class Tour {
+
+	/* ---------- Attributs ---------- */
+	/**
+	 * Numero du tour
+	 */
+	private int numTour = 1;
+	
+	/**
+	 * Dernier tour durant lequel une carte Apocalypse a ete utilisee
+	 */
+	private int dernierTourApo = null;
+	
+	/* ---------- Constructeurs ---------- */
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- Méthodes ---------- */
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

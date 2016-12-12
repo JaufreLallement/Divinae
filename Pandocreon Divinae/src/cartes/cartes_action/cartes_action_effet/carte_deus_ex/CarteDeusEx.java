@@ -77,5 +77,14 @@ public class CarteDeusEx extends CartesActionEffet {
 			System.out.println(deusEx.toString());
 		}
 	}
+	
+	/**
+	 * Implementation de la methode appliquerEffet
+	 * @see effet.Effet#appliquerEffet()
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO Auto-generated method stub
+	}
 
 }

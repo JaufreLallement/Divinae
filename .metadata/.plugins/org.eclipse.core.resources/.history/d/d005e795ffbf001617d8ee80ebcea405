@@ -1,0 +1,67 @@
+/**
+ * 
+ */
+package partie;
+
+import joueur.Joueur;
+
+/**
+ * @author Lallement
+ * La classe Tour decrit le comportement de l'ensemble des tours au sein d'une partie
+ */
+public class Tour {
+
+	/* ---------- Attributs ---------- */
+	/**
+	 * Numero du tour
+	 */
+	private int numTour = 0;
+	
+	/**
+	 * Dernier tour durant lequel une carte Apocalypse a ete utilisee
+	 */
+	private int dernierTourApo;
+	
+	/**
+	 * Dernier joueur ayant utilise une carte apocalypse
+	 */
+	private Joueur dernierJoueurApo = null;
+	
+	/**
+	 * Dernier joueur ayant lance le De
+	 */
+	private Joueur dernierLanceur = null;
+	
+	/**
+	 * Partie dans laquelle se deroule le tour
+	 */
+	private Partie partie;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Suppression du constructeur publique par defaut 
+	 */
+	private Tour() {}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param p
+	 */
+	public Tour(Partie p) {
+		this.numTour = this.numTour++;
+		this.partie = p;
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	
+	
+	/* ---------- Méthodes ---------- */
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

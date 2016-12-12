@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package partie;
+
+/**
+ * @author Lallement
+ *
+ */
+public class Tour {
+
+	/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */
+	/* ---------- Getters & Setters ---------- */
+	/* ---------- Méthodes ---------- */
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

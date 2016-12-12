@@ -136,6 +136,15 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	}
 	
 	/**
+	 * Implementation de la methode appliquerEffet
+	 * @see effet.Effet#appliquerEffet()
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO Auto-generated method stub
+	}
+	
+	/**
 	 * Methode de tests
 	 * @param args
 	 */

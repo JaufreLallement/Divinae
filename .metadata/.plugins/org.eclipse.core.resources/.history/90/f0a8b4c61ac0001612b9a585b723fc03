@@ -1,0 +1,184 @@
+/**
+ * 
+ */
+package partie;
+
+import java.util.ArrayList;
+
+import joueur.Joueur;
+
+/**
+ * @author Lallement
+ * La classe Tour decrit le comportement de l'ensemble des tours au sein d'une partie
+ */
+public class Tour implements Runnable {
+
+	/* ---------- Attributs ---------- */
+	/**
+	 * Numero du tour
+	 */
+	private int numTour;
+	
+	/**
+	 * Partie dans laquelle se deroule le tour
+	 */
+	private Partie partie;
+	
+	/**
+	 * Thread du tour
+	 */
+	private Thread t;
+	
+	/**
+	 * Joueurs ayant joue durant ce tour
+	 */
+	private ArrayList<Joueur> ayantJoue = new ArrayList<Joueur>();
+	
+	/**
+	 * True : un tour est en cours
+	 * False : aucun tour n'est en cours
+	 */
+	public static boolean enCours = false;
+	
+	/**
+	 * Joueur devant jouer
+	 */
+	private Joueur lanceur = null;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Suppression du constructeur publique par defaut 
+	 */
+	private Tour() {}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {Partie} p : partie durant laquelle se deroulera le tour
+	 */
+	public Tour(Partie p) {
+		this.partie = p;
+		this.numTour = this.partie.getTours().size();
+		this.partie.getTours().add(this);
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur pour l'attribut numTour
+	 * @return {int} numTour : numero du tour
+	 */
+	public int getNumTour() {
+		return this.numTour;
+	}
+
+	/**
+	 * Modificateur pour l'attribut numTour
+	 * @param {int} numTour : numero a attribuer au tour
+	 */
+	public void setNumTour(int numTour) {
+		this.numTour = numTour;
+	}
+
+	/**
+	 * Accesseur pour l'attribut partie
+	 * @return {Partie} partie : partie durant laquelle se deroule le tour
+	 */
+	public Partie getPartie() {
+		return this.partie;
+	}
+
+	/**
+	 * Modificateur pour l'attribut partie
+	 * @param {Partie} partie : partie durant laquelle le tour doit se derouler
+	 */
+	public void setPartie(Partie partie) {
+		this.partie = partie;
+		this.partie.getTours().add(this);
+	}
+
+	/**
+	 * Accesseur pour l'attribut ayantJoue
+	 * @return {ArrayList<Joueur>} ayantJoue : ArrayList contenant les joueurs ayant fini de joue ce tour
+	 */
+	public ArrayList<Joueur> getAyantJoue() {
+		return this.ayantJoue;
+	}
+
+	/**
+	 * Accesseur pour l'attribut JoueurActuel
+	 * @return {Joueur} joueurActuel : joueur devant lancer le de 
+	 */
+	public Joueur getJoueurActuel() {
+		return this.lanceur;
+	}
+
+	/**
+	 * Modificateur pour l'attribut JoueurActuel
+	 * @param {Joueur} j : joueur dont le tour est venu de lancer le de
+	 */
+	public void setJoueurActuel(Joueur j) {
+		this.lanceur = j;
+	}
+
+	/* ---------- Méthodes ---------- */
+	/**
+	 * Methode permettant de lancer un tour
+	 */
+	public void lancerTour() {
+		this.t = new Thread(this);
+		Tour.enCours = true;
+		this.t.start();
+	}
+	
+	/**
+	 * Implémentation de la méthode run
+	 * @see Runnable#run()
+	 */
+	@Override
+	public void run() {
+		System.out.println("Tour n° " + (this.numTour + 1) + " lance!");
+		while (this.ayantJoue.size() != this.partie.getParticipants().size()) {
+			this.partie.getParticipants().get(this.partie.getParticipants().indexOf(this.determinerLanceur())).jouer();
+			// TODO decrire l'enchaînement des joueurs
+		}
+		this.acheverTour();
+	}
+	
+	/**
+	 * Methode permettant de mettre fin a un tour
+	 */
+	public void acheverTour() {
+		Tour.enCours = false;
+		System.out.println("Tour n° " + (this.numTour + 1) + " termine!");
+		this.t.interrupt();
+	}
+	
+	/**
+	 * Methode permettant de determiner le joueur devant effectuer sa phase de jeu
+	 * @return {Joueur} joueurActuel : joueur dont le tour est venu de jouer
+	 */
+	private Joueur determinerLanceur() {
+		if (this.partie.getTours().size() <= 1) {
+			this.lanceur = this.partie.getRandomJoueur();
+		} else {
+			this.lanceur = this.partie.getTourAnt(1).ayantJoue.get(1);
+		}
+		System.out.println(this.lanceur.getNom());
+		return this.lanceur;
+	}
+	
+	/**
+	 * Methode permettant de determiner si un joueur a joue durant le tour  
+	 * @param {Joueur} j : joueur ayant fini de jouer pour ce tour
+	 */
+	public void addAyantJoue(Joueur j) {
+		this.ayantJoue.add(j);
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+}

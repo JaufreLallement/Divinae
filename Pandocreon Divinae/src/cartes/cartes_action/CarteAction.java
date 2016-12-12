@@ -5,6 +5,7 @@ package cartes.cartes_action;
 
 import java.util.ArrayList;
 
+import joueur.Joueur;
 import origine.Origine;
 import cartes.Carte;
 import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
@@ -17,6 +18,10 @@ import cartes.cartes_action.cartes_apocalypse.CarteApocalypse;
 public class CarteAction extends Carte {
 	
 	/* ---------- Attributs ---------- */
+	/**
+	 * Joueur detennant la carte
+	 */
+	private Joueur joueur;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -36,7 +41,22 @@ public class CarteAction extends Carte {
 	
 
 	/* ---------- Getters & Setters ---------- */
-	
+	/**
+	 * Accesseur pour l'attribut joueur
+	 * @return {Joueur} joueur : joueur a qui appartient la carte
+	 */
+	public Joueur getJoueur() {
+		return this.joueur;
+	}
+
+	/**
+	 * Modificateur pour l'attribut joueur
+	 * @param {Joueur} joueur : joueur a qui la carte doit appartenir
+	 */
+	public void setJoueur(Joueur joueur) {
+		this.joueur = joueur;
+	}
+
 	/* ---------- Méthodes ---------- */	
 	/**
 	 * Méthode permettant de jouer une carte action
@@ -49,7 +69,8 @@ public class CarteAction extends Carte {
 	 * Méthode permettant de défausser une carte
 	 */
 	public void defausser() {
-		// TODO décrire le comportement d'une carte action lorsqu'elle est défaussée
+		this.getJoueur().getPartie().getCimetiere().add(this);
+		this.getJoueur().getJeu().remove(this);
 	}
 	
 	/**

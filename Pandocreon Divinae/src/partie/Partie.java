@@ -4,8 +4,10 @@
 package partie;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import cartes.cartes_action.CarteAction;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
 import cartes.divinites.Divinite;
 import de.De;
 import exceptions.NumberOfPlayersException;
@@ -31,7 +33,7 @@ public class Partie implements Runnable {
 	/**
 	 * Cimetiere de la partie
 	 */
-	private ArrayList<CarteAction> cimetiere = null;
+	private ArrayList<CarteAction> cimetiere = new ArrayList<CarteAction>();
 	
 	/**
 	 * Divinites que les joueurs peuvent incarner
@@ -46,14 +48,44 @@ public class Partie implements Runnable {
 	/**
 	 * Tours de la partie
 	 */
-	private ArrayList<Tour> tours = null;
+	private ArrayList<Tour> tours = new ArrayList<Tour>();
 	
 	/**
 	 * De uitilise lors de la partie
 	 */
 	private De de = De.getInstance();
 	
+	/**
+	 * Centre de la table
+	 */
+	private ArrayList<CarteCroyant> centreTable = new ArrayList<CarteCroyant>();
+	
+	/**
+	 * Thread de la partie
+	 */
+	private Thread t;
+	
+	/**
+	 * Dernier tour durant lequel une carte Apocalypse a ete utilisee
+	 */
+	private int dernierTourApo;
+	
+	/**
+	 * Dernier joueur ayant utilise une carte apocalypse
+	 */
+	private Joueur dernierJoueurApo = null;
+	
+	/**
+	 * Dernier joueur ayant lance le De
+	 */
+	private Joueur dernierLanceur = null;
+	
 	/* ---------- Constructeurs ---------- */
+	/**
+	 * Suppression du constructeur publique par defaut
+	 */
+	private Partie(){}
+	
 	/**
 	 * Constructeur avec argument
 	 * @param {int} nbJoueurs : nombre de participants souhaite
@@ -175,15 +207,121 @@ public class Partie implements Runnable {
 	public De getDe() {
 		return this.de;
 	}
+	
+	/**
+	 * Accesseur pour l'attribut dernierTourApo
+	 * @return {int} dernierTourApo : numero du dernier tour durant lequel a ete utilise une carte apocalypse
+	 */
+	public int getDernierTourApo() {
+		return this.dernierTourApo;
+	}
 
+	/**
+	 * Modificateur pour l'attribut dernierTourApo
+	 * @param {int} dernierTourApo : numero a attribuer au dernier tour durant lequel a ete utilisee une carte apocalypse
+	 */
+	public void setDernierTourApo(int dernierTourApo) {
+		this.dernierTourApo = dernierTourApo;
+	}
+
+	/**
+	 * Accesseur pour l'attribut dernierJoueurApo
+	 * @return {Joueur} dernierJoueurApo : dernier joueur ayant utilise une carte apocalypse
+	 */
+	public Joueur getDernierJoueurApo() {
+		return this.dernierJoueurApo;
+	}
+
+	/**
+	 * Modificateur pour l'attribut dernierJoueurApo
+	 * @param {Joueur} dernierJoueurApo : dernier joueur ayant utilise une carte apocalypse
+	 */
+	public void setDernierJoueurApo(Joueur dernierJoueurApo) {
+		this.dernierJoueurApo = dernierJoueurApo;
+	}
+
+	/**
+	 * Accesseur pour l'attribut dernierLanceur
+	 * @return {Joueur} dernierLanceur : dernier joueur ayant lance le de
+	 */
+	public Joueur getDernierLanceur() {
+		return this.dernierLanceur;
+	}
+
+	/**
+	 * Modificateur pour l'attribut dernierLanceur
+	 * @param {Joueur} dernierLanceur : dernier joueur ayant lance le de
+	 */
+	public void setDernierLanceur(Joueur dernierLanceur) {
+		this.dernierLanceur = dernierLanceur;
+	}
+	
+	/**
+	 * Accesseur pour l'attribut centreTable
+	 * @return {ArrayList<CarteCroyant>} centreTable : cartes au centre de la table
+	 */
+	public ArrayList<CarteCroyant> getCentreTable() {
+		return this.centreTable;
+	}
+	
+	/**
+	 *Methode permettant d'obtenir un tour anterieur.
+	 * @param {int} tour : exemple 0 pour obtenir le tour actuel, 1 pour obtenir le tour precedent 
+	 * @return {Tour} : tour precedent
+	 */
+	public Tour getTourAnt(int tour) {
+		return (this.tours.get(0) == null) ? null : this.tours.get(this.tours.size() - (tour + 1));
+	}
+	
+	/***
+	 * Methode permettant de connaître le nombre de participants actuel
+	 * @return {int} : nombre de participants
+	 */
+	public int getNombreParticipants() {
+		return this.participants.size();
+	}
+	
+	/**
+	 * Methode permettant d'obtenir un joueur aleatoire de la partie 
+	 * @return {Joueur} : joueur aleatoire de la partie
+	 */
+	public Joueur getRandomJoueur() {
+		return this.participants.get(new Random().nextInt(this.getNombreParticipants()));
+	}
+	
+	
+	
 	/* ---------- Méthodes ---------- */
+	/**
+	 * Methode permettant de lancer la partie
+	 */
+	public void lancerPartie() {
+		this.t = new Thread(this);
+		this.t.start();
+	}
+	
 	/**
 	 * Implémentation de la méthode run
 	 * @see Runnable#run()
 	 */
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		System.out.println("Nouvelle partie lancee!");
+		while(this.gagnant == null) {
+			if (!Tour.isEnCours()) {
+				Tour t = new Tour(this);
+				t.lancerTour();
+			}
+		}
+		this.acheverPartie();
+	}
+	
+	/**
+	 * Methode permettant de mettre fin a la partie
+	 */
+	public void acheverPartie() {
+		System.out.println("Partie terminee");
+		this.t.interrupt();
 	}
 	
 	/**
@@ -192,6 +330,7 @@ public class Partie implements Runnable {
 	public static void main(String[] args) {
 		try {
 			Partie p = new Partie(6);
+			p.lancerPartie();
 		} catch (NumberOfPlayersException e) {
 			e.printStackTrace();
 		}

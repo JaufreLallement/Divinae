@@ -93,10 +93,9 @@ public class De {
 	 * Méthode simulant un lancer de dé
 	 * @return {Face} face : retourne l'une des faces du dé de manière aléatoire
 	 */
-	public Face lancerDe() {
-		Random rand = new Random();
-		int numFace = rand.nextInt(6);
-		return this.faces[numFace]; 
+	public Face lancerDe(Joueur j) {
+		j.getPartie().setDernierLanceur(j);
+		return this.faces[new Random().nextInt(6)];
 	}
 	
 	
@@ -105,9 +104,6 @@ public class De {
 	 * @param {String[]} args
 	 */
 	public static void main(String[] args) {
-		System.out.println(De.getInstance().lancerDe().toString());
-		for (Face f : De.getInstance().faces) {
-			System.out.println(f.getOrigineFace());
-		}
+		
 	}
 }

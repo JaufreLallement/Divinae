@@ -69,6 +69,15 @@ public abstract class CarteActionDogmatique extends CartesActionEffet {
 	}
 	
 	/**
+	 * Implementation de la methode appliquerEffet
+	 * @see effet.Effet#appliquerEffet()
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO Auto-generated method stub
+	}
+	
+	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import partie.Partie;
+import partie.Tour;
 import cartes.cartes_action.CarteAction;
 import cartes.divinites.Divinite;
 
@@ -14,7 +15,7 @@ import cartes.divinites.Divinite;
  * @author Lallement
  * La classe Joueur decrit le comportement general des Joueurs physiques ou virtuels
  */
-public class Joueur {
+public class Joueur implements Runnable {
 	
 	/* ---------- Attributs ---------- */
 	/**
@@ -51,6 +52,17 @@ public class Joueur {
 	 * Partie à laquelle le joueur participe
 	 */
 	private Partie partie;
+	
+	/**
+	 * Thread permettant la phase de jeu d'un joueur
+	 */
+	private Thread t;
+	
+	/**
+	 * True : une phase de jeu est en cours
+	 * False : aucune phase de jeu en cours
+	 */
+	private static boolean phaseJeu = false;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -206,6 +218,14 @@ public class Joueur {
 		this.partie = p;
 	}
 	
+	/**
+	 * Accesseur pour l'attribut phaseJeu
+	 * @return {boolean} phaseJeu : true si une phase de jeu est en cours, false sinon
+	 */
+	public static boolean isPhaseJeu() {
+		return Joueur.phaseJeu;
+	}
+	
 	/* ---------- Méthodes ---------- */
 	/**
 	 * Methode permettant d'initialiser les nouveaux joueurs
@@ -235,7 +255,6 @@ public class Joueur {
 		for (int i = 0; i < 7; i++) {
 			this.jeu.add(this.partie.getPioche().get(randDiv.nextInt(this.partie.getPioche().size())));
 			this.partie.getPioche().remove(this.jeu.get(i));
-			System.out.println(this.jeu.get(i));
 		}
 	}
 	
@@ -250,6 +269,38 @@ public class Joueur {
 				" ,, Points Jour: " + this.pointsActionJour + 
 				" ,, Points Nuit: " + this.pointsActionNuit + 
 				" ,, Points Neant: " + this.pointsActionNeant;
+	}
+	
+	/**
+	 * Methode permettant d'initialiser la phase de jeu d'un joueur
+	 */
+	public void jouer() {
+		this.t = new Thread(this);
+		Joueur.phaseJeu = true;
+		this.t.start();
+	}
+	
+	/**
+	 * Implémentation de la méthode run
+	 * @see Runnable#run()
+	 */
+	@Override
+	public void run() {
+		System.out.println("Le joueur " + this.nomJoueur + " debute sa phase de jeu!");
+		while(this.partie.getTourAnt(0).getJoueurActuel().equals(this)) {
+			// TODO decrire phase de jeu du joueur
+		}
+		this.acheverPhaseJeu();
+	}
+	
+	/**
+	 * Methode permettant d'interrompre la phase de jeu d'un joueur
+	 */
+	public void acheverPhaseJeu() {
+		System.out.println("Le joueur " + this.nomJoueur + " a termine sa phase de jeu!");
+		this.partie.getTourAnt(0).addAyantJoue(this);
+		Joueur.phaseJeu = false;
+		this.t.interrupt();
 	}
 	
 	/**

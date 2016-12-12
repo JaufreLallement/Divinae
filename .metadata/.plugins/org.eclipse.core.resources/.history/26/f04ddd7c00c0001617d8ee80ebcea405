@@ -1,0 +1,140 @@
+/**
+ * 
+ */
+package partie;
+
+import joueur.Joueur;
+
+/**
+ * @author Lallement
+ * La classe Tour decrit le comportement de l'ensemble des tours au sein d'une partie
+ */
+public class Tour {
+
+	/* ---------- Attributs ---------- */
+	/**
+	 * Numero du tour
+	 */
+	private int numTour = 0;
+	
+	/**
+	 * Dernier tour durant lequel une carte Apocalypse a ete utilisee
+	 */
+	private int dernierTourApo;
+	
+	/**
+	 * Dernier joueur ayant utilise une carte apocalypse
+	 */
+	private Joueur dernierJoueurApo = null;
+	
+	/**
+	 * Dernier joueur ayant lance le De
+	 */
+	private Joueur dernierLanceur = null;
+	
+	/**
+	 * Partie dans laquelle se deroule le tour
+	 */
+	private Partie partie;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Suppression du constructeur publique par defaut 
+	 */
+	private Tour() {}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {Partie} p : partie durant laquelle se deroulera le tour
+	 */
+	public Tour(Partie p) {
+		this.numTour = this.numTour++;
+		this.partie = p;
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur pour l'attribut numTour
+	 * @return {int} numTour : numero du tour
+	 */
+	public int getNumTour() {
+		return this.numTour;
+	}
+
+	/**
+	 * @param numTour the numTour to set
+	 */
+	public void setNumTour(int numTour) {
+		this.numTour = numTour;
+	}
+
+	/**
+	 * Accesseur pour l'attribut dernierTourApo
+	 * @return {int} dernierTourApo : numero du dernier tour durant lequel a ete utilise une carte apocalypse
+	 */
+	public int getDernierTourApo() {
+		return this.dernierTourApo;
+	}
+
+	/**
+	 * @param dernierTourApo the dernierTourApo to set
+	 */
+	public void setDernierTourApo(int dernierTourApo) {
+		this.dernierTourApo = dernierTourApo;
+	}
+
+	/**
+	 * Accesseur pour l'attribut dernierJoueurApo
+	 * @return {Joueur} dernierJoueurApo : dernier joueur ayant utilise une carte apocalypse
+	 */
+	public Joueur getDernierJoueurApo() {
+		return this.dernierJoueurApo;
+	}
+
+	/**
+	 * @param dernierJoueurApo the dernierJoueurApo to set
+	 */
+	public void setDernierJoueurApo(Joueur dernierJoueurApo) {
+		this.dernierJoueurApo = dernierJoueurApo;
+	}
+
+	/**
+	 * Accesseur pour l'attribut dernierLanceur
+	 * @return {Joueur} dernierLanceur : dernier joueur ayant lance le de
+	 */
+	public Joueur getDernierLanceur() {
+		return this.dernierLanceur;
+	}
+
+	/**
+	 * @param dernierLanceur the dernierLanceur to set
+	 */
+	public void setDernierLanceur(Joueur dernierLanceur) {
+		this.dernierLanceur = dernierLanceur;
+	}
+
+	/**
+	 * Accesseur pour l'attribut partie
+	 * @return {Partie} partie : partie durant laquelle se deroule le tour
+	 */
+	public Partie getPartie() {
+		return this.partie;
+	}
+
+	/**
+	 * @param partie the partie to set
+	 */
+	public void setPartie(Partie partie) {
+		this.partie = partie;
+	}
+
+	/* ---------- Méthodes ---------- */
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -9,18 +9,25 @@ import origine.Origine;
 import cartes.cartes_action.CarteAction;
 import cartes.cartes_action.cartes_action_effet.carte_deus_ex.CarteDeusEx;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
+import effets.Effet;
 
 /**
  * @author Lallement
  *
  */
-public class CartesActionEffet extends CarteAction {
+public class CartesActionEffet extends CarteAction implements Effet {
 	
 	/* ---------- Attributs ---------- */
 	/**
 	 * Intitulé de la carte
 	 */
 	private String intituleCarte;
+	
+	/**
+	 * True si un carte peut être sacrifiee
+	 * False sinon
+	 */
+	private boolean isSacrifiable = true;
 
 	
 	/* ---------- Constructeurs ---------- */
@@ -77,11 +84,30 @@ public class CartesActionEffet extends CarteAction {
 	}
 	
 	/**
+	 * Methode permettant de sacrifier une carte
+	 */
+	public void sacrifier() {
+		if (this.isSacrifiable) {
+			this.appliquerEffet();
+			this.defausser();
+		}
+	}
+	
+	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	/**
+	 * Implementation de la methode appliquerEffet
+	 * @see effet.Effet#appliquerEffet()
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO Auto-generated method stub
 	}
 
 }

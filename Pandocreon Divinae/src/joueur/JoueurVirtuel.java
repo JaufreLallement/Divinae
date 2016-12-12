@@ -3,6 +3,8 @@
  */
 package joueur;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 import strategie.StrategiePassive;
@@ -22,7 +24,7 @@ public class JoueurVirtuel extends Joueur {
 	/**
 	 * Tableau de differents noms possibles pour les joueurs virtuels
 	 */
-	private static String[] noms = {"Galadriel", "Caranthir", "Manwë", "Varda", "Ulmo", "Aulë", "Yavanna", "Geralt", "Thingol"};
+	private static ArrayList<String> noms = new ArrayList<String>(Arrays.asList("Galadriel", "Caranthir", "Manwë", "Varda", "Ulmo", "Aulë", "Yavanna", "Geralt", "Thingol"));
 
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -64,8 +66,9 @@ public class JoueurVirtuel extends Joueur {
 	 * @return {String} randomNom : retourne un nom au hasard parmis this.noms
 	 */
 	public static String getRandomNom() {
-		Random numRand = new Random();
-		return JoueurVirtuel.noms[numRand.nextInt(JoueurVirtuel.noms.length)];
+		String nom = JoueurVirtuel.noms.get(new Random().nextInt(JoueurVirtuel.noms.size()));
+		JoueurVirtuel.noms.remove(nom);
+		return nom;
 	}
 	
 	/* ---------- Méthodes ---------- */
