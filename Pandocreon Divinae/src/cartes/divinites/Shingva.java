@@ -27,7 +27,7 @@ public class Shingva extends Divinite implements Effet {
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private Shingva(Dogme[] dogmes) {
-		super("Shingva", Origine.AUBE, dogmes);
+		super(Origine.AUBE, dogmes);
 	}
 	
 	/* ---------- Holder ---------- */

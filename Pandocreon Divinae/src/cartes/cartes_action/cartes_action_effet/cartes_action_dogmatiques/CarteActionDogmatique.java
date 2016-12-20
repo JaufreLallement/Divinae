@@ -6,6 +6,7 @@ package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques;
 import java.util.ArrayList;
 
 import origine.Origine;
+import cartes.Carte;
 import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels.CarteGuideSpirituel;
@@ -59,12 +60,12 @@ public abstract class CarteActionDogmatique extends CartesActionEffet {
 	/* ---------- Méthodes ---------- */
 	/**
 	 * Méthode retournant toutes les cartes dogmatiques
-	 * @return {ArrayList<CarteActionDogmatique>} divinites : retourne un ArrayList contenant toutes les cartes dogmatiques
+	 * @return {ArrayList<Carte>} dogmatiques : retourne un ArrayList contenant toutes les cartes dogmatiques
 	 */
-	public static ArrayList<CarteActionDogmatique> getAllCartesDogmatiques() {
-		ArrayList<CarteActionDogmatique> dogmatiques = new ArrayList<CarteActionDogmatique>();
-		dogmatiques.addAll(CarteCroyant.getAllCroyants());
-		dogmatiques.addAll(CarteGuideSpirituel.getAllGuides());
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> dogmatiques = new ArrayList<Carte>();
+		dogmatiques.addAll(CarteCroyant.getAll());
+		dogmatiques.addAll(CarteGuideSpirituel.getAll());
 		return dogmatiques;
 	}
 	

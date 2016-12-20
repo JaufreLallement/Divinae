@@ -2,6 +2,7 @@ package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
 
 import java.util.ArrayList;
 
+import cartes.Carte;
 import origine.Origine;
 import effets.Effet;
 
@@ -78,10 +79,10 @@ public class CarteInfluence extends CarteDeusEx implements Effet {
 	
 	/**
 	 * Méthode retournant toutes les cartes influence
-	 * @return {ArrayList<CarteInfluence>} influences : retourne un ArrayList contenant toutes les influences
+	 * @return {ArrayList<Carte>} influences : retourne un ArrayList contenant toutes les influences
 	 */
-	public static ArrayList<CarteInfluence> getAllInfluence() {
-		ArrayList<CarteInfluence> influences = new ArrayList<CarteInfluence>();
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> influences = new ArrayList<Carte>();
 		influences.add(new CarteInfluence("Jour"));
 		influences.add(new CarteInfluence("Nuit"));
 		influences.add(new CarteInfluence("Neant"));
@@ -95,9 +96,9 @@ public class CarteInfluence extends CarteDeusEx implements Effet {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ArrayList<CarteInfluence> testInfluence = CarteInfluence.getAllInfluence();
-		for (int i = 0; i < testInfluence.size(); i++) {
-			System.out.println(testInfluence.get(i).getTypeInfluence());
+		ArrayList<Carte> testInfluence = CarteInfluence.getAll();
+		for (Carte carte : testInfluence) {
+			System.out.println(((CarteInfluence)carte).getIntituleCarte());
 		}
 	}
 }

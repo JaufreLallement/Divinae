@@ -1,0 +1,128 @@
+/**
+ * 
+ */
+package cartes.cartes_action.cartes_action_effet;
+
+import java.util.ArrayList;
+
+import origine.Origine;
+import cartes.cartes_action.CarteAction;
+import cartes.cartes_action.cartes_action_effet.carte_deus_ex.CarteDeusEx;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
+import effets.Effet;
+
+/**
+ * @author Lallement
+ *
+ */
+public class CartesActionEffet extends CarteAction implements Effet {
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Intitulé de la carte
+	 */
+	private String intituleCarte;
+	
+	/**
+	 * True si un carte peut être sacrifiee
+	 * False sinon
+	 */
+	private boolean isSacrifiable = true;
+
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur privé par défaut
+	 */
+	public CartesActionEffet() {}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {String} intitule : intitule de la carte
+	 */
+	public CartesActionEffet(String intitule) {
+		super();
+		this.intituleCarte = intitule;
+	}
+
+	/**
+	 * Constructeur avec arguments
+	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
+	 */
+	public CartesActionEffet(Origine origine, String intitule) {
+		super(origine);
+		this.intituleCarte = intitule;
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur pour l'attribut intituleCarte
+	 * @return {String} intituleCarte : retourne l'intitullé de la carte
+	 */
+	public String getIntituleCarte() {
+		return this.intituleCarte;
+	}
+
+	/**
+	 * Modificateur pour l'attribut intituleCarte
+	 * @param {String} intituleCarte : nouvel intuitulé pour la carte
+	 */
+	public void setIntituleCarte(String intituleCarte) {
+		this.intituleCarte = intituleCarte;
+	}
+	
+	/**
+	 * Accesseur pour l'attribut isSacrifiable 
+	 * @return {boolean} isSacrifiable : true si la carte est sacrifiable, false sinon
+	 */
+	public boolean isSacrifiable() {
+		return this.isSacrifiable;
+	}
+
+	/**
+	 * Modificateur pour l'attribut isSacrifiable
+	 */
+	public void setSacrifiable() {
+		this.isSacrifiable = (this.isSacrifiable) ? false : true;
+	}
+
+	/* ---------- Méthodes ---------- */
+	/**
+	 * Méthode permettant d'obtenir toutes les cartes action
+	 * @return {ArrayList<Carte>} cartesActionEffet : retourne un ArrayList contenant toutes les cartes actions 
+	 */
+	public static ArrayList<Carte> getAllCartesEffet() {
+		ArrayList<Carte> cartesActionEffet = new ArrayList<Carte>();
+		cartesActionEffet.addAll(CarteActionDogmatique.getAll());
+		cartesActionEffet.addAll(CarteDeusEx.getAllDeusEx());
+		return cartesActionEffet;
+	}
+	
+	/**
+	 * Methode permettant de sacrifier une carte
+	 */
+	public void sacrifier() {
+		if (this.isSacrifiable) {
+			this.appliquerEffet();
+			this.defausser();
+		}
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	/**
+	 * Implementation de la methode appliquerEffet
+	 * @see effet.Effet#appliquerEffet()
+	 */
+	@Override
+	public void appliquerEffet() {
+		// TODO Auto-generated method stub
+	}
+
+}

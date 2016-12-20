@@ -2,6 +2,7 @@ package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croya
 
 import java.util.ArrayList;
 
+import cartes.Carte;
 import origine.Origine;
 import dogme.Dogme;
 import effets.Effet;
@@ -40,10 +41,10 @@ public class CarteEsprit extends CarteCroyant implements Effet {
 	
 	/**
 	 * Methode retournant toutes les cartes esprits
-	 * @return {ArrayList<CarteEsprit>} divinites : retourne un ArrayList contenant tous les esprits
+	 * @return {ArrayList<CarteEsprit>} esprits : retourne un ArrayList contenant tous les esprits
 	 */
-	public static ArrayList<CarteEsprit> getAllEsprits() {
-		ArrayList<CarteEsprit> esprits = new ArrayList<CarteEsprit>();
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> esprits = new ArrayList<Carte>();
 		esprits.add(new CarteEsprit(new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.MYSTIQUES}));
 		esprits.add(new CarteEsprit(new Dogme[] {Dogme.MYSTIQUES, Dogme.HUMAIN, Dogme.CHAOS}));
 		esprits.add(new CarteEsprit(new Dogme[] {Dogme.SYMBOLES, Dogme.MYSTIQUES, Dogme.CHAOS}));

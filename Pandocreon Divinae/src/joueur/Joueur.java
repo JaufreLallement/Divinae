@@ -249,11 +249,11 @@ public class Joueur implements Runnable {
 	 */
 	public void distribuerJeu() {
 		Random randDiv = new Random();
-		this.diviniteIncarnee = this.partie.getPiocheDivinites().get(randDiv.nextInt(this.partie.getPiocheDivinites().size()));
+		this.diviniteIncarnee = (Divinite)this.partie.getPiocheDivinites().get(randDiv.nextInt(this.partie.getPiocheDivinites().size()));
 		this.partie.getPiocheDivinites().remove(this.diviniteIncarnee);
 		
 		for (int i = 0; i < 7; i++) {
-			this.jeu.add(this.partie.getPioche().get(randDiv.nextInt(this.partie.getPioche().size())));
+			this.jeu.add((CarteAction)this.partie.getPioche().get(randDiv.nextInt(this.partie.getPioche().size())));
 			this.partie.getPioche().remove(this.jeu.get(i));
 		}
 	}
@@ -265,7 +265,7 @@ public class Joueur implements Runnable {
 	@Override
 	public String toString() {
 		return "Joueur: " + this.nomJoueur +
-				" ,, Divinite: " + this.diviniteIncarnee.getNomDivinite() + 
+				" ,, Divinite: " + this.diviniteIncarnee.getClass().getSimpleName() + 
 				" ,, Points Jour: " + this.pointsActionJour + 
 				" ,, Points Nuit: " + this.pointsActionNuit + 
 				" ,, Points Neant: " + this.pointsActionNeant;

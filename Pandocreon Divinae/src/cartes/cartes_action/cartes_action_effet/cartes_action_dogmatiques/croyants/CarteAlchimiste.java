@@ -2,6 +2,7 @@ package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croya
 
 import java.util.ArrayList;
 
+import cartes.Carte;
 import origine.Origine;
 import dogme.Dogme;
 import effets.Effet;
@@ -39,10 +40,10 @@ public class CarteAlchimiste extends CarteCroyant implements Effet {
 	
 	/**
 	 * Methode retournant toutes les cartes ermites
-	 * @return {ArrayList<CarteAlchimiste>} divinites : retourne un ArrayList contenant tous les alchimistes
+	 * @return {ArrayList<Carte>} alchimistes : retourne un ArrayList contenant tous les alchimistes
 	 */
-	public static ArrayList<CarteAlchimiste> getAllAlchimistes() {
-		ArrayList<CarteAlchimiste> alchimistes = new ArrayList<CarteAlchimiste>();
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> alchimistes = new ArrayList<Carte>();
 		alchimistes.add(new CarteAlchimiste(new Dogme[] {Dogme.SYMBOLES, Dogme.NATURE, Dogme.CHAOS}));
 		alchimistes.add(new CarteAlchimiste(new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.CHAOS}));
 		alchimistes.add(new CarteAlchimiste(new Dogme[] {Dogme.SYMBOLES, Dogme.NATURE, Dogme.CHAOS}));

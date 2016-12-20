@@ -27,7 +27,7 @@ public class Yartsur extends Divinite implements Effet {
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private Yartsur(Dogme[] dogmes) {
-		super("Yartsur", Origine.JOUR, dogmes);
+		super(Origine.JOUR, dogmes);
 	}
 	
 	/* ---------- Holder ---------- */

@@ -6,6 +6,7 @@ package cartes.cartes_action.cartes_apocalypse;
 import java.util.ArrayList;
 
 import origine.Origine;
+import cartes.Carte;
 import cartes.cartes_action.CarteAction;
 
 /**
@@ -66,10 +67,10 @@ public class CarteApocalypse extends CarteAction {
 	
 	/**
 	 * Méthode permettant d'obtenir toutes les cartes apocalypse
-	 * @return {ArrayList<CarteApocalypse>} apocalypses : retourne un ArrayList contenant toutes les cartes apocalypse
+	 * @return {ArrayList<Carte>} apocalypses : retourne un ArrayList contenant toutes les cartes apocalypse
 	 */
-	public static ArrayList<CarteApocalypse> getAllApocalypse() {
-		ArrayList<CarteApocalypse> apocalypses = new ArrayList<CarteApocalypse>();
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> apocalypses = new ArrayList<Carte>();
 		apocalypses.add(new CarteApocalypse(Origine.JOUR));
 		apocalypses.add(new CarteApocalypse(Origine.NUIT));
 		apocalypses.add(new CarteApocalypse(Origine.NEANT));
@@ -82,10 +83,10 @@ public class CarteApocalypse extends CarteAction {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ArrayList<CarteApocalypse> testApocalypse = CarteApocalypse.getAllApocalypse();
+		ArrayList<Carte> testApocalypse = CarteApocalypse.getAll();
 		System.out.println(testApocalypse.size());
 		System.out.println(testApocalypse.toString());
-		for (CarteApocalypse carteApocalypse : testApocalypse) {
+		for (Carte carteApocalypse : testApocalypse) {
 			System.out.println(carteApocalypse.getOrigineCarte());
 		}
 	}

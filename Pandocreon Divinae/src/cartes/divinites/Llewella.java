@@ -27,7 +27,7 @@ public class Llewella extends Divinite implements Effet {
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private Llewella(Dogme[] dogmes) {
-		super("Llewella", Origine.NUIT, dogmes);
+		super(Origine.NUIT, dogmes);
 	}
 	
 	/* ---------- Holder ---------- */

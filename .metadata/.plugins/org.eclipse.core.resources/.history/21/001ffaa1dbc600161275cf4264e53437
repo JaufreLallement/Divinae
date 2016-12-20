@@ -1,0 +1,62 @@
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants;
+
+import java.util.ArrayList;
+
+import cartes.Carte;
+import origine.Origine;
+import dogme.Dogme;
+import effets.Effet;
+
+/**
+ * @author Lallement
+ * La classe CarteDemon decrit le comportement general des cartes Demon
+ */
+public class CarteDemon extends CarteCroyant implements Effet {
+
+	/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur avec arguments
+	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
+	 */
+	public CarteDemon(Dogme[] dogmes) {
+		super(Origine.NUIT, dogmes, 2, "Demons");
+	}
+	
+
+	/* ---------- Getters & Setters ---------- */
+	
+	/* ---------- Méthodes ---------- */
+	/**
+	 * Implémentation de la méthode appliquerEffet
+	 * @see effet.Effet#appliquerEffet()
+	 */
+	@Override
+	public void appliquerEffet() {
+		this.getJoueur().setPointsActionNuit(this.getJoueur().getPointsActionNuit() + 1);
+	}
+	
+	/**
+	 * Methode retournant toutes les cartes moines
+	 * @return {ArrayList<CarteDemon>} divinites : retourne un ArrayList contenant tous les moines
+	 */
+	@Override
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> demons = new ArrayList<Carte>();
+		demons.add(new CarteDemon(new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.MYSTIQUES}));
+		demons.add(new CarteDemon(new Dogme[] {Dogme.MYSTIQUES, Dogme.HUMAIN, Dogme.CHAOS}));
+		demons.add(new CarteDemon(new Dogme[] {Dogme.SYMBOLES, Dogme.MYSTIQUES, Dogme.CHAOS}));
+		demons.add(new CarteDemon(new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.SYMBOLES}));
+		demons.add(new CarteDemon(new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.CHAOS}));
+		return demons;
+	}
+	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+}

@@ -75,12 +75,12 @@ public class CarteAction extends Carte {
 	
 	/**
 	 * Méthode permettant d'obtenir toutes les cartes action
-	 * @return {ArrayList<CarteAction>} cartesAction : retourne un ArrayList contenant toutes les cartes actions 
+	 * @return {ArrayList<Carte>} cartesAction : retourne un ArrayList contenant toutes les cartes actions 
 	 */
-	public static ArrayList<CarteAction> getAllCartesAction() {
-		ArrayList<CarteAction> cartesAction = new ArrayList<CarteAction>();
-		cartesAction.addAll(CarteApocalypse.getAllApocalypse());
-		cartesAction.addAll(CartesActionEffet.getAllCartesEffet());
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> cartesAction = new ArrayList<Carte>();
+		cartesAction.addAll(CarteApocalypse.getAll());
+		cartesAction.addAll(CartesActionEffet.getAll());
 		return cartesAction;
 	}
 
@@ -88,7 +88,7 @@ public class CarteAction extends Carte {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ArrayList<CarteAction> cartesAction = CarteAction.getAllCartesAction();
+		ArrayList<Carte> cartesAction = CarteAction.getAll();
 		System.out.println(cartesAction.size());
 	}
 

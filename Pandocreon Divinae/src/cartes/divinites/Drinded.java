@@ -27,7 +27,7 @@ public class Drinded extends Divinite implements Effet {
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private Drinded(Dogme[] dogmes) {
-		super("Drinded", Origine.JOUR, dogmes);
+		super(Origine.JOUR, dogmes);
 	}
 	
 	

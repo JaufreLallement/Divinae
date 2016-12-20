@@ -27,7 +27,7 @@ public class Romtec extends Divinite implements Effet {
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private Romtec(Dogme[] dogmes) {
-		super("Romtec", Origine.CREPUSCULE, dogmes);
+		super(Origine.CREPUSCULE, dogmes);
 	}
 	
 	/* ---------- Holder ---------- */

@@ -3,6 +3,7 @@ package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guide
 import java.util.ArrayList;
 
 import origine.Origine;
+import cartes.Carte;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
 import cartes.divinites.Divinite;
@@ -105,16 +106,16 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	
 	/**
 	 * Méthode retournant tous les guides spirituels
-	 * @return {ArrayList<CarteGuideSpirituel>} divinites : retourne un ArrayList contenant tous les guides spirituels
+	 * @return {ArrayList<Carte>} guides : retourne un ArrayList contenant tous les guides spirituels
 	 */
-	public static ArrayList<CarteGuideSpirituel> getAllGuides() {
-		ArrayList<CarteGuideSpirituel> guides = new ArrayList<CarteGuideSpirituel>();
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> guides = new ArrayList<Carte>();
 		guides.add(CarteAnarchiste.getInstance());
 		guides.add(CarteAscete.getInstance());
-		guides.addAll(CarteClerc.getAllClercs());
+		guides.addAll(CarteClerc.getAll());
 		guides.add(CarteDevin.getInstance());
 		guides.add(CarteExorciste.getInstance());
-		guides.addAll(CarteMartyr.getAllMartyrs());
+		guides.addAll(CarteMartyr.getAll());
 		guides.add(CarteMessie.getInstance());
 		guides.add(CartePaladin.getInstance());
 		guides.add(CarteShaman.getInstance());
@@ -149,9 +150,9 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ArrayList<CarteGuideSpirituel> testGuides = CarteGuideSpirituel.getAllGuides();
+		ArrayList<Carte> testGuides = CarteGuideSpirituel.getAll();
 		System.out.println(testGuides.size());
-		for (CarteGuideSpirituel guide : testGuides) {
+		for (Carte guide : testGuides) {
 			System.out.println(guide.toString());
 		}
 	}

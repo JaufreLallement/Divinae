@@ -27,7 +27,7 @@ public class Gwenghelen extends Divinite implements Effet {
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private Gwenghelen(Dogme[] dogmes) {
-		super("Gwenghelen", Origine.AUBE, dogmes);
+		super(Origine.AUBE, dogmes);
 	}
 	
 	/* ---------- Holder ---------- */

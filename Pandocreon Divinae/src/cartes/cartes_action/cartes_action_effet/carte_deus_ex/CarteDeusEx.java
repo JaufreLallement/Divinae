@@ -3,6 +3,7 @@ package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
 import java.util.ArrayList;
 
 import origine.Origine;
+import cartes.Carte;
 import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
 
 /**
@@ -35,16 +36,16 @@ public class CarteDeusEx extends CartesActionEffet {
 	/* ---------- Methodes ---------- */
 	/**
 	 * Méthode permettatn de récupérer toutes les cartes Deus Ex
-	 * @return {ArrayList<CarteDeusEx>} deusEx : retourne un ArrayList contenant toutes les cartes DeusEx
+	 * @return {ArrayList<Carte>} deusEx : retourne un ArrayList contenant toutes les cartes DeusEx
 	 */
-	public static ArrayList<CarteDeusEx> getAllDeusEx() {
-		ArrayList<CarteDeusEx> deusEx = new ArrayList<CarteDeusEx>();
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> deusEx = new ArrayList<Carte>();
 		deusEx.add(CarteBouleversement.getInstance());
-		deusEx.addAll(CarteColereDivine.getAllColeresDivines());
+		deusEx.addAll(CarteColereDivine.getAll());
 		deusEx.add(CarteConcentration.getInstance());
 		deusEx.add(CarteDiversion.getInstance());
 		deusEx.add(CarteFourberie.getInstance());
-		deusEx.addAll(CarteInfluence.getAllInfluence());
+		deusEx.addAll(CarteInfluence.getAll());
 		deusEx.add(CarteInquisition.getInstance());
 		deusEx.add(CarteMiroir.getInstance());
 		deusEx.add(CarteOrdreCeleste.getInstance());
@@ -70,10 +71,10 @@ public class CarteDeusEx extends CartesActionEffet {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ArrayList<CarteDeusEx> testDeusEx = CarteDeusEx.getAllDeusEx();
+		ArrayList<Carte> testDeusEx = CarteDeusEx.getAll();
 		System.out.println(testDeusEx.size());
 		
-		for (CarteDeusEx deusEx : testDeusEx) {
+		for (Carte deusEx : testDeusEx) {
 			System.out.println(deusEx.toString());
 		}
 	}

@@ -6,6 +6,7 @@ package cartes.cartes_action.cartes_action_effet;
 import java.util.ArrayList;
 
 import origine.Origine;
+import cartes.Carte;
 import cartes.cartes_action.CarteAction;
 import cartes.cartes_action.cartes_action_effet.carte_deus_ex.CarteDeusEx;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
@@ -89,12 +90,12 @@ public class CartesActionEffet extends CarteAction implements Effet {
 	/* ---------- Méthodes ---------- */
 	/**
 	 * Méthode permettant d'obtenir toutes les cartes action
-	 * @return {ArrayList<CartesActionEffet>} cartesActionEffet : retourne un ArrayList contenant toutes les cartes actions 
+	 * @return {ArrayList<Carte>} cartesActionEffet : retourne un ArrayList contenant toutes les cartes actions possedant un effet de sacrifice
 	 */
-	public static ArrayList<CartesActionEffet> getAllCartesEffet() {
-		ArrayList<CartesActionEffet> cartesActionEffet = new ArrayList<CartesActionEffet>();
-		cartesActionEffet.addAll(CarteActionDogmatique.getAllCartesDogmatiques());
-		cartesActionEffet.addAll(CarteDeusEx.getAllDeusEx());
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> cartesActionEffet = new ArrayList<Carte>();
+		cartesActionEffet.addAll(CarteActionDogmatique.getAll());
+		cartesActionEffet.addAll(CarteDeusEx.getAll());
 		return cartesActionEffet;
 	}
 	

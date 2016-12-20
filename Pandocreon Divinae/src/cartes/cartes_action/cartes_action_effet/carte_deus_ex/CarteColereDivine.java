@@ -2,6 +2,7 @@ package cartes.cartes_action.cartes_action_effet.carte_deus_ex;
 
 import java.util.ArrayList;
 
+import cartes.Carte;
 import effets.Effet;
 import origine.Origine;
 
@@ -29,10 +30,10 @@ public class CarteColereDivine extends CarteDeusEx implements Effet {
 	
 	/**
 	 * Méthode retournant toutes les coleres divines
-	 * @return {ArrayList<CarteColereDivine>} divinites : retourne un ArrayList contenant toutes les coleres divines
+	 * @return {ArrayList<Carte>} coleresDivines : retourne un ArrayList contenant toutes les coleres divines
 	 */
-	public static ArrayList<CarteColereDivine> getAllColeresDivines() {
-		ArrayList<CarteColereDivine> coleresDivines = new ArrayList<CarteColereDivine>();
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> coleresDivines = new ArrayList<Carte>();
 		coleresDivines.add(new CarteColereDivine(Origine.JOUR));
 		coleresDivines.add(new CarteColereDivine(Origine.NUIT));
 		return coleresDivines;

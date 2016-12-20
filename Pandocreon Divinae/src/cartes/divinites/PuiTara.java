@@ -27,7 +27,7 @@ public class PuiTara extends Divinite implements Effet {
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private PuiTara(Dogme[] dogmes) {
-		super("Pui-Tara", Origine.NUIT, dogmes);
+		super(Origine.NUIT, dogmes);
 	}
 	
 	/* ---------- Holder ---------- */

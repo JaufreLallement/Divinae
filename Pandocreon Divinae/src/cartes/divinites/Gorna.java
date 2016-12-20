@@ -27,7 +27,7 @@ public class Gorna extends Divinite implements Effet {
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private Gorna(Dogme[] dogmes) {
-		super("Gorna", Origine.CREPUSCULE, dogmes);
+		super(Origine.CREPUSCULE, dogmes);
 	}
 	
 	/* ---------- Holder ---------- */

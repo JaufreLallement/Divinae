@@ -27,7 +27,7 @@ public class Killinstred extends Divinite implements Effet {
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private Killinstred(Dogme[] dogmes) {
-		super("Killinstred", Origine.NUIT, dogmes);
+		super(Origine.NUIT, dogmes);
 	}
 	
 	

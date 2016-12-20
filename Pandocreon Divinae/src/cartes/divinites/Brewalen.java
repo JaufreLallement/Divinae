@@ -27,7 +27,7 @@ public class Brewalen extends Divinite implements Effet {
 	 * La classe étant un singleton, on évite la création de plusieurs instances 
 	 */
 	private Brewalen(Dogme[] dogmes) {
-		super("Brewalen", Origine.JOUR, dogmes);
+		super(Origine.JOUR, dogmes);
 		
 	}
 	

@@ -2,6 +2,7 @@ package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croya
 
 import java.util.ArrayList;
 
+import cartes.Carte;
 import origine.Origine;
 import dogme.Dogme;
 import effets.Effet;
@@ -39,10 +40,10 @@ public class CarteAliene extends CarteCroyant implements Effet {
 	
 	/**
 	 * Methode retournant toutes les cartes alienes
-	 * @return {ArrayList<CarteAliene>} divinites : retourne un ArrayList contenant tous les alienes
+	 * @return {ArrayList<Carte>} alienes : retourne un ArrayList contenant tous les alienes
 	 */
-	public static ArrayList<CarteAliene> getAllAlienes() {
-		ArrayList<CarteAliene> alienes = new ArrayList<CarteAliene>();
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> alienes = new ArrayList<Carte>();
 		alienes.add(new CarteAliene(new Dogme[] {Dogme.SYMBOLES, Dogme.HUMAIN, Dogme.CHAOS}));
 		alienes.add(new CarteAliene(new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.SYMBOLES}));
 		alienes.add(new CarteAliene(new Dogme[] {Dogme.MYSTIQUES, Dogme.HUMAIN, Dogme.CHAOS}));

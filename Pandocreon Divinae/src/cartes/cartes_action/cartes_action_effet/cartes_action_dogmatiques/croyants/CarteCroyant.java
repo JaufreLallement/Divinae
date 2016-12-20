@@ -3,6 +3,7 @@ package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croya
 import java.util.ArrayList;
 
 import origine.Origine;
+import cartes.Carte;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
 import cartes.divinites.Divinite;
 import dogme.Dogme;
@@ -110,27 +111,27 @@ public class CarteCroyant extends CarteActionDogmatique {
 	
 	/**
 	 * Methode retournant toutes les cartes croyant
-	 * @return {ArrayList<CarteCroyant>} divinites : retourne un ArrayList contenant toutes les divinites
+	 * @return {ArrayList<Carte>} croyants : retourne un ArrayList contenant toutes les divinites
 	 */
-	public static ArrayList<CarteCroyant> getAllCroyants() {
-		ArrayList<CarteCroyant> croyants = new ArrayList<CarteCroyant>();
-		croyants.addAll(CarteAlchimiste.getAllAlchimistes());
-		croyants.addAll(CarteAliene.getAllAlienes());
-		croyants.addAll(CarteDemon.getAllDemons());
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> croyants = new ArrayList<Carte>();
+		croyants.addAll(CarteAlchimiste.getAll());
+		croyants.addAll(CarteAliene.getAll());
+		croyants.addAll(CarteDemon.getAll());
 		croyants.add(CarteDiplomate.getInstance());
-		croyants.addAll(CarteErmite.getAllErmites());
-		croyants.addAll(CarteEsprit.getAllEsprits());
+		croyants.addAll(CarteErmite.getAll());
+		croyants.addAll(CarteEsprit.getAll());
 		croyants.add(CarteGuerrierSaint.getInstance());
 		croyants.add(CarteIllusionniste.getInstance());
 		croyants.add(CarteIntegriste.getInstance());
 		croyants.add(CarteLycanthrope.getInstance());
-		croyants.addAll(CarteMoine.getAllMoines());
+		croyants.addAll(CarteMoine.getAll());
 		croyants.add(CarteNihilliste.getInstance());
 		croyants.add(CartePillard.getInstance());
 		croyants.add(CarteRevenant.getInstance());
 		croyants.add(CarteRevolutionnaire.getInstance());
-		croyants.addAll(CarteTravailleur.getAllTravailleurs());
-		croyants.addAll(CarteVampire.getAllVampires());
+		croyants.addAll(CarteTravailleur.getAll());
+		croyants.addAll(CarteVampire.getAll());
 		return croyants;
 	}
 	
@@ -168,9 +169,9 @@ public class CarteCroyant extends CarteActionDogmatique {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ArrayList<CarteCroyant> testCroyants = CarteCroyant.getAllCroyants();
+		ArrayList<Carte> testCroyants = CarteCroyant.getAll();
 		System.out.println(testCroyants.size());
-		for (CarteCroyant croyant : testCroyants) {
+		for (Carte croyant : testCroyants) {
 			System.out.println(croyant.toString());
 		}
 	}

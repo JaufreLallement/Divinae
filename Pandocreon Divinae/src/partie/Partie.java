@@ -6,6 +6,7 @@ package partie;
 import java.util.ArrayList;
 import java.util.Random;
 
+import cartes.Carte;
 import cartes.cartes_action.CarteAction;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
 import cartes.divinites.Divinite;
@@ -28,7 +29,7 @@ public class Partie implements Runnable {
 	/**
 	 * Pioche de la partie.
 	 */
-	private ArrayList<CarteAction> pioche = CarteAction.getAllCartesAction();
+	private ArrayList<Carte> pioche = CarteAction.getAll();
 	
 	/**
 	 * Cimetiere de la partie
@@ -38,7 +39,7 @@ public class Partie implements Runnable {
 	/**
 	 * Divinites que les joueurs peuvent incarner
 	 */
-	private ArrayList<Divinite> piocheDivinites = Divinite.getAllDivinites();
+	private ArrayList<Carte> piocheDivinites = Divinite.getAll();
 	
 	/**
 	 * Gagnant de la partie
@@ -124,7 +125,7 @@ public class Partie implements Runnable {
 	 * Accesseur pour l'attribut pioche
 	 * @return {ArrayList<CarteAction>} pioche : retourne un ArrayList contenant les cartes actions de la pioche
 	 */
-	public ArrayList<CarteAction> getPioche() {
+	public ArrayList<Carte> getPioche() {
 		return this.pioche;
 	}
 
@@ -132,7 +133,7 @@ public class Partie implements Runnable {
 	 * Modificateur pour l'attribut pioche
 	 * @param {ArrayList<CarteAction>} pioche : ArrayList contenant les cartes actions a attribuer a la pioche
 	 */
-	public void setPioche(ArrayList<CarteAction> pioche) {
+	public void setPioche(ArrayList<Carte> pioche) {
 		this.pioche = pioche;
 	}
 
@@ -156,7 +157,7 @@ public class Partie implements Runnable {
 	 * Accesseur pour l'attribut piocheDivinites
 	 * @return {ArrayList<Divinite>} piocheDivinite : retourne un ArrayList contenant les divinites disponibles
 	 */
-	public ArrayList<Divinite> getPiocheDivinites() {
+	public ArrayList<Carte> getPiocheDivinites() {
 		return this.piocheDivinites;
 	}
 
@@ -164,7 +165,7 @@ public class Partie implements Runnable {
 	 * Modificateur pour l'attribut piocheDivinites
 	 * @param {ArrayList<Divinite>} piocheDivinite : ArrayList contenant les divinites a attribuer a la pioche divinite
 	 */
-	public void setPiocheDivinites(ArrayList<Divinite> piocheDivinites) {
+	public void setPiocheDivinites(ArrayList<Carte> piocheDivinites) {
 		this.piocheDivinites = piocheDivinites;
 	}
 
