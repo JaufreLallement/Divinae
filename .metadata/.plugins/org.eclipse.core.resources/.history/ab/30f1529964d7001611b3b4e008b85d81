@@ -326,7 +326,6 @@ public class Partie implements Runnable {
 	}
 	
 	/**
-	 * Méthode de lancement de la partie
 	 * @param args
 	 */
 	public static void main(String[] args) {

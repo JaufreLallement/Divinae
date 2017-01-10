@@ -228,14 +228,6 @@ public class Joueur implements Runnable {
 	
 	/* ---------- Méthodes ---------- */
 	/**
-	 * Methode permettant de retourner directement les points de priere a partir du joueur
-	 * @return {int} : points de priere que poossede le joueur
-	 */
-	public int getPrieres() {
-		return this.diviniteIncarnee.getTotalPrieres();
-	}
-	
-	/**
 	 * Methode permettant d'initialiser les nouveaux joueurs
 	 * @return {ArrayList<Joueur>} participants : retourne un ArrayList contenant entre six et deux joueurs
 	 */
@@ -250,13 +242,6 @@ public class Joueur implements Runnable {
 			joueurs.add(jv);
 		}
 		return joueurs;
-	}
-	
-	/**
-	 * Méthode permettant d'éliminer un joueur
-	 */
-	public void eliminer() {
-		this.partie.getParticipants().remove(this);
 	}
 	
 	/**

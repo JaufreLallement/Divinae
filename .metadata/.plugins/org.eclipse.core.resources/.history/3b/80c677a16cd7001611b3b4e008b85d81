@@ -226,15 +226,11 @@ public class Joueur implements Runnable {
 		return Joueur.phaseJeu;
 	}
 	
-	/* ---------- Méthodes ---------- */
-	/**
-	 * Methode permettant de retourner directement les points de priere a partir du joueur
-	 * @return {int} : points de priere que poossede le joueur
-	 */
 	public int getPrieres() {
 		return this.diviniteIncarnee.getTotalPrieres();
 	}
 	
+	/* ---------- Méthodes ---------- */
 	/**
 	 * Methode permettant d'initialiser les nouveaux joueurs
 	 * @return {ArrayList<Joueur>} participants : retourne un ArrayList contenant entre six et deux joueurs

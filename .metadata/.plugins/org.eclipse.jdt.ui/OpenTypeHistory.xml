@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=Pandocreon Divinae/src&lt;joueur{Joueur.java[Joueur" modifiers="1" timestamp="1481514650347"/>
+<typeInfo handle="=Pandocreon Divinae/src&lt;joueur{Joueur.java[Joueur" modifiers="1" timestamp="1482256889309"/>
 <typeInfo handle="=Pandocreon Divinae/src&lt;strategie{Strategy.java[Strategy" modifiers="513" timestamp="1481321498262"/>
-<typeInfo handle="=Pandocreon Divinae/src&lt;cartes{Carte.java[Carte" modifiers="1025" timestamp="1481465265935"/>
-<typeInfo handle="=Pandocreon Divinae/src&lt;cartes.cartes_action{CarteAction.java[CarteAction" modifiers="1" timestamp="1481516116807"/>
-<typeInfo handle="=Pandocreon Divinae/src&lt;cartes.cartes_action.cartes_action_effet{CartesActionEffet.java[CartesActionEffet" modifiers="1" timestamp="1481518184022"/>
+<typeInfo handle="=Pandocreon Divinae/src&lt;cartes{Carte.java[Carte" modifiers="1025" timestamp="1482251360515"/>
+<typeInfo handle="=Pandocreon Divinae/src&lt;cartes.cartes_action{CarteAction.java[CarteAction" modifiers="1" timestamp="1482253393117"/>
+<typeInfo handle="=Pandocreon Divinae/src&lt;cartes.cartes_action.cartes_action_effet{CartesActionEffet.java[CartesActionEffet" modifiers="1" timestamp="1482253446045"/>
 <typeInfo handle="=Pandocreon Divinae/C:\/Program Files\/Java\/jre1.8.0_91\/lib\/rt.jar&lt;java.lang(Exception.class[Exception" modifiers="33" timestamp="1463313517099"/>
 </typeInfoHistroy>
