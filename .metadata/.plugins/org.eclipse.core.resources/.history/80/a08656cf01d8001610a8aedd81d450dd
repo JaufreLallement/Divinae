@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package effets;
+
+/**
+ * @author Lallement
+ *
+ */
+public interface ApplicationEffet {
+
+}

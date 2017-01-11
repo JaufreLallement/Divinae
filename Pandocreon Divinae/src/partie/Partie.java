@@ -69,7 +69,7 @@ public class Partie implements Runnable {
 	/**
 	 * Dernier tour durant lequel une carte Apocalypse a ete utilisee
 	 */
-	private int dernierTourApo;
+	private Tour dernierTourApo;
 	
 	/**
 	 * Dernier joueur ayant utilise une carte apocalypse
@@ -85,7 +85,7 @@ public class Partie implements Runnable {
 	/**
 	 * Suppression du constructeur publique par defaut
 	 */
-	private Partie(){}
+	private Partie() {}
 	
 	/**
 	 * Constructeur avec argument
@@ -213,7 +213,7 @@ public class Partie implements Runnable {
 	 * Accesseur pour l'attribut dernierTourApo
 	 * @return {int} dernierTourApo : numero du dernier tour durant lequel a ete utilise une carte apocalypse
 	 */
-	public int getDernierTourApo() {
+	public Tour getDernierTourApo() {
 		return this.dernierTourApo;
 	}
 
@@ -221,7 +221,7 @@ public class Partie implements Runnable {
 	 * Modificateur pour l'attribut dernierTourApo
 	 * @param {int} dernierTourApo : numero a attribuer au dernier tour durant lequel a ete utilisee une carte apocalypse
 	 */
-	public void setDernierTourApo(int dernierTourApo) {
+	public void setDernierTourApo(Tour dernierTourApo) {
 		this.dernierTourApo = dernierTourApo;
 	}
 
@@ -263,8 +263,9 @@ public class Partie implements Runnable {
 	 */
 	public ArrayList<CarteCroyant> getCentreTable() {
 		return this.centreTable;
-	}
+	}	
 	
+	/* ---------- Méthodes ---------- */
 	/**
 	 *Methode permettant d'obtenir un tour anterieur.
 	 * @param {int} tour : exemple 0 pour obtenir le tour actuel, 1 pour obtenir le tour precedent 
@@ -291,8 +292,6 @@ public class Partie implements Runnable {
 	}
 	
 	
-	
-	/* ---------- Méthodes ---------- */
 	/**
 	 * Methode permettant de lancer la partie
 	 */
@@ -311,6 +310,7 @@ public class Partie implements Runnable {
 		while(this.gagnant == null) {
 			if (!Tour.isEnCours()) {
 				Tour t = new Tour(this);
+				this.tours.add(t);
 				t.lancerTour();
 			}
 		}

@@ -7,6 +7,8 @@ import cartes.Carte;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
 import cartes.divinites.Divinite;
 import dogme.Dogme;
+import effets.Effet;
+import effets.EffetAjoutPointAction;
 /**
  * 
  * @author Lallement
@@ -46,10 +48,12 @@ public class CarteCroyant extends CarteActionDogmatique {
 	 * Constructeur avec arguments
 	 * @param {Origine} origine : origine a attribuer a la carte 
 	 * @param {Dogme[]} dogmes : dogmes a attribuer a la carte
-	 * @param {int} pointsPriere : points de priere que la carte doit posseder  
+	 * @param {int} pointsPriere : points de priere que la carte doit posseder
+	 * @param {String} intitule : intitule de la carte nouvellement creee
+	 * @param {Effet} effet : effet a attribuer a la carte nouvellement creee  
 	 */
-	public CarteCroyant(Origine origine, Dogme[] dogmes, int pointsPriere, String intitule) {
-		super(origine, dogmes, intitule);
+	public CarteCroyant(Origine origine, Dogme[] dogmes, int pointsPriere, String intitule, Effet effet) {
+		super(origine, dogmes, intitule, effet);
 		this.pointsPriere = pointsPriere;
 	}
 	/* ---------- Getters & Setters ---------- */
@@ -115,23 +119,13 @@ public class CarteCroyant extends CarteActionDogmatique {
 	 */
 	public static ArrayList<Carte> getAll() {
 		ArrayList<Carte> croyants = new ArrayList<Carte>();
-		croyants.addAll(CarteAlchimiste.getAll());
-		croyants.addAll(CarteAliene.getAll());
-		croyants.addAll(CarteDemon.getAll());
-		croyants.add(CarteDiplomate.getInstance());
-		croyants.addAll(CarteErmite.getAll());
-		croyants.addAll(CarteEsprit.getAll());
-		croyants.add(CarteGuerrierSaint.getInstance());
-		croyants.add(CarteIllusionniste.getInstance());
-		croyants.add(CarteIntegriste.getInstance());
-		croyants.add(CarteLycanthrope.getInstance());
-		croyants.addAll(CarteMoine.getAll());
-		croyants.add(CarteNihilliste.getInstance());
-		croyants.add(CartePillard.getInstance());
-		croyants.add(CarteRevenant.getInstance());
-		croyants.add(CarteRevolutionnaire.getInstance());
-		croyants.addAll(CarteTravailleur.getAll());
-		croyants.addAll(CarteVampire.getAll());
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.MYSTIQUES}, 2, "Moines", new EffetAjoutPointAction(Origine.JOUR)));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.HUMAIN, Dogme.CHAOS}, 2, "Moines", new EffetAjoutPointAction(Origine.JOUR)));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.SYMBOLES, Dogme.MYSTIQUES, Dogme.CHAOS}, 2, "Moines", new EffetAjoutPointAction(Origine.JOUR)));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.SYMBOLES}, 2, "Moines", new EffetAjoutPointAction(Origine.JOUR)));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.CHAOS}, 2, "Moines", new EffetAjoutPointAction(Origine.JOUR)));
+		
+		// TODO instancier tous les croyants
 		return croyants;
 	}
 	
@@ -148,16 +142,8 @@ public class CarteCroyant extends CarteActionDogmatique {
 	}
 	
 	/**
-	 * Implementation de la methode appliquerEffet
-	 * @see effet.Effet#appliquerEffet()
-	 */
-	@Override
-	public void appliquerEffet() {
-		// TODO Auto-generated method stub
-	}
-	
-	/**
-	 * 
+	 * Surcharge de la methode jouerCarte.
+	 * La methode place la carte croyant au centre de la table.
 	 */
 	@Override
 	public void jouerCarte() {

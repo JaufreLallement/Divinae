@@ -6,6 +6,7 @@ package joueur;
 import java.util.ArrayList;
 import java.util.Random;
 
+import origine.Origine;
 import partie.Partie;
 import partie.Tour;
 import cartes.cartes_action.CarteAction;
@@ -156,50 +157,32 @@ public class Joueur implements Runnable {
 
 	/**
 	 * Accesseur pour l'attribut pointsActionJour
+	 * @param {Origine} origine : origine des points d'action
 	 * @return {int} pointsActionJour : retourne les points d'action d'origine jour du joueur
 	 */
-	public int getPointsActionJour() {
-		return this.pointsActionJour;
+	public int getPointsAction(Origine origine) {
+		return (origine == Origine.JOUR) ? this.pointsActionJour : (origine == Origine.NUIT) ? this.pointsActionNuit : this.pointsActionNeant;
 	}
-
+	
 	/**
-	 * Modificateur pour l'attribut pointsActionJour
-	 * @param {int} pointsActionJour : nombre de points d'action d'origine jour a attribuer au joueur
+	 * Modificateur pour les attributs pointsAction
+	 * @param {Origine} origine : origine des points d'action
+	 * @param {int} pointsActionJour : nombre de points d'action a attribuer
 	 */
-	public void setPointsActionJour(int pointsActionJour) {
-		this.pointsActionJour = pointsActionJour;
-	}
+	public void setPointsAction(Origine origine, int pointsAction) {
+		switch (origine) {
+		case JOUR:
+			this.pointsActionJour = pointsAction;
+			break;
 
-	/**
-	 * Accesseur pour l'attribut pointsActionNuit
-	 * @return {int} pointsActionNuit : retourne les points d'action d'origine nuit du joueur
-	 */
-	public int getPointsActionNuit() {
-		return this.pointsActionNuit;
-	}
-
-	/**
-	 * Modificateur pour l'attribut pointsActionNuit
-	 * @param {int} pointsActionNuit : nombre de points d'action d'origine nuit a attribuer au joueur
-	 */
-	public void setPointsActionNuit(int pointsActionNuit) {
-		this.pointsActionNuit = pointsActionNuit;
-	}
-
-	/**
-	 * Accesseur pour l'attribut pointsActionNeant
-	 * @return {int} pointsActionNeant : retourne les points d'action d'origine neant du joueur
-	 */
-	public int getPointsActionNeant() {
-		return this.pointsActionNeant;
-	}
-
-	/**
-	 * Modificateur pour l'attribut pointsActionNeant
-	 * @param {int} pointsActionNeant : nombre de points d'action d'origine neant a attribuer au joueur
-	 */
-	public void setPointsActionNeant(int pointsActionNeant) {
-		this.pointsActionNeant = pointsActionNeant;
+		case NUIT:
+			this.pointsActionNuit = pointsAction;
+			break;
+			
+		case NEANT:
+			this.pointsActionNeant = pointsAction;
+			break;
+		}
 	}
 
 	/**

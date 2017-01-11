@@ -16,7 +16,7 @@ import effets.Effet;
  * @author Lallement
  *
  */
-public class CartesActionEffet extends CarteAction implements Effet {
+public class CartesActionEffet extends CarteAction {
 	
 	/* ---------- Attributs ---------- */
 	/**
@@ -28,7 +28,12 @@ public class CartesActionEffet extends CarteAction implements Effet {
 	 * True si un carte peut être sacrifiee
 	 * False sinon
 	 */
-	private boolean isSacrifiable = true;
+	private boolean sacrifiable = true;
+	
+	/**
+	 * Effet de la carte
+	 */
+	private Effet effet;
 
 	
 	/* ---------- Constructeurs ---------- */
@@ -47,14 +52,17 @@ public class CartesActionEffet extends CarteAction implements Effet {
 	}
 
 	/**
-	 * Constructeur avec arguments
-	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
+	 * Constructeur avec deux arguments
+	 * @param {Origine} origine : origine a attribuer à la carte nouvellement creee
+	 * @param {String} intitule : intitule de la carte nouvellement creee
+	 * @param {Effet} effet : effet correspondant a la carte nouvellement creee
 	 */
-	public CartesActionEffet(Origine origine, String intitule) {
+	public CartesActionEffet(Origine origine, String intitule, Effet effet) {
 		super(origine);
 		this.intituleCarte = intitule;
+		this.effet = effet;
 	}
-	
+
 	/* ---------- Getters & Setters ---------- */
 	/**
 	 * Accesseur pour l'attribut intituleCarte
@@ -73,18 +81,34 @@ public class CartesActionEffet extends CarteAction implements Effet {
 	}
 	
 	/**
-	 * Accesseur pour l'attribut isSacrifiable 
+	 * Accesseur pour l'attribut sacrifiable 
 	 * @return {boolean} isSacrifiable : true si la carte est sacrifiable, false sinon
 	 */
 	public boolean isSacrifiable() {
-		return this.isSacrifiable;
+		return this.sacrifiable;
 	}
 
 	/**
-	 * Modificateur pour l'attribut isSacrifiable
+	 * Modificateur pour l'attribut sacrifiable
 	 */
 	public void setSacrifiable() {
-		this.isSacrifiable = (this.isSacrifiable) ? false : true;
+		this.sacrifiable = (this.sacrifiable) ? false : true;
+	}
+
+	/**
+	 * Accesseur pour l'attribut effet
+	 * @return {Effet} effet : effet de la carte
+	 */
+	public Effet getEffet() {
+		return this.effet;
+	}
+
+	/**
+	 * Modificateur pour l'attribut effet
+	 * @param {Effet} effet : effet a attribuer a la carte
+	 */
+	public void setEffet(Effet effet) {
+		this.effet = effet;
 	}
 
 	/* ---------- Méthodes ---------- */
@@ -103,8 +127,8 @@ public class CartesActionEffet extends CarteAction implements Effet {
 	 * Methode permettant de sacrifier une carte
 	 */
 	public void sacrifier() {
-		if (this.isSacrifiable) {
-			this.appliquerEffet();
+		if (this.sacrifiable) {
+			this.effet.appliquerEffet();
 			this.defausser();
 		}
 	}
@@ -116,14 +140,4 @@ public class CartesActionEffet extends CarteAction implements Effet {
 		// TODO Auto-generated method stub
 
 	}
-	
-	/**
-	 * Implementation de la methode appliquerEffet
-	 * @see effet.Effet#appliquerEffet()
-	 */
-	@Override
-	public void appliquerEffet() {
-		// TODO Auto-generated method stub
-	}
-
 }

@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package effets;
+
+import cartes.Carte;
+
+/**
+ * @author Lallement
+ * 
+ */
+public class Effet implements ApplicationEffet {
+	/* ---------- Attributs ---------- */
+	private Carte carte;
+	
+	/* ---------- Constructeurs ---------- */
+	
+	/* ---------- Getters & Setters ---------- */
+	
+	/* ---------- Methodes ---------- */
+	/**
+	 * Méthode permettant à une carte d'activer son effet spécial
+	 */
+	public void appliquerEffet() {
+		System.out.println("L'effet est applique!");
+	}
+}

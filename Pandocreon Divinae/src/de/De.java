@@ -95,7 +95,14 @@ public class De {
 	 */
 	public Face lancerDe(Joueur j) {
 		j.getPartie().setDernierLanceur(j);
-		return this.faces[new Random().nextInt(6)];
+		Face f = this.faces[new Random().nextInt(6)];
+		if (f.getOrigineFace() == j.getDiviniteIncarnee().getOrigineCarte()) {
+			j.setPointsAction(f.getOrigineFace(), j.getPointsAction(f.getOrigineFace()) + 1);
+			System.out.println("Le joueur" + j.getNom() + " gagne deux points d'action " + f.getOrigineFace() + "!");
+		} else {
+			System.out.println("Aucun point gagné!");
+		}
+		return f;
 	}
 	
 	
@@ -104,6 +111,6 @@ public class De {
 	 * @param {String[]} args
 	 */
 	public static void main(String[] args) {
-		
+		System.out.println(Origine.JOUR);
 	}
 }

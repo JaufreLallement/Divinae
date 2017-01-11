@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package effets;
+
+import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
+
+/**
+ * @author Lallement
+ *
+ */
+public class EffetAjoutPointAction extends Effet {
+	
+	/* ------------ Attributs ------------ */
+	/* ---------- Constructeurs ---------- */
+	/* -------- Getters & Setters -------- */
+	/* -------- Methodes de classe ------- */
+	/**
+	 * Constructeur par defaut prive
+	 */
+	private EffetAjoutPointAction() {}
+
+	/**
+	 * @param carte
+	 */
+	public EffetAjoutPointAction(CartesActionEffet carte) {
+		super(carte);
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

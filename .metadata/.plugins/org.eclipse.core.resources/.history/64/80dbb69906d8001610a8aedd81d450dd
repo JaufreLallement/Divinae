@@ -1,0 +1,120 @@
+/**
+ * 
+ */
+package cartes.cartes_action.cartes_apocalypse;
+
+import java.util.ArrayList;
+
+import joueur.Joueur;
+import origine.Origine;
+import cartes.Carte;
+import cartes.cartes_action.CarteAction;
+import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
+import effets.Effet;
+
+/**
+ * @author Lallement
+ *
+ */
+public class CarteApocalypse extends CartesActionEffet {
+	/* ---------- Attributs ---------- */
+	/**
+	 * Possibilité de poser une carte apocalypse.
+	 * True: une carte apocalypse peut être posée
+	 * False sinon 
+	 */
+	private boolean etatApocalypse = false;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par défaut
+	 */
+	public CarteApocalypse() {
+		super();
+	}
+
+	/**
+	 * Constructeur avec arguments
+	 * @param {Origine} origine : origine à attribuer la carte apocalypse
+	 */
+	public CarteApocalypse(Origine origine) {
+		
+	}
+	
+
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur pour l'attribut etatApocalypse
+	 * @return {boolean} etatApocalypse : retourne true si une carte apocalypse peut être posée, false sinon
+	 */
+	public boolean isEtatApocalypse() {
+		return this.etatApocalypse;
+	}
+
+	/**
+	 * Modificateur pour l'attribut etatApocalypse
+	 */
+	public void setEtatApocalypse() {
+		this.etatApocalypse = (this.etatApocalypse) ? false : true;
+	}
+	
+	/* ---------- Méthodes ---------- */
+	
+	/**
+	 * Méthode appliquant l'effet d'une carte apocalypse
+	 * @see effet.Effet#appliquerEffet()
+	 */
+	public void appliquerEffet() {
+		ArrayList<Joueur> participants = this.getJoueur().getPartie().getParticipants();
+		boolean egalite = false;
+		Joueur elimine = participants.get(0);
+		Joueur gagnant = participants.get(0);
+		for (int i = 0; i < participants.size(); i++) {
+			if (participants.get(i).getPrieres() <  elimine.getPrieres()) {
+				elimine = participants.get(i);
+			} else if (participants.get(i).getPrieres() >  elimine.getPrieres()) {
+				gagnant = participants.get(i);
+			}
+			egalite = (participants.get(i).getPrieres() == elimine.getPrieres()) ? true : false;
+		}	
+		
+		if (!egalite) {
+			if (participants.size() >= 4) {
+				this.getJoueur().getPartie().getParticipants().remove(elimine);
+				System.out.println("Le joueur " + elimine.toString() + " est elimine!");
+			} else {
+				this.getJoueur().getPartie().setGagnant(gagnant);
+				System.out.println("Le joueur " + gagnant.toString() + " remporte la partie!");
+			}
+		} else {
+			System.out.println("Il y a une egalite, aucun effet!");
+		}
+	}
+	
+	/**
+	 * Méthode permettant d'obtenir toutes les cartes apocalypse
+	 * @return {ArrayList<Carte>} apocalypses : retourne un ArrayList contenant toutes les cartes apocalypse
+	 */
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> apocalypses = new ArrayList<Carte>();
+		apocalypses.add(new CarteApocalypse(Origine.JOUR));
+		apocalypses.add(new CarteApocalypse(Origine.NUIT));
+		apocalypses.add(new CarteApocalypse(Origine.NEANT));
+		apocalypses.add(new CarteApocalypse(null));
+		apocalypses.add(new CarteApocalypse(null));
+		return apocalypses;
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ArrayList<Carte> testApocalypse = CarteApocalypse.getAll();
+		System.out.println(testApocalypse.size());
+		System.out.println(testApocalypse.toString());
+		for (Carte carteApocalypse : testApocalypse) {
+			System.out.println(carteApocalypse.getOrigineCarte());
+		}
+	}
+
+}

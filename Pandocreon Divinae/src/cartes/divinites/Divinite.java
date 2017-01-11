@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import cartes.Carte;
 import dogme.Dogme;
+import effets.Effet;
 import origine.Origine;
 
 /**
@@ -32,12 +33,17 @@ public class Divinite extends Carte {
 	 */
 	private int totalPrieres = 0;
 	
+	/**
+	 * Effet de la divinite
+	 */
+	private Effet effet;
+	
 
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par défaut   
+	 * Constructeur par defaut prive   
 	 */
-	public Divinite() {
+	private Divinite() {
 		super();
 	}
 	
@@ -111,16 +117,7 @@ public class Divinite extends Carte {
 	 */
 	public static ArrayList<Carte> getAll() {
 		ArrayList<Carte> divinites = new ArrayList<Carte>();
-		divinites.add(Brewalen.getInstance());
-		divinites.add(Drinded.getInstance());
-		divinites.add(Gorna.getInstance());
-		divinites.add(Gwenghelen.getInstance());
-		divinites.add(Killinstred.getInstance());
-		divinites.add(Llewella.getInstance());
-		divinites.add(PuiTara.getInstance());
-		divinites.add(Romtec.getInstance());
-		divinites.add(Shingva.getInstance());
-		divinites.add(Yartsur.getInstance());
+		// TODO instancier toutes les divinites
 		return divinites;
 	}
 	

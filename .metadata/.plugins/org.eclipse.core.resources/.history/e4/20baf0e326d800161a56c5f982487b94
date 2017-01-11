@@ -1,0 +1,73 @@
+/**
+ * 
+ */
+package effets;
+
+import java.util.ArrayList;
+
+import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
+import partie.Partie;
+import joueur.Joueur;
+
+/**
+ * @author Lallement
+ *
+ */
+public class EffetApocalypse extends Effet {
+	
+	/* ------------ Attributs ------------ */
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut prive
+	 */
+	private EffetApocalypse() {}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {Joueur} joueur : joueur utilisant l'effet
+	 */
+	public EffetApocalypse(Joueur joueur) {
+		super(joueur);
+	}
+	/* -------- Getters & Setters -------- */
+	/* -------- Methodes de classe ------- */
+	/**
+	 * Methode permettant d'appliquer l'effet souhaite
+	 */
+	public void appliquerEffet() {
+		boolean egalite = false;
+		Joueur elimine = this.getPartie().getParticipants().get(0);
+		Joueur gagnant = this.getPartie().getParticipants().get(0);
+		for (int i = 0; i < this.getPartie().getParticipants().size(); i++) {
+			if (this.getPartie().getParticipants().get(i).getPrieres() <  elimine.getPrieres()) {
+				elimine = this.getPartie().getParticipants().get(i);
+			} else if (this.getPartie().getParticipants().get(i).getPrieres() >  elimine.getPrieres()) {
+				gagnant = this.getPartie().getParticipants().get(i);
+			}
+			egalite = (this.getPartie().getParticipants().get(i).getPrieres() == elimine.getPrieres()) ? true : false;
+		}	
+		
+		if (!egalite) {
+			if (this.getPartie().getParticipants().size() >= 4) {
+				this.getPartie().getParticipants().remove(elimine);
+				this.getPartie().setDernierJoueurApo(this.getJoueur());
+				this.getPartie().setDernierTourApo(this.getCarte().getJoueur().getPartie().getTourAnt(0));
+				System.out.println("Le joueur " + elimine.toString() + " est elimine!");
+			} else {
+				this.getCarte().getJoueur().getPartie().setGagnant(gagnant);
+				System.out.println("Le joueur " + gagnant.toString() + " remporte la partie!");
+			}
+		} else {
+			System.out.println("Il y a une egalite, aucun effet!");
+		}
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

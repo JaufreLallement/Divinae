@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import origine.Origine;
 import cartes.Carte;
 import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
+import effets.Effet;
 
 /**
  * @author alexis
@@ -27,8 +28,8 @@ public class CarteDeusEx extends CartesActionEffet {
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
 	 */
-	public CarteDeusEx(Origine origine, String intitule) {
-		super(origine, intitule);
+	public CarteDeusEx(Origine origine, String intitule, Effet effet) {
+		super(origine, intitule, effet);
 	}
 	
 	/* ---------- Getters & Setters ---------- */
@@ -40,19 +41,7 @@ public class CarteDeusEx extends CartesActionEffet {
 	 */
 	public static ArrayList<Carte> getAll() {
 		ArrayList<Carte> deusEx = new ArrayList<Carte>();
-		deusEx.add(CarteBouleversement.getInstance());
-		deusEx.addAll(CarteColereDivine.getAll());
-		deusEx.add(CarteConcentration.getInstance());
-		deusEx.add(CarteDiversion.getInstance());
-		deusEx.add(CarteFourberie.getInstance());
-		deusEx.addAll(CarteInfluence.getAll());
-		deusEx.add(CarteInquisition.getInstance());
-		deusEx.add(CarteMiroir.getInstance());
-		deusEx.add(CarteOrdreCeleste.getInstance());
-		deusEx.add(CartePhoenix.getInstance());
-		deusEx.add(CarteStase.getInstance());
-		deusEx.add(CarteTranse.getInstance());
-		deusEx.add(CarteTrouNoir.getInstance());
+		// TODO instancier tous les deusex
 		return deusEx;
 	}
 	
@@ -78,14 +67,4 @@ public class CarteDeusEx extends CartesActionEffet {
 			System.out.println(deusEx.toString());
 		}
 	}
-	
-	/**
-	 * Implementation de la methode appliquerEffet
-	 * @see effet.Effet#appliquerEffet()
-	 */
-	@Override
-	public void appliquerEffet() {
-		// TODO Auto-generated method stub
-	}
-
 }

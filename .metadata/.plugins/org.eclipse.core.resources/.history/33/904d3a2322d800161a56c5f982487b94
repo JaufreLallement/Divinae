@@ -1,0 +1,61 @@
+/**
+ * 
+ */
+package effets;
+
+import java.util.ArrayList;
+
+import partie.Partie;
+import joueur.Joueur;
+
+/**
+ * @author Lallement
+ *
+ */
+public class EffetApocalypse extends Effet {
+	
+	/* ------------ Attributs ------------ */
+	/* ---------- Constructeurs ---------- */
+	/* -------- Getters & Setters -------- */
+	/* -------- Methodes de classe ------- */
+	/**
+	 * 
+	 */
+	public void appliquerEffet() {
+		ArrayList<Joueur> participants = this.getPartie().getParticipants();
+		boolean egalite = false;
+		Joueur elimine = participants.get(0);
+		Joueur gagnant = participants.get(0);
+		for (int i = 0; i < participants.size(); i++) {
+			if (participants.get(i).getPrieres() <  elimine.getPrieres()) {
+				elimine = participants.get(i);
+			} else if (participants.get(i).getPrieres() >  elimine.getPrieres()) {
+				gagnant = participants.get(i);
+			}
+			egalite = (participants.get(i).getPrieres() == elimine.getPrieres()) ? true : false;
+		}	
+		
+		if (!egalite) {
+			if (participants.size() >= 4) {
+				this.getPartie().getParticipants().remove(elimine);
+				this.getPartie().setDernierJoueurApo(this.getCarte().getJoueur());
+				this.getPartie().setDernierTourApo(this.getCarte().getJoueur().getPartie().getTourAnt(0));
+				System.out.println("Le joueur " + elimine.toString() + " est elimine!");
+			} else {
+				this.getCarte().getJoueur().getPartie().setGagnant(gagnant);
+				System.out.println("Le joueur " + gagnant.toString() + " remporte la partie!");
+			}
+		} else {
+			System.out.println("Il y a une egalite, aucun effet!");
+		}
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package effets;
+
+/**
+ * @author Lallement
+ * 
+ */
+public class Effet {
+	/**
+	 * Méthode permettant à une carte d'activer son effet spécial
+	 */
+	public void appliquerEffet() {
+		
+	}
+}

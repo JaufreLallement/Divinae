@@ -9,7 +9,8 @@ import joueur.Joueur;
 import origine.Origine;
 import cartes.Carte;
 import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
-import cartes.cartes_action.cartes_apocalypse.CarteApocalypse;
+import cartes.cartes_action.cartes_action_effet.cartes_apocalypse.CarteApocalypse;
+import dogme.Dogme;
 
 /**
  * @author Lallement
@@ -88,8 +89,7 @@ public class CarteAction extends Carte {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ArrayList<Carte> cartesAction = CarteAction.getAll();
-		System.out.println(cartesAction.size());
+		
 	}
 
 }

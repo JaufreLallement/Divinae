@@ -8,6 +8,7 @@ import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteA
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
 import cartes.divinites.Divinite;
 import dogme.Dogme;
+import effets.Effet;
 
 /**
  * @author Lallement
@@ -32,9 +33,8 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	 * Constructeur avec argument
 	 * @param {String} intitule : intitule de la carte
 	 */
-	public CarteGuideSpirituel(String intitule) {
-		super(intitule);
-		this.croyants = new CarteCroyant[this.nbCroyantsTotal];
+	private CarteGuideSpirituel() {
+		super("");
 	}
 	
 	/**
@@ -42,9 +42,11 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	 * @param {Origine} origine : origine a attribuer a la carte
 	 * @param {Dogme[]} dogmes : dogmes a attribuer  
 	 * @param {int} totalCroyants : nombre de croyants total que le Guide peut rassembler
+	 * @param {String} intitule : intitule de la carte nouvellement creee
+	 * @param {Effet} effet : effet a attribuer a la carte nouvellement creee
 	 */
-	public CarteGuideSpirituel(Origine origine, Dogme[] dogmes, int totalCroyants, String intitule) {
-		super(origine, dogmes, intitule);
+	public CarteGuideSpirituel(Origine origine, Dogme[] dogmes, int totalCroyants, String intitule, Effet effet) {
+		super(origine, dogmes, intitule, effet);
 		this.nbCroyantsTotal = totalCroyants;
 		this.croyants = new CarteCroyant[this.nbCroyantsTotal];
 	}
@@ -88,8 +90,14 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	 * @param {CarteCroyant} croyant : croyant a lier au guide
 	 */
 	public void addCroyant(CarteCroyant croyant) {
-		for (int i = 0; i < this.nbCroyantsTotal; i++) {
-			if (this.croyants[i] == null) this.croyants[i] = croyant;
+		int i = 0;
+		boolean attribue = false;
+		while (i < this.nbCroyantsTotal && !attribue) {
+			if (this.croyants[i] == null) {
+				this.croyants[i] = croyant;
+				attribue = true;
+			}
+			i++;
 		}
 	}
 	
@@ -110,17 +118,7 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	 */
 	public static ArrayList<Carte> getAll() {
 		ArrayList<Carte> guides = new ArrayList<Carte>();
-		guides.add(CarteAnarchiste.getInstance());
-		guides.add(CarteAscete.getInstance());
-		guides.addAll(CarteClerc.getAll());
-		guides.add(CarteDevin.getInstance());
-		guides.add(CarteExorciste.getInstance());
-		guides.addAll(CarteMartyr.getAll());
-		guides.add(CarteMessie.getInstance());
-		guides.add(CartePaladin.getInstance());
-		guides.add(CarteShaman.getInstance());
-		guides.add(CarteSorcier.getInstance());
-		guides.add(CarteTyran.getInstance());
+		// TODO instancier tous les guides
 		return guides;
 	}
 	
@@ -134,15 +132,6 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 				" ,, Origine: " + this.getOrigineCarte() + 
 				" ,, Nombre de croyants: " + this.getNbCroyantsTotal() + 
 				" ,, Dogmes: " + this.getDogmes()[0] + ", " + this.getDogmes()[1];
-	}
-	
-	/**
-	 * Implementation de la methode appliquerEffet
-	 * @see effet.Effet#appliquerEffet()
-	 */
-	@Override
-	public void appliquerEffet() {
-		// TODO Auto-generated method stub
 	}
 	
 	/**

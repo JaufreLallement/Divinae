@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+package effets;
+
+import partie.Partie;
+import cartes.Carte;
+
+/**
+ * @author Lallement
+ * 
+ */
+public class Effet implements ApplicationEffet {
+	/* ---------- Attributs ---------- */
+	private Carte carte;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par défaut
+	 */
+	public Effet() {}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur pour l'attribut carte
+	 * @return {Carte} carte : carte a laquelle est attribue l'effet
+	 */
+	public Carte getCarte() {
+		return this.carte;
+	}
+
+	/**
+	 * Modificateur pour l'attribut carte
+	 * @param {} carte
+	 */
+	public void setCarte(Carte carte) {
+		this.carte = carte;
+	}
+	
+	/* ---------- Methodes ---------- */
+	
+	/**
+	 * Methode permettant de retourner la partie en cours
+	 */
+	public Partie getPartie() {
+		
+	}
+	
+	/**
+	 * Méthode permettant à une carte d'activer son effet spécial
+	 */
+	public void appliquerEffet() {
+		System.out.println("L'effet est applique!");
+	}
+}

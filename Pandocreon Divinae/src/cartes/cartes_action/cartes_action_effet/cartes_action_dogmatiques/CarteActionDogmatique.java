@@ -11,6 +11,7 @@ import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels.CarteGuideSpirituel;
 import dogme.Dogme;
+import effets.Effet;
 
 /**
  * @author Lallement
@@ -19,6 +20,9 @@ import dogme.Dogme;
 public abstract class CarteActionDogmatique extends CartesActionEffet {
 	
 	/* ---------- Attributs ---------- */
+	/**
+	 * Dogmes de la carte
+	 */
 	private Dogme[] dogmes;
 	
 	/* ---------- Constructeurs ---------- */	
@@ -32,19 +36,23 @@ public abstract class CarteActionDogmatique extends CartesActionEffet {
 	
 	/**
 	 * Constructeur avec argument
-	 * @param {Origine} origine : origine à attribuer à la carte nouvellement créée
+	 * @param {Origine} origine : origine a attribuer a la carte nouvellement creee
+	 * @param {String} intitule : intitule de la carte nouvellement creee
+	 * @param {Effet} effet : effet a attribuer a la carte nouvellement creee
 	 */
-	public CarteActionDogmatique(Origine origine, String intitule) {
-		super(origine, intitule);
+	public CarteActionDogmatique(Origine origine, String intitule, Effet effet) {
+		super(origine, intitule, effet);
 	}
 
 	/**
 	 * Constructeur avec argument
-	 * @param {Origine} origine : origine à attribuer à la carte nouvellement créée
-	 * @param {Dogme[]} dogmes : tableau de dogmes à attribuer à la carte
+	 * @param {Origine} origine : origine à attribuer a la carte nouvellement créée
+	 * @param {Dogme[]} dogmes : tableau de dogmes à attribuer a la carte
+	 * @param {String} intitule : intitule de la carte nouvellement creee
+	 * @param {Effet} effet : effet a attribuer a la carte nouvellement creee
 	 */
-	public CarteActionDogmatique(Origine origine, Dogme[] dogmes, String intitule) {
-		super(origine, intitule);
+	public CarteActionDogmatique(Origine origine, Dogme[] dogmes, String intitule, Effet effet) {
+		super(origine, intitule, effet);
 		this.dogmes = dogmes;
 	}
 	
@@ -70,15 +78,7 @@ public abstract class CarteActionDogmatique extends CartesActionEffet {
 	}
 	
 	/**
-	 * Implementation de la methode appliquerEffet
-	 * @see effet.Effet#appliquerEffet()
-	 */
-	@Override
-	public void appliquerEffet() {
-		// TODO Auto-generated method stub
-	}
-	
-	/**
+	 * Methode de tests
 	 * @param args
 	 */
 	public static void main(String[] args) {
