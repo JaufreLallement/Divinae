@@ -10,6 +10,7 @@ import origine.Origine;
 import partie.Partie;
 import partie.Tour;
 import cartes.Carte;
+import cartes.cartes_dogmatiques.croyants.CarteCroyant;
 import cartes.divinites.Divinite;
 
 /**
@@ -210,6 +211,21 @@ public class Joueur implements Runnable {
 	}
 	
 	/* ---------- Méthodes ---------- */
+	/**
+	 * Methode permettant de retourner tous les croyants ou guides spirituel du jeu du joueur
+	 * @param {String} dogmatique : CarteCroyant ou CarteGuideSpirituel
+	 * @return {ArrayList<Carte>} dogmatiques : ArrayList de carte
+	 */
+	public ArrayList<Carte> getJeuDogmatiques(String dogmatique) {
+		ArrayList<Carte> dogmatiques = new ArrayList<Carte>();
+		for (Carte carte : this.jeu) {
+			if (carte.getClass().getSimpleName() == dogmatique) {
+				dogmatiques.add(carte);
+			}
+		}
+		return dogmatiques;
+	}
+	
 	/**
 	 * Methode permettant de retourner directement les points de priere a partir du joueur
 	 * @return {int} : points de priere que poossede le joueur

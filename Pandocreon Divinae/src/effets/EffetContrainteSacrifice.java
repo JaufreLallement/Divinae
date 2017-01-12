@@ -4,6 +4,7 @@
 package effets;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import cartes.Carte;
 import dogme.Dogme;
@@ -29,7 +30,7 @@ public class EffetContrainteSacrifice extends Effet {
 	/**
 	 * Dogmes que la carte a contraindre doit posseder
 	 */
-	private ArrayList<Dogme> dogmes = null;
+	private Dogme[] dogmes = null;
 	
 	/* ---------- Constructeurs ---------- */
 	/**
@@ -42,7 +43,7 @@ public class EffetContrainteSacrifice extends Effet {
 	 * @param {Carte} carte : carte concernee
 	 * @param {boolean} sacrifice : true, la carte doit se sacrifier; false, le sacrifice est empeche pour un tour 
 	 */
-	public EffetContrainteSacrifice(boolean sacrifice, ArrayList<Dogme> dogmes) {
+	public EffetContrainteSacrifice(boolean sacrifice, Dogme[] dogmes) {
 		super();
 		this.sacrifice = sacrifice;
 		this.dogmes = dogmes;
@@ -82,17 +83,17 @@ public class EffetContrainteSacrifice extends Effet {
 
 	/**
 	 * Accesseur pour l'attribut dogmes
-	 * @return {ArrayList<Dogme>} dogmes : dogmes a verifier
+	 * @return {Dogme[]} dogmes : dogmes a verifier
 	 */
-	public ArrayList<Dogme> getDogmes() {
+	public Dogme[] getDogmes() {
 		return this.dogmes;
 	}
 
 	/**
 	 * Modificateur pour l'attribut dogmes
-	 * @param {ArrayList<Dogme>} dogmes : dogme devant etre verifie
+	 * @param {Dogme[]} dogmes : dogme devant etre verifie
 	 */
-	public void setDogmes(ArrayList<Dogme> dogmes) {
+	public void setDogmes(Dogme[] dogmes) {
 		this.dogmes = dogmes;
 	}
 	
@@ -105,7 +106,16 @@ public class EffetContrainteSacrifice extends Effet {
 		if (this.sacrifice) {
 			this.carteContrainte.utiliserCapacite();
 		} else {
+			boolean contientDogme = false;
 			for (Dogme dogme : this.dogmes) {
+				if (Arrays.asList(this.carteContrainte.getJoueur().getDiviniteIncarnee().getDogmes()).contains(dogme)) {
+					contientDogme = true;
+				}
+			}
+			if (!contientDogme) {
+				throw new InvalidDogmeException();
+			} else {
+				this.carteContrainte.setSacrifiable(false);
 			}
 		}
 	}

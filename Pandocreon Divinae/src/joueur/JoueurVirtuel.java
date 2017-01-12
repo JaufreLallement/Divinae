@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import cartes.Carte;
 import strategie.StrategiePassive;
 import strategie.Strategy;
 
@@ -73,8 +74,20 @@ public class JoueurVirtuel extends Joueur {
 	
 	/* ---------- Méthodes ---------- */
 	
+	/**
+	 * Methode permettant a un joueur virtuel d'utiliser sa strategie
+	 */
 	public void employerStrategie() {
 		this.strategie.jouer();
+	}
+	
+	/**
+	 * Methode permettant de retourner un croyant ou un guide spirituel du jeu aleatoire
+	 * @param {String} dogmatique : CarteCroyant ou CarteGuideSpirituel
+	 * @return {Carte} : croyant ou guide spirituel du jeu aleatoire
+	 */
+	public Carte choisirCarteASacrifier(String dogmatique) {
+		return this.getJeuDogmatiques(dogmatique).get(new Random().nextInt(this.getJeuDogmatiques(this.getClass().getSimpleName()).size()));
 	}
 	
 	/**

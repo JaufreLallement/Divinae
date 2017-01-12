@@ -4,7 +4,8 @@
 package effets;
 
 import java.util.ArrayList;
-import cartes.cartes_action.cartes_action_effet.cartes_apocalypse.CarteApocalypse;
+
+import cartes.cartes_apocalypse.CarteApocalypse;
 import partie.Partie;
 import joueur.Joueur;
 

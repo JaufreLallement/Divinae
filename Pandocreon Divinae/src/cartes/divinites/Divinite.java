@@ -7,7 +7,7 @@ package cartes.divinites;
 import java.util.ArrayList;
 
 import cartes.Carte;
-import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteDogmatique;
+import cartes.cartes_dogmatiques.CarteDogmatique;
 import dogme.Dogme;
 import effets.Effet;
 import origine.Origine;

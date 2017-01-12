@@ -1,0 +1,120 @@
+/**
+ * 
+ */
+package effets;
+
+import java.util.ArrayList;
+
+import cartes.Carte;
+import dogme.Dogme;
+import exceptions.InvalidDogmeException;
+
+/**
+ * @author Lallement
+ * Cette classe décrit l'effet contraignant le sacrifice d'une carte. L'effet permet de forcer ou d'empecher une carte de se sacrifier
+ */
+public class EffetContrainteSacrifice extends Effet {
+	
+	/* ------------ Attributs ------------ */
+	/**
+	 * Carte que l'on souhaite contraindre
+	 */
+	private Carte carteContrainte = null;
+	
+	/**
+	 * True : la carte est forcee au sacrifice, false : le sacrifice est empeche
+	 */
+	private boolean sacrifice;
+	
+	/**
+	 * Dogmes que la carte a contraindre doit posseder
+	 */
+	private ArrayList<Dogme> dogmes = null;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut prive
+	 */
+	private EffetContrainteSacrifice() {}
+	
+	/**
+	 * Constructeur avec deux arguments
+	 * @param {Carte} carte : carte concernee
+	 * @param {boolean} sacrifice : true, la carte doit se sacrifier; false, le sacrifice est empeche pour un tour 
+	 */
+	public EffetContrainteSacrifice(boolean sacrifice, ArrayList<Dogme> dogmes) {
+		super();
+		this.sacrifice = sacrifice;
+		this.dogmes = dogmes;
+	}
+	/* -------- Getters & Setters -------- */
+	/**
+	 * Accesseur pour l'attribut carteContrainte
+	 * @return {Carte} carteContrainte : carte contrainte
+	 */
+	public Carte getCarteContrainte() {
+		return this.carteContrainte;
+	}
+
+	/**
+	 * Modificateur pour l'attribut carteContrainte
+	 * @param {Carte} carteContrainte : carte devant etre contrainte 
+	 */
+	public void setCarteContrainte(Carte carteContrainte) {
+		this.carteContrainte = carteContrainte;
+	}
+
+	/**
+	 * Accesseur pour l'attribut sacrifice
+	 * @return {boolean} sacrifice : true, la carte doit se sacrifier; false, le sacrifice est empeche pour un tour
+	 */
+	public boolean isSacrifice() {
+		return this.sacrifice;
+	}
+
+	/**
+	 * Modificateur pour l'attribut sacrifice
+	 * @param {boolean} sacrifice : le sacrifice doit etre empeche ou non
+	 */
+	public void setSacrifice(boolean sacrifice) {
+		this.sacrifice = sacrifice;
+	}
+
+	/**
+	 * Accesseur pour l'attribut dogmes
+	 * @return {ArrayList<Dogme>} dogmes : dogmes a verifier
+	 */
+	public ArrayList<Dogme> getDogmes() {
+		return this.dogmes;
+	}
+
+	/**
+	 * Modificateur pour l'attribut dogmes
+	 * @param {ArrayList<Dogme>} dogmes : dogme devant etre verifie
+	 */
+	public void setDogmes(ArrayList<Dogme> dogmes) {
+		this.dogmes = dogmes;
+	}
+	
+	/* -------- Methodes de classe ------- */
+	/**
+	 * Methode permettant d'appliquer l'effet souhaite
+	 * @param {Carte} carte : carte possedant l'effet
+	 */
+	public void appliquerEffet(Carte carte) throws InvalidDogmeException {
+		if (this.sacrifice) {
+			this.carteContrainte.utiliserCapacite();
+		} else {
+			for (Dogme dogme : this.dogmes) {
+			}
+		}
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+}

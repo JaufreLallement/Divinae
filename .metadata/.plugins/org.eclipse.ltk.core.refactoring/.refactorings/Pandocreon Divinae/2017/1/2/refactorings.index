@@ -7,3 +7,7 @@
 1484241494223	Delete element
 1484241627570	Delete element
 1484243351434	Rename type 'CarteActionDogmatique'
+1484254913820	Rename package 'cartes.cartes_action.cartes_action_effet.cartes_apocalypse'
+1484254939642	Rename package 'cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques'
+1484254978358	Rename package 'cartes.cartes_action_dogmatiques'
+1484255013799	Rename package 'cartes.cartes_action.cartes_action_effet.carte_deus_ex'

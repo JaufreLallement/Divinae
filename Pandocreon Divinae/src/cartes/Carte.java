@@ -5,9 +5,9 @@ package cartes;
 
 import java.util.ArrayList;
 
-import cartes.cartes_action.cartes_action_effet.carte_deus_ex.CarteDeusEx;
-import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteDogmatique;
-import cartes.cartes_action.cartes_action_effet.cartes_apocalypse.CarteApocalypse;
+import cartes.carte_deus_ex.CarteDeusEx;
+import cartes.cartes_apocalypse.CarteApocalypse;
+import cartes.cartes_dogmatiques.CarteDogmatique;
 import cartes.divinites.Divinite;
 import effets.Effet;
 import joueur.Joueur;

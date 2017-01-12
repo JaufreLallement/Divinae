@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import cartes.Carte;
-import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
+import cartes.cartes_dogmatiques.croyants.CarteCroyant;
 import cartes.divinites.Divinite;
 import de.De;
 import exceptions.NumberOfPlayersException;

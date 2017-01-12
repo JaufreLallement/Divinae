@@ -1,0 +1,62 @@
+package cartes.carte_deus_ex;
+
+import java.util.ArrayList;
+
+import origine.Origine;
+import cartes.Carte;
+import effets.Effet;
+
+/**
+ * @author alexis
+ * @author Lallement
+ * La classe CarteDeusEx decrit le comportement general des cartes Deus Ex
+ */
+public class CarteDeusEx extends Carte {
+	
+	/* ---------- Attributs ---------- */
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee
+	 */
+	public CarteDeusEx(Origine origine, String intitule, Effet effet) {
+		super(origine, intitule, effet);
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	
+	/* ---------- Methodes ---------- */
+	/**
+	 * Méthode permettatn de récupérer toutes les cartes Deus Ex
+	 * @return {ArrayList<Carte>} deusEx : retourne un ArrayList contenant toutes les cartes DeusEx
+	 */
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> deusEx = new ArrayList<Carte>();
+		// TODO instancier tous les deusex
+		return deusEx;
+	}
+	
+	/**
+	 * Methode permettant de donner les détails d'un deus ex
+	 * @return {String} : retourne un chaîne de caractère décrivant le deus ex
+	 */
+	@Override
+	public String toString() {
+		return "Deus Ex: " + this.getIntituleCarte() + 
+				" ,, Origine: " + this.getOrigineCarte();
+	}
+	
+	/**
+	 * Méthode de tests
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ArrayList<Carte> testDeusEx = CarteDeusEx.getAll();
+		System.out.println(testDeusEx.size());
+		
+		for (Carte deusEx : testDeusEx) {
+			System.out.println(deusEx.toString());
+		}
+	}
+}
