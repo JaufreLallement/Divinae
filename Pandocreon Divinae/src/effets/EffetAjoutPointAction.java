@@ -3,8 +3,8 @@
  */
 package effets;
 
+import cartes.Carte;
 import origine.Origine;
-import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
 
 /**
  * @author Lallement
@@ -13,7 +13,11 @@ import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
 public class EffetAjoutPointAction extends Effet {
 	
 	/* ------------ Attributs ------------ */
+	/**
+	 * Origine des points
+	 */
 	private Origine originePoint;
+	
 	/* ---------- Constructeurs ---------- */
 	/**
 	 * Constructeur par defaut prive
@@ -48,8 +52,9 @@ public class EffetAjoutPointAction extends Effet {
 	/* -------- Methodes de classe ------- */
 	/**
 	 * Methode permettant d'appliquer l'effet souhaite
+	 * @param {CartesActionEffet} carte : carte possedant l'effet; permet de recuperer le joueur a qui ajouter les points 
 	 */
-	public void appliquerEffet(CartesActionEffet carte) {
+	public void appliquerEffet(Carte carte) {
 		carte.getJoueur().setPointsAction(this.originePoint, carte.getJoueur().getPointsAction(this.originePoint) + 1);
 	}
 	

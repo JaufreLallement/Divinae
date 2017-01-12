@@ -9,7 +9,7 @@ import java.util.Random;
 import origine.Origine;
 import partie.Partie;
 import partie.Tour;
-import cartes.cartes_action.CarteAction;
+import cartes.Carte;
 import cartes.divinites.Divinite;
 
 /**
@@ -27,7 +27,7 @@ public class Joueur implements Runnable {
 	/**
 	 * Jeu du joueur : ArrayList de Carte Action
 	 */
-	private ArrayList<CarteAction> jeu = new ArrayList<CarteAction>();
+	private ArrayList<Carte> jeu = new ArrayList<Carte>();
 	
 	/**
 	 * Divinite incranee par le joueur 
@@ -95,11 +95,11 @@ public class Joueur implements Runnable {
 	/**
 	 * Constructeur avec arguments
 	 * @param {String} nom : nom du joueur
-	 * @param {ArrayList<CarteAction>} jeu : ArrayList des cartes du joueur
+	 * @param {ArrayList<Carte>} jeu : ArrayList des cartes du joueur
 	 * @param {Divinite} divinite : divinite incarnee par le joueur
 	 * @param {Partie} p : partie a laquelle le joueur participe
 	 */
-	public Joueur(String nom, ArrayList<CarteAction> jeu, Divinite divinite, Partie p) {
+	public Joueur(String nom, ArrayList<Carte> jeu, Divinite divinite, Partie p) {
 		this.nomJoueur = nom;
 		this.jeu = jeu;
 		this.diviniteIncarnee = divinite;
@@ -125,9 +125,9 @@ public class Joueur implements Runnable {
 
 	/**
 	 * Accesseur pour l'attribut jeu
-	 * @return {ArrayList<CarteAction>} jeu : retourne un ArrayList contenant les cartes action du joueur
+	 * @return {ArrayList<Carte>} jeu : retourne un ArrayList contenant les cartes action du joueur
 	 */
-	public ArrayList<CarteAction> getJeu() {
+	public ArrayList<Carte> getJeu() {
 		return this.jeu;
 	}
 
@@ -135,7 +135,7 @@ public class Joueur implements Runnable {
 	 * Modificateur pour l'attribut jeu
 	 * @param jeu the jeu to set
 	 */
-	public void setJeu(ArrayList<CarteAction> jeu) {
+	public void setJeu(ArrayList<Carte> jeu) {
 		this.jeu = jeu;
 	}
 
@@ -251,7 +251,7 @@ public class Joueur implements Runnable {
 		this.partie.getPiocheDivinites().remove(this.diviniteIncarnee);
 		
 		for (int i = 0; i < 7; i++) {
-			this.jeu.add((CarteAction)this.partie.getPioche().get(randDiv.nextInt(this.partie.getPioche().size())));
+			this.jeu.add((Carte)this.partie.getPioche().get(randDiv.nextInt(this.partie.getPioche().size())));
 			this.partie.getPioche().remove(this.jeu.get(i));
 		}
 	}

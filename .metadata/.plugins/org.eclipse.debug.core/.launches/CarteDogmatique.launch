@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Pandocreon Divinae/src/cartes/cartes_action/cartes_action_effet/cartes_action_dogmatiques/CarteDogmatique.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteDogmatique"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Pandocreon Divinae"/>
+</launchConfiguration>

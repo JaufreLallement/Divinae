@@ -1,0 +1,123 @@
+/**
+ * 
+ */
+package cartes.divinites;
+
+
+import java.util.ArrayList;
+
+import cartes.Carte;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteDogmatique;
+import dogme.Dogme;
+import effets.Effet;
+import origine.Origine;
+
+/**
+ * @author Lallement
+ * La classe Divinité décrit le comportement général des divinités
+ */
+public class Divinite extends CarteDogmatique {
+	
+	/* ---------- Attributs ---------- */	
+	/**
+	 * Disponibilite de la capacite de la divinite
+	 */
+	private boolean capaciteDispo = true;
+	
+	/**
+	 * Nombre total de prieres rassemblées par la divinité.
+	 */
+	private int totalPrieres = 0;
+	
+
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut prive
+	 */
+	private Divinite() {}
+	
+	/**
+	 * Constructeur avec arguments
+	 * @param {Origine} origine : Origine de la divinité nouvellement créée
+	 * @param {Dogme[]} dogmes : tableau de dogmes à attribuer à la divinite
+	 * @param {String} nom : nom à attribuer à la divinite
+	 * @paramThisgamesucks10
+	 * 
+	 */
+	public Divinite(Origine origine, Dogme[] dogmes, String intitule, Effet effet) {
+		super(origine, dogmes, intitule, effet);
+		this.setSacrifiable(false);
+	}
+	
+
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur pour l'attribut capaciteDispo
+	 * @return {boolean} capaciteDispo : retourne la valeur de l'attribut capaciteDispo. True si la capacité est disponible, false sinon
+	 */
+	public boolean isCapaciteDispo() {
+		return this.capaciteDispo;
+	}
+
+	/**
+	 * Modificateur pour l'attribut capaciteDispo
+	 * @param {boolean} disponibilite : boolean a attribuer a capaciteDispo; true, la capacite est disponible, false sinon
+	 */
+	public void setCapaciteDispo(boolean disponibilite) {
+		this.capaciteDispo = (this.capaciteDispo) ? false : true;
+	}
+
+	/**
+	 * Accesseur pour l'attribut totalPrieres
+	 * @return {int} totalPrieres : retourne le nombre de prières obtenues par la divinité
+	 */
+	public int getTotalPrieres() {
+		return this.totalPrieres;
+	}
+
+	/**
+	 * Modificateur pour l'attribut capaciteDivinite
+	 * @param {int} prieres : nombre de prière à attribuer à la divinité
+	 */
+	public void setTotalPrieres(int nbPrieres) {
+		this.totalPrieres = nbPrieres;
+	}
+	
+	
+	/* ---------- Méthodes ---------- */
+	/**
+	 * Méthode retournant toutes les divinites
+	 * @return {ArrayList<Carte>} divinites : retourne un ArrayList contenant toutes les divinites
+	 */
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> divinites = new ArrayList<Carte>();
+		// TODO instancier toutes les divinites
+		return divinites;
+	}
+	
+	/**
+	 * Methode permettant de donner les détails d'unn divinite
+	 * @return {String} : retourne un chaîne de caractère décrivant la divbinite
+	 */
+	@Override
+	public String toString() {
+		return "Divinite: " + this.getClass().getSimpleName() + 
+				" ,, Origine: " + this.getOrigineCarte() + 
+				" ,, Points de priere: " + this.getTotalPrieres() + 
+				" ,, Dogmes: " + this.getDogmes()[0] + ", " + this.getDogmes()[1] + ", " + this.getDogmes()[2];
+	}
+	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		/* Tests de la méthode getAll() */
+		ArrayList<Carte> testDivinites = Divinite.getAll();
+		System.out.println(testDivinites.size());
+
+		for (Carte divinite : testDivinites) {
+			System.out.println(divinite.toString());
+		}
+	}
+}

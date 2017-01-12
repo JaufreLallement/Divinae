@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import origine.Origine;
 import cartes.Carte;
-import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteDogmatique;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
 import cartes.divinites.Divinite;
 import dogme.Dogme;
@@ -15,7 +15,7 @@ import effets.Effet;
  * La classe CarteGuideSpirituel decrit le comportement des cartes Guides Spirituels
  */
 
-public class CarteGuideSpirituel extends CarteActionDogmatique {
+public class CarteGuideSpirituel extends CarteDogmatique {
 
 	/* ---------- Attributs ---------- */
 	/**
@@ -29,14 +29,6 @@ public class CarteGuideSpirituel extends CarteActionDogmatique {
 	private CarteCroyant[] croyants;
 	
 	/* ---------- Constructeurs ---------- */
-	/**
-	 * Constructeur avec argument
-	 * @param {String} intitule : intitule de la carte
-	 */
-	private CarteGuideSpirituel() {
-		super("");
-	}
-	
 	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine a attribuer a la carte

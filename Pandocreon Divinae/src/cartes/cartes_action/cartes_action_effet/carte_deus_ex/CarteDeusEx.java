@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import origine.Origine;
 import cartes.Carte;
-import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
 import effets.Effet;
 
 /**
@@ -12,18 +11,11 @@ import effets.Effet;
  * @author Lallement
  * La classe CarteDeusEx decrit le comportement general des cartes Deus Ex
  */
-public class CarteDeusEx extends CartesActionEffet {
+public class CarteDeusEx extends Carte {
 	
 	/* ---------- Attributs ---------- */
 	
 	/* ---------- Constructeurs ---------- */
-	/**
-	 * Constructeur par défaut
-	 */
-	public CarteDeusEx(String intitule) {
-		super(intitule);
-	}
-	
 	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine à attribuer à la carte nouvellement creee

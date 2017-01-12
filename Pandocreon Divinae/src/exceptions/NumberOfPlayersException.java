@@ -8,7 +8,14 @@ package exceptions;
  *
  */
 public class NumberOfPlayersException extends Exception {
-
+	
+	/* ------------ Attributs ------------ */
+	
+	/* ---------- Constructeurs ---------- */
+	
+	/* -------- Getters & Setters -------- */
+	
+	/* -------- Methodes de classe ------- */
 	/**
 	 * Méthode permettant de retourtner un message d'erreur
 	 * @return {String} : message à afficher

@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package effets;
+
+import cartes.Carte;
+
+/**
+ * @author Lallement
+ * Cette classe décrit l'effet contraignant le sacrifice d'une carte. L'effet permet de forcer ou d'empecher une carte de se sacrifier
+ */
+public class EffetContrainteSacrifice extends Effet {
+	
+	/* ------------ Attributs ------------ */
+	/**
+	 * Carte que l'on souhaite contraindre
+	 */
+	private Carte carteContrainte;
+	
+	private boolean sacrifice;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut
+	 */
+	public EffetContrainteSacrifice() {}
+	/* -------- Getters & Setters -------- */
+	/* -------- Methodes de classe ------- */
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -3,10 +3,6 @@
  */
 package effets;
 
-import partie.Partie;
-import cartes.Carte;
-import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
-
 /**
  * @author Lallement
  * 

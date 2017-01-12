@@ -1,0 +1,312 @@
+/**
+ * 
+ */
+package joueur;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import origine.Origine;
+import partie.Partie;
+import partie.Tour;
+import cartes.Carte;
+import cartes.divinites.Divinite;
+
+/**
+ * @author Lallement
+ * La classe Joueur decrit le comportement general des Joueurs physiques ou virtuels
+ */
+public class Joueur implements Runnable {
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Nom du joueur
+	 */
+	private String nomJoueur;
+	
+	/**
+	 * Jeu du joueur : ArrayList de Carte Action
+	 */
+	private ArrayList<Carte> jeu = new ArrayList<Carte>();
+	
+	/**
+	 * Divinite incranee par le joueur 
+	 */
+	private Divinite diviniteIncarnee;
+	
+	/**
+	 * Points d'action d'origine Jour du joueur.
+	 */
+	private int pointsActionJour = 0;
+	
+	/**
+	 * Points d'action d'origine Nuit du joueur.
+	 */
+	private int pointsActionNuit = 0;
+	
+	/**
+	 * Points d'action d'origine Neant du joueur.
+	 */
+	private int pointsActionNeant = 0;
+	
+	/**
+	 * Partie à laquelle le joueur participe
+	 */
+	private Partie partie;
+	
+	/**
+	 * Thread permettant la phase de jeu d'un joueur
+	 */
+	private Thread t;
+	
+	/**
+	 * True : une phase de jeu est en cours
+	 * False : aucune phase de jeu en cours
+	 */
+	private static boolean phaseJeu = false;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * On supprime le constructeur publique par défaut afin de s'assurer
+	 * que les informations requises soient fournies
+	 */
+	private Joueur() {}
+	
+	/**
+	 * Constructeur avec argument
+	 * @param {String} nom : nom choisit par le joueur physique
+	 */
+	public Joueur(String nom) {
+		this.nomJoueur = nom;
+		// TODO partie, jeu, divinite
+	}
+	
+	/**
+	 * Constructeur avec arguments
+	 * @param {String} nom : nom a attribuer au joueur
+	 * @param {Partie} p : partie a laquelle le joueur participe
+	 */
+	public Joueur(String nom, Partie p) {
+		this.nomJoueur = nom;
+		this.partie = p;
+		// TODO jeu et divinite
+	}
+	
+	/**
+	 * Constructeur avec arguments
+	 * @param {String} nom : nom du joueur
+	 * @param {ArrayList<CarteAction>} jeu : ArrayList des cartes du joueur
+	 * @param {Divinite} divinite : divinite incarnee par le joueur
+	 * @param {Partie} p : partie a laquelle le joueur participe
+	 */
+	public Joueur(String nom, ArrayList<CarteAction> jeu, Divinite divinite, Partie p) {
+		this.nomJoueur = nom;
+		this.jeu = jeu;
+		this.diviniteIncarnee = divinite;
+		this.partie = p;
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur pour l'attribut nom
+	 * @return {String} nomJoueur : retourne le nom du joueur
+	 */
+	public String getNom() {
+		return this.nomJoueur;
+	}
+
+	/**
+	 * Modificateur pour l'attribut nom
+	 * @param {String} nom : nom a attribuer au joueur
+	 */
+	public void setNom(String nom) {
+		this.nomJoueur = nom;
+	}
+
+	/**
+	 * Accesseur pour l'attribut jeu
+	 * @return {ArrayList<CarteAction>} jeu : retourne un ArrayList contenant les cartes action du joueur
+	 */
+	public ArrayList<CarteAction> getJeu() {
+		return this.jeu;
+	}
+
+	/**
+	 * Modificateur pour l'attribut jeu
+	 * @param jeu the jeu to set
+	 */
+	public void setJeu(ArrayList<CarteAction> jeu) {
+		this.jeu = jeu;
+	}
+
+	/**
+	 * Accesseur pour l'attribut diviniteIncarnee
+	 * @return {Divinite} diviniteIncarnee : retourne la divinite que le joueur incarne
+	 */
+	public Divinite getDiviniteIncarnee() {
+		return this.diviniteIncarnee;
+	}
+
+	/**
+	 * Modificateur pour l'attribut diviniteIncarnee
+	 * @param {Divinite} divinite : divinite a attribuer au joueur
+	 */
+	public void setDiviniteIncarnee(Divinite divinite) {
+		this.diviniteIncarnee = divinite;
+	}
+
+	/**
+	 * Accesseur pour l'attribut pointsActionJour
+	 * @param {Origine} origine : origine des points d'action
+	 * @return {int} pointsActionJour : retourne les points d'action d'origine jour du joueur
+	 */
+	public int getPointsAction(Origine origine) {
+		return (origine == Origine.JOUR) ? this.pointsActionJour : (origine == Origine.NUIT) ? this.pointsActionNuit : this.pointsActionNeant;
+	}
+	
+	/**
+	 * Modificateur pour les attributs pointsAction
+	 * @param {Origine} origine : origine des points d'action
+	 * @param {int} pointsActionJour : nombre de points d'action a attribuer
+	 */
+	public void setPointsAction(Origine origine, int pointsAction) {
+		switch (origine) {
+		case JOUR:
+			this.pointsActionJour = pointsAction;
+			break;
+
+		case NUIT:
+			this.pointsActionNuit = pointsAction;
+			break;
+			
+		case NEANT:
+			this.pointsActionNeant = pointsAction;
+			break;
+		}
+	}
+
+	/**
+	 * Accesseur pour l'attribut partie
+	 * @return {Partie} partie : retourne la partie a laquelle le joueur participe
+	 */
+	public Partie getPartie() {
+		return this.partie;
+	}
+
+	/**
+	 * Modificateur pour l'attribut partie
+	 * @param {Partie} p : partie a laquelle on souhaite que le joueur participe
+	 */
+	public void setPartie(Partie p) {
+		this.partie = p;
+	}
+	
+	/**
+	 * Accesseur pour l'attribut phaseJeu
+	 * @return {boolean} phaseJeu : true si une phase de jeu est en cours, false sinon
+	 */
+	public static boolean isPhaseJeu() {
+		return Joueur.phaseJeu;
+	}
+	
+	/* ---------- Méthodes ---------- */
+	/**
+	 * Methode permettant de retourner directement les points de priere a partir du joueur
+	 * @return {int} : points de priere que poossede le joueur
+	 */
+	public int getPrieres() {
+		return this.diviniteIncarnee.getTotalPrieres();
+	}
+	
+	/**
+	 * Methode permettant d'initialiser les nouveaux joueurs
+	 * @return {ArrayList<Joueur>} participants : retourne un ArrayList contenant entre six et deux joueurs
+	 */
+	public static ArrayList<Joueur> getSixParticipants(int nbParticipant, Partie p) {
+		ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+		JoueurPhysique jp = JoueurPhysique.getInstance();
+		jp.setPartie(p);
+		joueurs.add(jp);
+		for (int i = 0; i < nbParticipant - 1; i++) {
+			JoueurVirtuel jv = new JoueurVirtuel(JoueurVirtuel.getRandomNom());
+			jv.setPartie(p);
+			joueurs.add(jv);
+		}
+		return joueurs;
+	}
+	
+	/**
+	 * Méthode permettant d'éliminer un joueur
+	 */
+	public void eliminer() {
+		this.partie.getParticipants().remove(this);
+	}
+	
+	/**
+	 * Methode permettant de distribuer les cartes a un joueur
+	 */
+	public void distribuerJeu() {
+		Random randDiv = new Random();
+		this.diviniteIncarnee = (Divinite)this.partie.getPiocheDivinites().get(randDiv.nextInt(this.partie.getPiocheDivinites().size()));
+		this.partie.getPiocheDivinites().remove(this.diviniteIncarnee);
+		
+		for (int i = 0; i < 7; i++) {
+			this.jeu.add((CarteAction)this.partie.getPioche().get(randDiv.nextInt(this.partie.getPioche().size())));
+			this.partie.getPioche().remove(this.jeu.get(i));
+		}
+	}
+	
+	/**
+	 * Methode permettant de donner les détails d'un joueur
+	 * @return {String} : retourne un chaîne de caractère décrivant le joueur
+	 */
+	@Override
+	public String toString() {
+		return "Joueur: " + this.nomJoueur +
+				" ,, Divinite: " + this.diviniteIncarnee.getClass().getSimpleName() + 
+				" ,, Points Jour: " + this.pointsActionJour + 
+				" ,, Points Nuit: " + this.pointsActionNuit + 
+				" ,, Points Neant: " + this.pointsActionNeant;
+	}
+	
+	/**
+	 * Methode permettant d'initialiser la phase de jeu d'un joueur
+	 */
+	public void jouer() {
+		this.t = new Thread(this);
+		Joueur.phaseJeu = true;
+		this.t.start();
+	}
+	
+	/**
+	 * Implémentation de la méthode run
+	 * @see Runnable#run()
+	 */
+	@Override
+	public void run() {
+		System.out.println("Le joueur " + this.nomJoueur + " debute sa phase de jeu!");
+		while(this.partie.getTourAnt(0).getJoueurActuel().equals(this)) {
+			// TODO decrire phase de jeu du joueur
+		}
+		this.acheverPhaseJeu();
+	}
+	
+	/**
+	 * Methode permettant d'interrompre la phase de jeu d'un joueur
+	 */
+	public void acheverPhaseJeu() {
+		System.out.println("Le joueur " + this.nomJoueur + " a termine sa phase de jeu!");
+		this.partie.getTourAnt(0).addAyantJoue(this);
+		Joueur.phaseJeu = false;
+		this.t.interrupt();
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

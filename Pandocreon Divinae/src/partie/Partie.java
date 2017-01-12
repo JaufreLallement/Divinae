@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import cartes.Carte;
-import cartes.cartes_action.CarteAction;
 import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
 import cartes.divinites.Divinite;
 import de.De;
@@ -29,12 +28,12 @@ public class Partie implements Runnable {
 	/**
 	 * Pioche de la partie.
 	 */
-	private ArrayList<Carte> pioche = CarteAction.getAll();
+	private ArrayList<Carte> pioche = Carte.getAll();
 	
 	/**
 	 * Cimetiere de la partie
 	 */
-	private ArrayList<CarteAction> cimetiere = new ArrayList<CarteAction>();
+	private ArrayList<Carte> cimetiere = new ArrayList<Carte>();
 	
 	/**
 	 * Divinites que les joueurs peuvent incarner
@@ -139,17 +138,17 @@ public class Partie implements Runnable {
 
 	/**
 	 * Accesseur pour l'attribut cimetiere
-	 * @return {ArrayList<CarteAction>} cimetiere : retourne un ArrayList contenant les cartes ayant ete defaussees
+	 * @return {ArrayList<Carte>} cimetiere : retourne un ArrayList contenant les cartes ayant ete defaussees
 	 */
-	public ArrayList<CarteAction> getCimetiere() {
+	public ArrayList<Carte> getCimetiere() {
 		return this.cimetiere;
 	}
 
 	/**
 	 * Modificateur pour l'attribut cimetiere
-	 * @param {ArrayList<CarteAction>} cimetiere : ArrayList contenant les cartes a attribuer au cimetiere
+	 * @param {ArrayList<Carte>} cimetiere : ArrayList contenant les cartes a attribuer au cimetiere
 	 */
-	public void setCimetiere(ArrayList<CarteAction> cimetiere) {
+	public void setCimetiere(ArrayList<Carte> cimetiere) {
 		this.cimetiere = cimetiere;
 	}
 

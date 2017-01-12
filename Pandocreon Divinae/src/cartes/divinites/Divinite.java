@@ -7,6 +7,7 @@ package cartes.divinites;
 import java.util.ArrayList;
 
 import cartes.Carte;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteDogmatique;
 import dogme.Dogme;
 import effets.Effet;
 import origine.Origine;
@@ -15,14 +16,9 @@ import origine.Origine;
  * @author Lallement
  * La classe Divinité décrit le comportement général des divinités
  */
-public class Divinite extends Carte {
+public class Divinite extends CarteDogmatique {
 	
-	/* ---------- Attributs ---------- */
-	/**
-	 * Tableau contenant les trois dogmes d'une divinité
-	 */
-	private Dogme[] dogmesDivinite;
-	
+	/* ---------- Attributs ---------- */	
 	/**
 	 * Disponibilite de la capacite de la divinite
 	 */
@@ -33,49 +29,28 @@ public class Divinite extends Carte {
 	 */
 	private int totalPrieres = 0;
 	
-	/**
-	 * Effet de la divinite
-	 */
-	private Effet effet;
-	
 
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par defaut prive   
+	 * Constructeur par defaut prive
 	 */
-	private Divinite() {
-		super();
-	}
+	private Divinite() {}
 	
 	/**
 	 * Constructeur avec arguments
-	 * @param {String} nom : nom à attribuer à la divinite
 	 * @param {Origine} origine : Origine de la divinité nouvellement créée
 	 * @param {Dogme[]} dogmes : tableau de dogmes à attribuer à la divinite
+	 * @param {String} nom : nom à attribuer à la divinite
+	 * @paramThisgamesucks10
+	 * 
 	 */
-	public Divinite(Origine origine, Dogme[] dogmes) {
-		super(origine);
-		this.dogmesDivinite = dogmes;
+	public Divinite(Origine origine, Dogme[] dogmes, String intitule, Effet effet) {
+		super(origine, dogmes, intitule, effet);
+		this.setSacrifiable(false);
 	}
 	
 
 	/* ---------- Getters & Setters ---------- */
-	/**
-	 * Accesseur pour l'attribut dogmesDivinite
-	 * @return {Dogme[]} dogmesDivinite : tableau des dogmes de la divinité
-	 */
-	public Dogme[] getDogmesDivinite() {
-		return this.dogmesDivinite;
-	}
-
-	/**
-	 * Modificateur pour l'attribut dogmesDivinite
-	 * @param {Dogme[]} dogmes : tableau de dogmes à attribuer à la divinité 
-	 */
-	public void setDogmesDivinite(Dogme[] dogmes) {
-		this.dogmesDivinite = dogmes;
-	}
-
 	/**
 	 * Accesseur pour l'attribut capaciteDispo
 	 * @return {boolean} capaciteDispo : retourne la valeur de l'attribut capaciteDispo. True si la capacité est disponible, false sinon
@@ -86,11 +61,10 @@ public class Divinite extends Carte {
 
 	/**
 	 * Modificateur pour l'attribut capaciteDispo
-	 * Si la capacité est disponible au temps tn-1, elle devient indisponible au temps tn
-	 * Si la capacité est indisponible au temps tn-1, elle devient disponible au temps tn
+	 * @param {boolean} disponibilite : boolean a attribuer a capaciteDispo; true, la capacite est disponible, false sinon
 	 */
-	public void setCapaciteDispo() {
-		this.capaciteDispo = (this.capaciteDispo) ? false : true;
+	public void setCapaciteDispo(boolean disponibilite) {
+		this.capaciteDispo = disponibilite;
 	}
 
 	/**
@@ -130,7 +104,7 @@ public class Divinite extends Carte {
 		return "Divinite: " + this.getClass().getSimpleName() + 
 				" ,, Origine: " + this.getOrigineCarte() + 
 				" ,, Points de priere: " + this.getTotalPrieres() + 
-				" ,, Dogmes: " + this.getDogmesDivinite()[0] + ", " + this.getDogmesDivinite()[1] + ", " + this.getDogmesDivinite()[2];
+				" ,, Dogmes: " + this.getDogmes()[0] + ", " + this.getDogmes()[1] + ", " + this.getDogmes()[2];
 	}
 	
 	/**

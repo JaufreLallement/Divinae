@@ -5,18 +5,15 @@ package cartes.cartes_action.cartes_action_effet.cartes_apocalypse;
 
 import java.util.ArrayList;
 
-import joueur.Joueur;
 import origine.Origine;
 import cartes.Carte;
-import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
-import effets.Effet;
 import effets.EffetApocalypse;
 
 /**
  * @author Lallement
  *
  */
-public class CarteApocalypse extends CartesActionEffet {
+public class CarteApocalypse extends Carte {
 	/* ---------- Attributs ---------- */
 	/**
 	 * Possibilité de poser une carte apocalypse.
@@ -30,9 +27,7 @@ public class CarteApocalypse extends CartesActionEffet {
 	 * Constructeur par défaut prive
 	 * On s'assure que les informations necessaires soient renseignees
 	 */
-	private CarteApocalypse() {
-		super();
-	}
+	private CarteApocalypse() {}
 
 	/**
 	 * Constructeur avec arguments

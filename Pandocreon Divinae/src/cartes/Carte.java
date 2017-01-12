@@ -5,8 +5,11 @@ package cartes;
 
 import java.util.ArrayList;
 
-import cartes.cartes_action.CarteAction;
+import cartes.cartes_action.cartes_action_effet.carte_deus_ex.CarteDeusEx;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteDogmatique;
+import cartes.cartes_action.cartes_action_effet.cartes_apocalypse.CarteApocalypse;
 import cartes.divinites.Divinite;
+import effets.Effet;
 import joueur.Joueur;
 import origine.Origine;
 
@@ -27,6 +30,22 @@ public abstract class Carte {
 	 * Joueur possédant la carte divinité donnée
 	 */
 	private Joueur joueur = null;
+	
+	/**
+	 * Intitulé de la carte
+	 */
+	private String intituleCarte;
+	
+	/**
+	 * True si un carte peut être sacrifiee
+	 * False sinon
+	 */
+	private boolean sacrifiable = true;
+	
+	/**
+	 * Effet de la carte
+	 */
+	private Effet effet;
 
 	/* ---------- Constructeurs ---------- */
 	
@@ -42,6 +61,18 @@ public abstract class Carte {
 	public Carte(Origine origine) {
 		this.origineCarte = origine;
 	}
+	
+	/**
+	 * Constructeur avec trois arguments
+	 * @param {Origine} origine : origine de la carte
+	 * @param {String} intitule : intitule de la carte nouvellement creee
+	 * @param {Effet} effet : effet a attribuer a la carte
+	 */
+	public Carte(Origine origine, String intitule, Effet effet) {
+		this.origineCarte = origine;
+		this.intituleCarte = intitule;
+		this.effet = effet;
+	}
 
 
 	/* ---------- Getters & Setters ---------- */
@@ -52,8 +83,6 @@ public abstract class Carte {
 	public Origine getOrigineCarte() {
 		return this.origineCarte;
 	}
-
-
 
 	/**
 	 * Modificateur pour l'attribut origineCarte
@@ -78,9 +107,81 @@ public abstract class Carte {
 	public void setJoueur(Joueur joueur) {
 		this.joueur = joueur;
 	}
+	
+	/**
+	 * Accesseur pour l'attribut intituleCarte
+	 * @return {String} intituleCarte : retourne l'intitullé de la carte
+	 */
+	public String getIntituleCarte() {
+		return this.intituleCarte;
+	}
 
+	/**
+	 * Modificateur pour l'attribut intituleCarte
+	 * @param {String} intituleCarte : nouvel intuitulé pour la carte
+	 */
+	public void setIntituleCarte(String intituleCarte) {
+		this.intituleCarte = intituleCarte;
+	}
+	
+	/**
+	 * Accesseur pour l'attribut sacrifiable 
+	 * @return {boolean} isSacrifiable : true si la carte est sacrifiable, false sinon
+	 */
+	public boolean isSacrifiable() {
+		return this.sacrifiable;
+	}
+
+	/**
+	 * Modificateur pour l'attribut sacrifiable
+	 * @param {boolean} sacrifiable : true, peut etre sacrifie; false, ne peut pas etre sacrifie
+	 */
+	public void setSacrifiable(boolean sacrifiable) {
+		this.sacrifiable = sacrifiable;
+	}
+
+	/**
+	 * Accesseur pour l'attribut effet
+	 * @return {Effet} effet : effet de la carte
+	 */
+	public Effet getEffet() {
+		return this.effet;
+	}
+
+	/**
+	 * Modificateur pour l'attribut effet
+	 * @param {Effet} effet : effet a attribuer a la carte
+	 */
+	public void setEffet(Effet effet) {
+		this.effet = effet;
+	}
 
 	/* ---------- Méthodes ---------- */
+	/**
+	 * Methode permettant de sacrifier une carte
+	 */
+	public void utiliserCapacite() {
+		if (this.getClass().getSimpleName() == "Divinite") {
+			if (((Divinite)this).isCapaciteDispo()) {
+				this.getEffet().appliquerEffet();
+				((Divinite)this).setCapaciteDispo(false);
+			}
+		} else {
+			if (this.sacrifiable) {
+				this.effet.appliquerEffet();
+				
+				this.defausser();
+			}
+		}
+	}
+	
+	/**
+	 * Méthode permettant de défausser une carte
+	 */
+	private void defausser() {
+		this.joueur.getPartie().getCimetiere().add(this);
+		this.joueur.getJeu().remove(this);
+	}
 	
 	/**
 	 * Méthode retournant toutes les cartes
@@ -89,7 +190,9 @@ public abstract class Carte {
 	public static ArrayList<Carte> getAll() {
 		ArrayList<Carte> cartes = new ArrayList<Carte>();
 		cartes.addAll(Divinite.getAll());
-		cartes.addAll(CarteAction.getAll());
+		cartes.addAll(CarteDogmatique.getAll());
+		cartes.addAll(CarteApocalypse.getAll());
+		cartes.addAll(CarteDeusEx.getAll());
 		return cartes;
 	}
 	

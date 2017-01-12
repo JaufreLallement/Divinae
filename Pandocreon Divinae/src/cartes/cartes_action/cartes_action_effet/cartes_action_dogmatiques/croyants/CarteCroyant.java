@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import origine.Origine;
 import cartes.Carte;
-import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteDogmatique;
 import cartes.divinites.Divinite;
 import dogme.Dogme;
 import effets.Effet;
@@ -14,7 +14,7 @@ import effets.EffetAjoutPointAction;
  * @author Lallement
  * La classe CarteCroyant decrit le comportement generale des cartes Croyants
  */
-public class CarteCroyant extends CarteActionDogmatique {
+public class CarteCroyant extends CarteDogmatique {
 
 	/* ---------- Attributs ---------- */
 	/**
@@ -35,15 +35,7 @@ public class CarteCroyant extends CarteActionDogmatique {
 	 */
 	private boolean estSacrifiable = false;
 	
-	/* ---------- Constructeurs ---------- */
-	/**
-	 * Constructeur avec argument
-	 * @param {String} intitule : intitule de la carte
-	 */
-	public CarteCroyant(String intitule) {
-		super(intitule);
-	}
-	
+	/* ---------- Constructeurs ---------- */	
 	/**
 	 * Constructeur avec arguments
 	 * @param {Origine} origine : origine a attribuer a la carte 
@@ -145,8 +137,8 @@ public class CarteCroyant extends CarteActionDogmatique {
 	 * Surcharge de la methode jouerCarte.
 	 * La methode place la carte croyant au centre de la table.
 	 */
-	@Override
-	public void jouerCarte() {
+	public void placerAuCentre() {
+		System.out.println("Le croyant " + this.getIntituleCarte() + " est joué par " + this.getJoueur().getNom());
 		this.getJoueur().getPartie().getCentreTable().add(this);
 	}
 	

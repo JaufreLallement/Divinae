@@ -5,8 +5,8 @@ package partie;
 
 import java.util.ArrayList;
 
-import cartes.cartes_action.CarteAction;
-import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteActionDogmatique;
+import cartes.Carte;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.CarteDogmatique;
 import joueur.Joueur;
 
 /**
@@ -171,10 +171,10 @@ public class Tour implements Runnable {
 	 */
 	public void reinitialiser() {
 		for (Joueur joueur : this.partie.getParticipants()) {
-			for (CarteAction carte : joueur.getJeu()) {
-				if (carte.getClass().getSuperclass().getSuperclass().getSimpleName() == "CarteActionDogmatique") {
-					if (((CarteActionDogmatique)carte).isSacrifiable()) {
-						((CarteActionDogmatique)carte).setSacrifiable();
+			for (Carte carte : joueur.getJeu()) {
+				if (carte.getClass().getSuperclass().getSuperclass().getSimpleName() == "CarteDogmatique") {
+					if (!carte.isSacrifiable()) {
+						((CarteDogmatique)carte).setSacrifiable(true);
 					}
 				}
 			}

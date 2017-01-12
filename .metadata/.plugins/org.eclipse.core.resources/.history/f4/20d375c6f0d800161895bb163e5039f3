@@ -1,0 +1,91 @@
+/**
+ * 
+ */
+package cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques;
+
+import java.util.ArrayList;
+
+import origine.Origine;
+import cartes.Carte;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.croyants.CarteCroyant;
+import cartes.cartes_action.cartes_action_effet.cartes_action_dogmatiques.guides_spirituels.CarteGuideSpirituel;
+import dogme.Dogme;
+import effets.Effet;
+
+/**
+ * @author Lallement
+ *
+ */
+public abstract class CarteDogmatique extends Carte {
+	
+	/* ---------- Attributs ---------- */
+	/**
+	 * Dogmes de la carte
+	 */
+	private Dogme[] dogmes;
+	
+	/* ---------- Constructeurs ---------- */	
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine a attribuer a la carte nouvellement creee
+	 * @param {String} intitule : intitule de la carte nouvellement creee
+	 * @param {Effet} effet : effet a attribuer a la carte nouvellement creee
+	 */
+	public CarteDogmatique(Origine origine, String intitule, Effet effet) {
+		super(origine, intitule, effet);
+	}
+
+	/**
+	 * Constructeur avec argument
+	 * @param {Origine} origine : origine à attribuer a la carte nouvellement créée
+	 * @param {Dogme[]} dogmes : tableau de dogmes à attribuer a la carte
+	 * @param {String} intitule : intitule de la carte nouvellement creee
+	 * @param {Effet} effet : effet a attribuer a la carte nouvellement creee
+	 */
+	public CarteDogmatique(Origine origine, Dogme[] dogmes, String intitule, Effet effet) {
+		super(origine, intitule, effet);
+		this.dogmes = dogmes;
+	}
+	
+	/* ---------- Getters & Setters ---------- */
+	/**
+	 * Accesseur permettant d'obtenir les dogmes d'une carte
+	 * @return {Dogme[]} dogmes : retourne un tableau contenant les dogmes de la carte
+	 */
+	public Dogme[] getDogmes() {
+		return this.dogmes;
+	}
+	
+	/* ---------- Méthodes ---------- */
+	/**
+	 * Surcharge de la methode jouerCarte.
+	 * La methode place la carte croyant au centre de la table.
+	 */
+	public void jouerCarteDogmatique() {
+		System.out.println("Le croyant " + this.getIntituleCarte() + " est joué par " + this.getJoueur().getNom());
+	}
+	
+	
+	/**
+	 * Méthode retournant toutes les cartes dogmatiques
+	 * @return {ArrayList<Carte>} dogmatiques : retourne un ArrayList contenant toutes les cartes dogmatiques
+	 */
+	public static ArrayList<Carte> getAll() {
+		ArrayList<Carte> dogmatiques = new ArrayList<Carte>();
+		dogmatiques.addAll(CarteCroyant.getAll());
+		dogmatiques.addAll(CarteGuideSpirituel.getAll());
+		return dogmatiques;
+	}
+	
+	/**
+	 * Methode de tests
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Dogme[] dogmes = new Dogme[3];
+		dogmes[0] = Dogme.CHAOS;
+		dogmes[1] = Dogme.HUMAIN;
+		System.out.println(dogmes[2]);
+	}
+
+}

@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package effets;
+
+import cartes.Carte;
+
+/**
+ * @author Lallement
+ *
+ */
+public class EffetContrainteSacrifice extends Effet {
+	
+	/* ------------ Attributs ------------ */
+	private Carte carteContrainte;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut
+	 */
+	public EffetContrainteSacrifice() {}
+	/* -------- Getters & Setters -------- */
+	/* -------- Methodes de classe ------- */
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

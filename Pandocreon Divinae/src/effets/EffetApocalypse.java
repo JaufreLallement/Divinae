@@ -4,8 +4,7 @@
 package effets;
 
 import java.util.ArrayList;
-
-import cartes.cartes_action.cartes_action_effet.CartesActionEffet;
+import cartes.cartes_action.cartes_action_effet.cartes_apocalypse.CarteApocalypse;
 import partie.Partie;
 import joueur.Joueur;
 
@@ -26,8 +25,9 @@ public class EffetApocalypse extends Effet {
 	/* -------- Methodes de classe ------- */
 	/**
 	 * Methode permettant d'appliquer l'effet souhaite
+	 * @param {CartesActionEffet} carte : carte apocalypse utilisee
 	 */
-	public void appliquerEffet(CartesActionEffet carte) {
+	public void appliquerEffet(CarteApocalypse carte) {
 		boolean egalite = false;
 		Joueur elimine = carte.getJoueur().getPartie().getParticipants().get(0);
 		Joueur gagnant = carte.getJoueur().getPartie().getParticipants().get(0);

@@ -1,0 +1,59 @@
+/**
+ * 
+ */
+package effets;
+
+import java.util.ArrayList;
+
+import cartes.Carte;
+import dogme.Dogme;
+
+/**
+ * @author Lallement
+ * Cette classe décrit l'effet contraignant le sacrifice d'une carte. L'effet permet de forcer ou d'empecher une carte de se sacrifier
+ */
+public class EffetContrainteSacrifice extends Effet {
+	
+	/* ------------ Attributs ------------ */
+	/**
+	 * Carte que l'on souhaite contraindre
+	 */
+	private Carte carteContrainte;
+	
+	/**
+	 * True : la carte est forcee au sacrifice, false : le sacrifice est empeche
+	 */
+	private boolean sacrifice;
+	
+	/**
+	 * Dogmes que la carte a contraindre doit posseder
+	 */
+	private ArrayList<Dogme> dogmes = null;
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut prive
+	 */
+	private EffetContrainteSacrifice() {}
+	
+	/**
+	 * Constructeur avec deux arguments
+	 * @param {Carte} carte : carte concernee
+	 * @param {boolean} sacrifice : true, la carte doit se sacrifier; false, le sacrifice est empecher pour un tour 
+	 */
+	public EffetContrainteSacrifice(Carte carte, boolean sacrifice) {
+		super();
+		this.carteContrainte = carte;
+		this.sacrifice = sacrifice;
+	}
+	/* -------- Getters & Setters -------- */
+	/* -------- Methodes de classe ------- */
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
