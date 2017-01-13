@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package effets;
+
+import java.util.Arrays;
+
+import cartes.cartes_dogmatiques.guides_spirituels.CarteGuideSpirituel;
+import joueur.Joueur;
+import de.De;
+
+/**
+ * @author Lallement
+ *
+ */
+public class EffetRetirerCroyants {
+	
+	/* ------------ Attributs ------------ */
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut
+	 */
+	public EffetRetirerCroyants() {}
+	
+	/* -------- Getters & Setters -------- */
+	
+	/* -------- Methodes de classe ------- */
+	/**
+	 * Methode permettant d'appliquer l'effet souhaite
+	 */
+	public void appliquerEffet(CarteGuideSpirituel carte) {
+		carte.getJoueur().getPartie().getCentreTable().addAll(Arrays.asList(carte.getCroyants()));
+		Arrays.asList(carte.getCroyants()).removeAll(Arrays.asList(carte.getCroyants()));
+	}	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+
+}

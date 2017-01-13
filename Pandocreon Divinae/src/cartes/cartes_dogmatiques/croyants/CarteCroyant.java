@@ -9,6 +9,14 @@ import cartes.divinites.Divinite;
 import dogme.Dogme;
 import effets.Effet;
 import effets.EffetAjoutPointAction;
+import effets.EffetBloquerGainPoint;
+import effets.EffetContrainteSacrifice;
+import effets.EffetCopierEffet;
+import effets.EffetPiocherMain;
+import effets.EffetRamenerCarte;
+import effets.EffetRecupererPointAction;
+import effets.EffetRelancerDe;
+import effets.EffetRetirerCroyants;
 /**
  * 
  * @author Lallement
@@ -116,8 +124,40 @@ public class CarteCroyant extends CarteDogmatique {
 		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.SYMBOLES, Dogme.MYSTIQUES, Dogme.CHAOS}, 2, "Moines", new EffetAjoutPointAction(Origine.JOUR)));
 		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.SYMBOLES}, 2, "Moines", new EffetAjoutPointAction(Origine.JOUR)));
 		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.CHAOS}, 2, "Moines", new EffetAjoutPointAction(Origine.JOUR)));
-		
-		// TODO instancier tous les croyants
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.SYMBOLES, Dogme.HUMAIN, Dogme.CHAOS}, 2, "Travailleurs", new EffetContrainteSacrifice(false, new Dogme[] {Dogme.NATURE, Dogme.MYSTIQUES})));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.SYMBOLES}, 2, "Travailleurs", new EffetContrainteSacrifice(false, new Dogme[] {Dogme.CHAOS, Dogme.MYSTIQUES})));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.HUMAIN, Dogme.CHAOS}, 2, "Travailleurs", new EffetPiocherMain(2)));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.CHAOS}, 1, "Ermite", new EffetContrainteSacrifice(true, null)));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.SYMBOLES}, 1, "Ermite", new EffetContrainteSacrifice(true, null)));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.CHAOS}, 1, "Integristes", new EffetContrainteSacrifice(true, null)));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.SYMBOLES}, 4, "Guerriers Saints", new EffetRamenerCarte()));
+		croyants.add(new CarteCroyant(Origine.JOUR, new Dogme[] {Dogme.SYMBOLES, Dogme.HUMAIN, Dogme.CHAOS}, 4, "Diplomates", new EffetRelancerDe()));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.MYSTIQUES}, 2, "Demons", new EffetAjoutPointAction(Origine.NUIT)));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.MYSTIQUES, Dogme.HUMAIN, Dogme.CHAOS}, 2, "Demons", new EffetAjoutPointAction(Origine.NUIT)));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.SYMBOLES, Dogme.MYSTIQUES, Dogme.CHAOS}, 2, "Demons", new EffetAjoutPointAction(Origine.NUIT)));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.SYMBOLES}, 2, "Demons", new EffetAjoutPointAction(Origine.NUIT)));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.CHAOS}, 2, "Demons", new EffetAjoutPointAction(Origine.NUIT)));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.SYMBOLES, Dogme.NATURE, Dogme.CHAOS}, 2, "Alchimistes", new EffetContrainteSacrifice(false, new Dogme[] {Dogme.HUMAIN, Dogme.MYSTIQUES})));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.CHAOS}, 2, "Alchimistes", new EffetContrainteSacrifice(false, new Dogme[] {Dogme.HUMAIN, Dogme.SYMBOLES})));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.SYMBOLES, Dogme.NATURE, Dogme.CHAOS}, 2, "Alchimistes", new EffetPiocherMain(2)));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.SYMBOLES}, 1, "Vampire", new EffetContrainteSacrifice(true, null)));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.MYSTIQUES, Dogme.HUMAIN, Dogme.CHAOS}, 1, "Vampire", new EffetContrainteSacrifice(true, null)));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.CHAOS}, 4, "Lycanthropes", new EffetRetirerCroyants()));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.SYMBOLES}, 4, "Pillards", new EffetRecupererPointAction()));
+		croyants.add(new CarteCroyant(Origine.NUIT, new Dogme[] {Dogme.SYMBOLES, Dogme.HUMAIN, Dogme.CHAOS}, 4, "Illusionnistes", new EffetCopierEffet()));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.MYSTIQUES}, 2, "Esprits", new EffetAjoutPointAction(Origine.NEANT)));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.MYSTIQUES, Dogme.HUMAIN, Dogme.CHAOS}, 2, "Esprits", new EffetAjoutPointAction(Origine.NEANT)));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.SYMBOLES, Dogme.MYSTIQUES, Dogme.CHAOS}, 2, "Esprits", new EffetAjoutPointAction(Origine.NEANT)));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.SYMBOLES}, 2, "Esprits", new EffetAjoutPointAction(Origine.NEANT)));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.MYSTIQUES, Dogme.NATURE, Dogme.CHAOS}, 2, "Esprits", new EffetAjoutPointAction(Origine.NEANT)));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.SYMBOLES, Dogme.HUMAIN, Dogme.CHAOS}, 2, "Alienes", new EffetContrainteSacrifice(false, new Dogme[] {Dogme.NATURE, Dogme.MYSTIQUES})));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.SYMBOLES}, 2, "Alienes", new EffetContrainteSacrifice(false, new Dogme[] {Dogme.MYSTIQUES, Dogme.CHAOS})));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.MYSTIQUES, Dogme.HUMAIN, Dogme.CHAOS}, 2, "Alienes", new EffetPiocherMain(2)));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.HUMAIN, Dogme.NATURE, Dogme.MYSTIQUES}, 1, "Revenant", new EffetRelancerDe()));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.SYMBOLES, Dogme.HUMAIN, Dogme.CHAOS}, 2, "Revolutionnaires", new EffetContrainteSacrifice(true, null)));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.MYSTIQUES, Dogme.HUMAIN, Dogme.CHAOS}, 2, "Alienes", new EffetPiocherMain(2)));
+		croyants.add(new CarteCroyant(Origine.NEANT, new Dogme[] {Dogme.SYMBOLES, Dogme.MYSTIQUES, Dogme.CHAOS}, 4, "Nihilistes", new EffetBloquerGainPoint()));
+		// TODO ameliorer les effets
 		return croyants;
 	}
 	

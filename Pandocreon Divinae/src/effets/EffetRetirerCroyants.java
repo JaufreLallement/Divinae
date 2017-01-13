@@ -13,7 +13,7 @@ import de.De;
  * @author Lallement
  *
  */
-public class EffetRetirerCroyants {
+public class EffetRetirerCroyants extends Effet {
 	
 	/* ------------ Attributs ------------ */
 	

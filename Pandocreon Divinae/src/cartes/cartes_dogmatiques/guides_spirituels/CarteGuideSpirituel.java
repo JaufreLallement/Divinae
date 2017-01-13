@@ -9,6 +9,7 @@ import cartes.cartes_dogmatiques.croyants.CarteCroyant;
 import cartes.divinites.Divinite;
 import dogme.Dogme;
 import effets.Effet;
+import effets.EffetApocalypse;
 
 /**
  * @author Lallement
@@ -110,7 +111,8 @@ public class CarteGuideSpirituel extends CarteDogmatique {
 	 */
 	public static ArrayList<Carte> getAll() {
 		ArrayList<Carte> guides = new ArrayList<Carte>();
-		// TODO instancier tous les guides
+		guides.add(new CarteGuideSpirituel(Origine.JOUR, new Dogme[] {Dogme.NATURE, Dogme.HUMAIN}, 2, "Martyr", new EffetApocalypse()));
+		// TODO instancier tous les guide
 		return guides;
 	}
 	

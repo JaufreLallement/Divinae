@@ -13,7 +13,7 @@ import dogme.Dogme;
  * @author Lallement
  *
  */
-public class EffetRelancerDe {
+public class EffetRelancerDe extends Effet {
 	
 	/* ------------ Attributs ------------ */
 	
