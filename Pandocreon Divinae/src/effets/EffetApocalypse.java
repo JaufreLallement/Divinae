@@ -11,11 +11,12 @@ import joueur.Joueur;
 
 /**
  * @author Lallement
- *
+ * Cette classe 
  */
 public class EffetApocalypse extends Effet {
 	
 	/* ------------ Attributs ------------ */
+	
 	/* ---------- Constructeurs ---------- */
 	/**
 	 * Constructeur par defaut prive
@@ -23,6 +24,7 @@ public class EffetApocalypse extends Effet {
 	public EffetApocalypse() {}
 	
 	/* -------- Getters & Setters -------- */
+	
 	/* -------- Methodes de classe ------- */
 	/**
 	 * Methode permettant d'appliquer l'effet souhaite

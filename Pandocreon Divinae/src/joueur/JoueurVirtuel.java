@@ -82,15 +82,6 @@ public class JoueurVirtuel extends Joueur {
 	}
 	
 	/**
-	 * Methode permettant de retourner un croyant ou un guide spirituel du jeu aleatoire
-	 * @param {String} dogmatique : CarteCroyant ou CarteGuideSpirituel
-	 * @return {Carte} : croyant ou guide spirituel du jeu aleatoire
-	 */
-	public Carte choisirCarteASacrifier(String dogmatique) {
-		return this.getJeuDogmatiques(dogmatique).get(new Random().nextInt(this.getJeuDogmatiques(this.getClass().getSimpleName()).size()));
-	}
-	
-	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {

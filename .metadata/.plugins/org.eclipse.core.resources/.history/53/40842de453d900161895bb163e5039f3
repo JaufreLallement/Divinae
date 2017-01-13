@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package effets;
+
+/**
+ * @author Lallement
+ *
+ */
+public class EffetRelancerDe {
+
+	/**
+	 * 
+	 */
+	public EffetRelancerDe() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

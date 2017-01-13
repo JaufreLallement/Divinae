@@ -91,6 +91,7 @@ public class De {
 
 	/**
 	 * Méthode simulant un lancer de dé
+	 * @param {Joueur} j : joueur lançant le de
 	 * @return {Face} face : retourne l'une des faces du dé de manière aléatoire
 	 */
 	public Face lancerDe(Joueur j) {

@@ -100,9 +100,8 @@ public class EffetContrainteSacrifice extends Effet {
 	/* -------- Methodes de classe ------- */
 	/**
 	 * Methode permettant d'appliquer l'effet souhaite
-	 * @param {Carte} carte : carte possedant l'effet
 	 */
-	public void appliquerEffet(Carte carte) throws InvalidDogmeException {
+	public void appliquerEffet() {
 		if (this.sacrifice) {
 			this.carteContrainte.utiliserCapacite();
 		} else {
@@ -113,7 +112,7 @@ public class EffetContrainteSacrifice extends Effet {
 				}
 			}
 			if (!contientDogme) {
-				throw new InvalidDogmeException();
+				System.err.println("La carte ne possede pas les dogmes correspondant!");
 			} else {
 				this.carteContrainte.setSacrifiable(false);
 			}

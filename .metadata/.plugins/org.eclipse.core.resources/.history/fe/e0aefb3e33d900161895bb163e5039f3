@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package effets;
+
+/**
+ * @author Lallement
+ *
+ */
+public class EffetPiocherMain extends Effet {
+	
+	/* ------------ Attributs ------------ */
+	/**
+	 * Nombre de carte
+	 */
+	private int nombreDeCartes = 2;
+	/* ---------- Constructeurs ---------- */
+	private EffetPiocherMain() {}
+	
+	
+	/**
+	 * Constructeur avec un argument
+	 * @param {int} pioche : nombre de carte a piocher
+	 */
+	public EffetPiocherMain(int pioche) {
+		this.nombreDeCartes = pioche;
+	}
+	/* -------- Getters & Setters -------- */
+	/* -------- Methodes de classe ------- */
+	/**
+	 * Methode permettant d'appliquer l'effet souhaite
+	 */
+	public void appliquerEffet() {
+		
+	}
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

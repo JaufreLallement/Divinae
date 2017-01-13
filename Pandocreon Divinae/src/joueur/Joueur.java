@@ -227,6 +227,23 @@ public class Joueur implements Runnable {
 	}
 	
 	/**
+	 * Methode permettant de retourner un croyant ou un guide spirituel du jeu aleatoire
+	 * @param {String} dogmatique : CarteCroyant ou CarteGuideSpirituel
+	 * @return {Carte} : croyant ou guide spirituel du jeu aleatoire
+	 */
+	public Carte getRandomDogmatique(String dogmatique) {
+		return this.getJeuDogmatiques(dogmatique).get(new Random().nextInt(this.getJeuDogmatiques(this.getClass().getSimpleName()).size()));
+	}
+	
+	/**
+	 * Methode permettant de retourner une carte aleatoire du jeu d'un joueur
+	 * @return {Carte}
+	 */
+	public Carte getRandomCarte() {
+		return this.jeu.get(new Random().nextInt(this.jeu.size()));
+	}
+	
+	/**
 	 * Methode permettant de retourner directement les points de priere a partir du joueur
 	 * @return {int} : points de priere que poossede le joueur
 	 */
@@ -267,7 +284,9 @@ public class Joueur implements Runnable {
 		this.partie.getPiocheDivinites().remove(this.diviniteIncarnee);
 		
 		for (int i = 0; i < 7; i++) {
-			this.jeu.add((Carte)this.partie.getPioche().get(randDiv.nextInt(this.partie.getPioche().size())));
+			Carte c = this.partie.getPioche().get(randDiv.nextInt(this.partie.getPioche().size()));
+			this.jeu.add(c);
+			c.setJoueur(this);
 			this.partie.getPioche().remove(this.jeu.get(i));
 		}
 	}

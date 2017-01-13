@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package effets;
+
+/**
+ * @author Lallement
+ *
+ */
+public class EffetRamenerCarte extends Effet {
+	
+	/* ------------ Attributs ------------ */
+	
+	/* ---------- Constructeurs ---------- */
+	
+	/* -------- Getters & Setters -------- */
+	
+	/* -------- Methodes de classe ------- */
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
