@@ -1,0 +1,51 @@
+/**
+ * 
+ */
+package interface_graphique;
+
+import java.awt.GraphicsConfiguration;
+import java.awt.HeadlessException;
+
+import javax.swing.JFrame;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+/**
+ * @author Lallement
+ *
+ */
+public class PandocreonFrame extends JFrame {
+
+	/* ------------ Attributs ------------ */
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut
+	 */
+	public PandocreonFrame() {
+		super("Pandocréon Divinae");
+		this.setVisible(true);
+		this.setSize(12000, 800);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		
+		try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+		} catch (ClassNotFoundException | InstantiationException
+				| IllegalAccessException | UnsupportedLookAndFeelException e) {
+		}
+		
+		
+	}
+	
+	/* -------- Getters & Setters -------- */
+	
+	/* -------- Methodes de classe ------- */
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		PandocreonFrame fenetreJeu = new PandocreonFrame();
+	}
+
+}

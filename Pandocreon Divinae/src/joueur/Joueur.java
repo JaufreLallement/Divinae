@@ -298,7 +298,7 @@ public class Joueur implements Runnable {
 	@Override
 	public String toString() {
 		return "Joueur: " + this.nomJoueur +
-				" ,, Divinite: " + this.diviniteIncarnee.getClass().getSimpleName() + 
+				" ,, Divinite: " + this.diviniteIncarnee.getIntituleCarte() + 
 				" ,, Points Jour: " + this.pointsActionJour + 
 				" ,, Points Nuit: " + this.pointsActionNuit + 
 				" ,, Points Neant: " + this.pointsActionNeant;

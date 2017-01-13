@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package interface_graphique;
+
+import java.awt.GraphicsConfiguration;
+import java.awt.HeadlessException;
+
+import javax.swing.JFrame;
+
+/**
+ * @author Lallement
+ *
+ */
+public class PandocreonFrame extends JFrame {
+
+	/* ------------ Attributs ------------ */
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut
+	 */
+	public PandocreonFrame() {
+	}
+	
+	/* -------- Getters & Setters -------- */
+	/* -------- Methodes de classe ------- */
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

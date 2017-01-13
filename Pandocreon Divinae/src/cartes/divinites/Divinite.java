@@ -111,7 +111,7 @@ public class Divinite extends CarteDogmatique {
 	 */
 	@Override
 	public String toString() {
-		return "Divinite: " + this.getClass().getSimpleName() + 
+		return "Divinite: " + this.getIntituleCarte() + 
 				" ,, Origine: " + this.getOrigineCarte() + 
 				" ,, Points de priere: " + this.getTotalPrieres() + 
 				" ,, Dogmes: " + this.getDogmes()[0] + ", " + this.getDogmes()[1] + ", " + this.getDogmes()[2];

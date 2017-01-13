@@ -145,7 +145,6 @@ public class Tour implements Runnable {
 	 */
 	@Override
 	public void run() {
-		System.out.println("Tour n° " + (this.numTour + 1) + " lance!");
 		this.lanceur = this.determinerLanceur();
 		this.reinitialiser();
 		while (this.ayantJoue.size() != this.partie.getParticipants().size()) {
@@ -186,7 +185,8 @@ public class Tour implements Runnable {
 	 * @return {Joueur} joueurActuel : joueur dont le tour est venu de jouer
 	 */
 	private Joueur determinerLanceur() {
-		if (this.partie.getTours().size() <= 1) {
+		System.out.println(this.partie.getTours().size());
+		if (this.partie.getTours().size() == 1) {
 			this.lanceur = this.partie.getRandomJoueur();
 		} else {
 			this.lanceur = this.partie.getTourAnt(1).ayantJoue.get(1);
