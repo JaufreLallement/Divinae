@@ -31,11 +31,6 @@ public class CarteGuideSpirituel extends CarteDogmatique {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par defaut prive
-	 */
-	private CarteGuideSpirituel() {}
-	
-	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine a attribuer a la carte
 	 * @param {Dogme[]} dogmes : dogmes a attribuer  
@@ -127,17 +122,9 @@ public class CarteGuideSpirituel extends CarteDogmatique {
 		guides.add(new CarteGuideSpirituel(Origine.NEANT, new Dogme[] {Dogme.SYMBOLES, Dogme.CHAOS}, 2, "Clerc", null));
 		guides.add(new CarteGuideSpirituel(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.CHAOS}, 2, "Clerc", null));
 		guides.add(new CarteGuideSpirituel(Origine.NUIT, new Dogme[] {Dogme.NATURE, Dogme.HUMAIN}, 2, "Clerc", null));
-		guides.add(new CarteGuideSpirituel(Origine.NUIT, new Dogme[] {Dogme.NATURE, Dogme.SYMBOLES}, 3, "Shaman", null));
-		guides.add(new CarteGuideSpirituel(Origine.NEANT, new Dogme[] {Dogme.HUMAIN, Dogme.CHAOS}, 3, "Anarchiste", null));
-		guides.add(new CarteGuideSpirituel(Origine.JOUR, new Dogme[] {Dogme.HUMAIN, Dogme.MYSTIQUES}, 3, "Paladin", null));
-		guides.add(new CarteGuideSpirituel(Origine.NUIT, new Dogme[] {Dogme.HUMAIN, Dogme.SYMBOLES}, 1, "Ascete", null));
-		guides.add(new CarteGuideSpirituel(Origine.NEANT, new Dogme[] {Dogme.NATURE, Dogme.MYSTIQUES}, 1, "Devin", null));
-		guides.add(new CarteGuideSpirituel(Origine.JOUR, new Dogme[] {Dogme.MYSTIQUES, Dogme.CHAOS}, 1, "Exorciste", null));
-		guides.add(new CarteGuideSpirituel(Origine.NUIT, new Dogme[] {Dogme.MYSTIQUES, Dogme.SYMBOLES}, 3, "Sorcier", null));
-		guides.add(new CarteGuideSpirituel(Origine.NEANT, new Dogme[] {Dogme.SYMBOLES, Dogme.CHAOS}, 3, "Tyran", null));
-		guides.add(new CarteGuideSpirituel(Origine.JOUR, new Dogme[] {Dogme.HUMAIN, Dogme.MYSTIQUES}, 3, "Messie", null));
+		guides.add(new CarteGuideSpirituel(Origine.NUIT, new Dogme[] {Dogme.NATURE, Dogme.SYMBOLES}, 2, "Shaman", null));
 		
-		// TODO ajouter les effets manquants
+		// TODO instancier tous les guide
 		return guides;
 	}
 	

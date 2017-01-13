@@ -33,25 +33,8 @@ public class CarteDeusEx extends Carte {
 	 */
 	public static ArrayList<Carte> getAll() {
 		ArrayList<Carte> deusEx = new ArrayList<Carte>();
-		deusEx.add(new CarteDeusEx(Origine.JOUR, "Colere Divine", null));
-		deusEx.add(new CarteDeusEx(Origine.NUIT, "Colere Divine", null));
-		deusEx.add(new CarteDeusEx(Origine.JOUR, "Stase", null));
-		deusEx.add(new CarteDeusEx(Origine.JOUR, "Ordre Celeste", null));
-		deusEx.add(new CarteDeusEx(Origine.NUIT, "Fourberie", null));
-		deusEx.add(new CarteDeusEx(Origine.NUIT, "Diversion", null));
-		deusEx.add(new CarteDeusEx(Origine.NEANT, "Concentration", null));
-		deusEx.add(new CarteDeusEx(Origine.NEANT, "Trou Noir", null));
-		deusEx.add(new CarteDeusEx(Origine.NEANT, "Phoenix", null));
-		deusEx.add(new CarteDeusEx(null, "Influence Jour", null));
-		deusEx.add(new CarteDeusEx(null, "Influence Nuit", null));
-		deusEx.add(new CarteDeusEx(null, "Influence Neant", null));
-		deusEx.add(new CarteDeusEx(null, "Influence Nulle", null));
-		deusEx.add(new CarteDeusEx(null, "Influence Nulle", null));
-		deusEx.add(new CarteDeusEx(null, "Transe", null));
-		deusEx.add(new CarteDeusEx(null, "Miroir", null));
-		deusEx.add(new CarteDeusEx(null, "Bouleversement", null));
-		deusEx.add(new CarteDeusEx(null, "Inquisition", null));
-		// TODO Implementer les effets manquants
+		deusEx.add(new CarteDeusEx(Origine.JOUR, "Colere Divine", effet))
+		// TODO instancier tous les deusex
 		return deusEx;
 	}
 	

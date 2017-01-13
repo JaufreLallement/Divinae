@@ -43,11 +43,7 @@ public class CarteCroyant extends CarteDogmatique {
 	 */
 	private boolean estSacrifiable = false;
 	
-	/* ---------- Constructeurs ---------- */
-	/**
-	 * Constructeur par defaut prive
-	 */
-	private CarteCroyant() {}
+	/* ---------- Constructeurs ---------- */	
 	/**
 	 * Constructeur avec arguments
 	 * @param {Origine} origine : origine a attribuer a la carte 
@@ -87,7 +83,7 @@ public class CarteCroyant extends CarteDogmatique {
 
 	/**
 	 * Modificateur pour l'attribut numTourCreation
-	 * @param {int} numTourCreation : numero du tour de creation a attribuer
+	 * @param {int} numTourCreation : num�ro du tour de cr�ation � attribuer
 	 */
 	public void setNumTourCreation(int numTourCreation) {
 		this.numTourCreation = numTourCreation;

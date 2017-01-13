@@ -48,10 +48,7 @@ public class CarteDeusEx extends Carte {
 		deusEx.add(new CarteDeusEx(null, "Influence Nulle", null));
 		deusEx.add(new CarteDeusEx(null, "Influence Nulle", null));
 		deusEx.add(new CarteDeusEx(null, "Transe", null));
-		deusEx.add(new CarteDeusEx(null, "Miroir", null));
-		deusEx.add(new CarteDeusEx(null, "Bouleversement", null));
-		deusEx.add(new CarteDeusEx(null, "Inquisition", null));
-		// TODO Implementer les effets manquants
+		// TODO instancier tous les deusex
 		return deusEx;
 	}
 	

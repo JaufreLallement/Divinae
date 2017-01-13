@@ -87,7 +87,7 @@ public class CarteCroyant extends CarteDogmatique {
 
 	/**
 	 * Modificateur pour l'attribut numTourCreation
-	 * @param {int} numTourCreation : numero du tour de creation a attribuer
+	 * @param {int} numTourCreation : num�ro du tour de cr�ation � attribuer
 	 */
 	public void setNumTourCreation(int numTourCreation) {
 		this.numTourCreation = numTourCreation;

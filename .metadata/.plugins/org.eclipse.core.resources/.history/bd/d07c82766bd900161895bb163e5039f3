@@ -31,11 +31,6 @@ public class CarteGuideSpirituel extends CarteDogmatique {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par defaut prive
-	 */
-	private CarteGuideSpirituel() {}
-	
-	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine a attribuer a la carte
 	 * @param {Dogme[]} dogmes : dogmes a attribuer  

@@ -31,7 +31,7 @@ public class CarteGuideSpirituel extends CarteDogmatique {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par defaut prive
+	 * Constructeur prive par defaut
 	 */
 	private CarteGuideSpirituel() {}
 	

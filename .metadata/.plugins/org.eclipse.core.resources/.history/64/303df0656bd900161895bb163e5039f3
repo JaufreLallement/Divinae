@@ -31,11 +31,6 @@ public class CarteGuideSpirituel extends CarteDogmatique {
 	
 	/* ---------- Constructeurs ---------- */
 	/**
-	 * Constructeur par defaut prive
-	 */
-	private CarteGuideSpirituel() {}
-	
-	/**
 	 * Constructeur avec argument
 	 * @param {Origine} origine : origine a attribuer a la carte
 	 * @param {Dogme[]} dogmes : dogmes a attribuer  
@@ -137,7 +132,7 @@ public class CarteGuideSpirituel extends CarteDogmatique {
 		guides.add(new CarteGuideSpirituel(Origine.NEANT, new Dogme[] {Dogme.SYMBOLES, Dogme.CHAOS}, 3, "Tyran", null));
 		guides.add(new CarteGuideSpirituel(Origine.JOUR, new Dogme[] {Dogme.HUMAIN, Dogme.MYSTIQUES}, 3, "Messie", null));
 		
-		// TODO ajouter les effets manquants
+		// TODO instancier tous les guide
 		return guides;
 	}
 	
