@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package effets;
+
+import cartes.cartes_dogmatiques.guides_spirituels.CarteGuideSpirituel;
+import joueur.Joueur;
+import de.De;
+
+/**
+ * @author Lallement
+ *
+ */
+public class EffetRetirerCroyants {
+	
+	/* ------------ Attributs ------------ */
+	
+	/* ---------- Constructeurs ---------- */
+	/**
+	 * Constructeur par defaut
+	 */
+	public EffetRetirerCroyants() {}
+	
+	/* -------- Getters & Setters -------- */
+	
+	/* -------- Methodes de classe ------- */
+	/**
+	 * Methode permettant d'appliquer l'effet souhaite
+	 */
+	public void appliquerEffet(CarteGuideSpirituel carte) {
+	}	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+
+}
