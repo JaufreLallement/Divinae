@@ -91,17 +91,8 @@ public class Divinite extends CarteDogmatique {
 	 */
 	public static ArrayList<Carte> getAll() {
 		ArrayList<Carte> divinites = new ArrayList<Carte>();
-		divinites.add(new Divinite(Origine.JOUR, new Dogme[] {Dogme.NATURE, Dogme.HUMAIN, Dogme.MYSTIQUES}, "Brewalen", null));
-		divinites.add(new Divinite(Origine.JOUR, new Dogme[] {Dogme.NATURE, Dogme.HUMAIN, Dogme.SYMBOLES}, "Drinded", null));
-		divinites.add(new Divinite(Origine.JOUR, new Dogme[] {Dogme.CHAOS, Dogme.SYMBOLES, Dogme.MYSTIQUES}, "Yarstur", null));
-		divinites.add(new Divinite(Origine.NUIT, new Dogme[] {Dogme.NATURE, Dogme.MYSTIQUES, Dogme.CHAOS}, "Killinstred", null));
-		divinites.add(new Divinite(Origine.NUIT, new Dogme[] {Dogme.NATURE, Dogme.MYSTIQUES, Dogme.CHAOS}, "Llewella", null));
-		divinites.add(new Divinite(Origine.NUIT, new Dogme[] {Dogme.NATURE, Dogme.MYSTIQUES, Dogme.SYMBOLES}, "Pui-Tara", null));
-		divinites.add(new Divinite(Origine.AUBE, new Dogme[] {Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.SYMBOLES}, "Gwenghelen", null));
-		divinites.add(new Divinite(Origine.AUBE, new Dogme[] {Dogme.HUMAIN, Dogme.MYSTIQUES, Dogme.CHAOS}, "Shingva", null));
-		divinites.add(new Divinite(Origine.CREPUSCULE, new Dogme[] {Dogme.HUMAIN, Dogme.SYMBOLES, Dogme.CHAOS}, "Gorpa", null));
-		divinites.add(new Divinite(Origine.CREPUSCULE, new Dogme[] {Dogme.NATURE, Dogme.HUMAIN, Dogme.CHAOS}, "Romtec", null));
-		// TODO implementer les effet manquants
+		divinites.add(new Divinite(Origine.JOUR, new Dogme[] {Dogme.nature, Dogme.HUMAIN, Dogme.MYSTIQUES}, "Brewalen", null));
+		// TODO instancier toutes les divinites
 		return divinites;
 	}
 	
